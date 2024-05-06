@@ -1,7 +1,12 @@
 # This .gitignore file should be placed at the root of your Unity project directory
 #
 # Get latest from https://github.com/github/gitignore/blob/main/Unity.gitignore
-#
+# Subject 404 Rule to Ignore Large File: add the specific path of the imported asset onto this .gitignore, and share the asset folders to the other teammate for local download  
+[Aa]LP_Assets/
+
+
+
+
 [Ll]ibrary/
 [Tt]emp/
 [Oo]bj/
