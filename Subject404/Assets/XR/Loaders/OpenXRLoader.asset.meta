@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 07a6601ac9d931344b0f81f468eab00c
+=======
+guid: 5f53529cf8d78094ab938b5355ea7c5f
+>>>>>>> 63d6e9b (updated gitignore to exclude large terrain asset file (squashed repeated commits))
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 11400000
