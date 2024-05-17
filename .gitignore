@@ -4,6 +4,12 @@
 
 # Subject 404 Rule to Ignore Large File: add the specific path of the imported asset onto this .gitignore, and share the asset folders to the other teammate for local download  
 [Aa]LP_Assets/
+[Oo]culus Hands/
+
+
+
+
+
 
 [Ll]ibrary/
 [Tt]emp/
