@@ -19,7 +19,9 @@ public class PauseMenu : MonoBehaviour
         InputSystem.onDeviceChange -= OnDeviceChange;
     }
     private void ToggleMenu(InputAction.CallbackContext context) {
-        pauseMenu.SetActive(!pauseMenu.activeSelf);
+        bool isActive = pauseMenu.activeSelf;
+        pauseMenu.SetActive(!isActive);
+        Time.timeScale = isActive ? 1f : 0f;
     }
     private void OnDeviceChange(InputDevice device, InputDeviceChange change) {
         switch(change) {
