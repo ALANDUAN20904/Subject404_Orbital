@@ -8,11 +8,11 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Grab Ignore Ray
   - Water
   - UI
-  - 
-  - 
+  - Body
+  - Grab
   - 
   - 
   - 
