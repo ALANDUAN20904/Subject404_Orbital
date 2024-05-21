@@ -1,7 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
-<<<<<<< HEAD
---- !u!114 &-7554693397924275883
+--- !u!114 &-9044710494393578875
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -13,12 +12,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d236b7d11115f2143951f1e14045df39, type: 3}
   m_Name: Standalone Settings
   m_EditorClassIdentifier: 
-  m_LoaderManagerInstance: {fileID: -5973435223442956692}
+  m_LoaderManagerInstance: {fileID: 4988313306553909950}
   m_InitManagerOnStart: 1
---- !u!114 &-5973435223442956692
-=======
---- !u!114 &-6400080115334142289
->>>>>>> 63d6e9b (updated gitignore to exclude large terrain asset file (squashed repeated commits))
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2dc886499c26824283350fa532d087d, type: 3}
+  m_Name: XRGeneralSettingsPerBuildTarget
+  m_EditorClassIdentifier: 
+  Keys: 01000000
+  Values:
+  - {fileID: -9044710494393578875}
+--- !u!114 &4988313306553909950
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -34,44 +45,4 @@ MonoBehaviour:
   m_AutomaticLoading: 0
   m_AutomaticRunning: 0
   m_Loaders:
-<<<<<<< HEAD
   - {fileID: 11400000, guid: 659ff649070311b4cbe594aa1c0e22e2, type: 2}
-  - {fileID: 11400000, guid: 07a6601ac9d931344b0f81f468eab00c, type: 2}
-  - {fileID: 11400000, guid: 041a955d183d44c45a24ee87d32d90d5, type: 2}
-=======
-  - {fileID: 11400000, guid: 3267b9fe4e3754b48b9dd3ce27fb7008, type: 2}
-  - {fileID: 11400000, guid: 6695ffb2b624a3d45b242ba0d160fd72, type: 2}
->>>>>>> 63d6e9b (updated gitignore to exclude large terrain asset file (squashed repeated commits))
---- !u!114 &11400000
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d2dc886499c26824283350fa532d087d, type: 3}
-  m_Name: XRGeneralSettingsPerBuildTarget
-  m_EditorClassIdentifier: 
-  Keys: 01000000
-  Values:
-<<<<<<< HEAD
-  - {fileID: -7554693397924275883}
-=======
-  - {fileID: 7108133692957743182}
---- !u!114 &7108133692957743182
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d236b7d11115f2143951f1e14045df39, type: 3}
-  m_Name: Standalone Settings
-  m_EditorClassIdentifier: 
-  m_LoaderManagerInstance: {fileID: -6400080115334142289}
-  m_InitManagerOnStart: 1
->>>>>>> 63d6e9b (updated gitignore to exclude large terrain asset file (squashed repeated commits))
