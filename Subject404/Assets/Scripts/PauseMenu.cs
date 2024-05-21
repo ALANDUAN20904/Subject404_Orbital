@@ -42,4 +42,9 @@ public class PauseMenu : MonoBehaviour
                 break;
         }
     }
+
+    public void Resume()
+    {
+        Time.timeScale = 1f;
+    }
 }
