@@ -783,9 +783,9 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "Menu",
+                    "name": "menu",
                     "type": "Button",
-                    "id": "26028b3f-e59a-423f-8f55-cf4047f32c0b",
+                    "id": "da3cc133-1a77-486c-a7ce-02a97e1dbc4f",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -960,23 +960,23 @@
                 },
                 {
                     "name": "",
-                    "id": "20b4a3fe-2dc6-4f61-8fcc-d39fcc0fde69",
+                    "id": "a629c110-75f0-43d3-9b05-d9e1dc2e1210",
                     "path": "<XRController>{LeftHand}/{MenuButton}",
                     "interactions": "",
                     "processors": "",
                     "groups": "Generic XR Controller",
-                    "action": "Menu",
+                    "action": "menu",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "e89f8a81-15ea-4c55-ad79-54dec8a2d39b",
+                    "id": "19523512-e364-4536-ab4b-b0f2e7078aff",
                     "path": "<Keyboard>/escape",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Menu",
+                    "action": "menu",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

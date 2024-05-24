@@ -1,5 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
+<<<<<<< HEAD
 guid: 40f2a0650eeb9a64f974d8b90f7e6252
+=======
+guid: 6575a24b5b170094aa06a131ee55526f
+>>>>>>> 63d6e9b (updated gitignore to exclude large terrain asset file (squashed repeated commits))
+=======
+guid: 6575a24b5b170094aa06a131ee55526f
+>>>>>>> c0a4f4a995f2e1298c702f96aefcd71264fde70c
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
