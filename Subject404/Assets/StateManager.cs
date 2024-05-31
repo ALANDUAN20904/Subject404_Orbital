@@ -21,6 +21,9 @@ public class StateManager : MonoBehaviour
     public void playNewsAudio(){
         StartCoroutine(playAudioAndWait());
     }
+    public int getSceneState(){
+        return sceneState;
+    }
 
     private IEnumerator playAudioAndWait(){
         audioSources = radio.GetComponents<AudioSource>();
@@ -40,7 +43,7 @@ public class StateManager : MonoBehaviour
         toggleInteraction = mainDoor.GetComponent<ToggleInteraction>();
         toggleInteraction.EnableObjectInteraction();
     }
-    string[] instructions = {"Grab lamp interactable to turn on lamp", "Walk towards the table", "", "Open the fridge", "Exit the house"};
+    string[] instructions = {"Grab lamp interactable to turn on lamp", "Walk towards the table", "", "Grab the handle and open the fridge", "Grab the main door handle to exit the house"};
     private void Awake(){
         textUpdater = GetComponent<TextUpdater>();
     }
