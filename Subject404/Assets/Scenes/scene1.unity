@@ -669,6 +669,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lampActive: {fileID: 2002890206}
+  fridgeRDoor: {fileID: 298439894}
+  mainDoor: {fileID: 608253461}
 --- !u!1 &101289652
 GameObject:
   m_ObjectHideFlags: 0
@@ -1221,7 +1223,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 298439894}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0ad34abafad169848a38072baa96cdb2, type: 3}
   m_Name: 
@@ -1272,6 +1274,18 @@ MonoBehaviour:
       - m_Target: {fileID: 66754275}
         m_TargetAssemblyTypeName: StateManager, Assembly-CSharp
         m_MethodName: setInteractedFridge
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
+      - m_Target: {fileID: 66754275}
+        m_TargetAssemblyTypeName: StateManager, Assembly-CSharp
+        m_MethodName: enableDoorInteraction
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3070,7 +3084,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 608253461}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0ad34abafad169848a38072baa96cdb2, type: 3}
   m_Name: 
@@ -3256,6 +3270,19 @@ HingeJoint:
   m_EnablePreprocessing: 1
   m_MassScale: 1
   m_ConnectedMassScale: 1
+--- !u!114 &608253475
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 608253461}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56120eff799b16848a08dc3a4ee27134, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  xRGrabInteractable: {fileID: 608253466}
 --- !u!1 &613697823
 GameObject:
   m_ObjectHideFlags: 0
@@ -5900,6 +5927,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1000010943916374, guid: 23d25b2e2d4364dd4b92c52ef40cd36e, type: 3}
       insertIndex: -1
       addedObject: {fileID: 608253471}
+    - targetCorrespondingSourceObject: {fileID: 1000010943916374, guid: 23d25b2e2d4364dd4b92c52ef40cd36e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 608253475}
   m_SourcePrefab: {fileID: 100100000, guid: 23d25b2e2d4364dd4b92c52ef40cd36e, type: 3}
 --- !u!4 &1063491187 stripped
 Transform:
@@ -10276,6 +10306,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7334539273898789907, guid: b9f258a086096d24aa7861fa20deed65, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1906420857}
+    - targetCorrespondingSourceObject: {fileID: 7334539273898789907, guid: b9f258a086096d24aa7861fa20deed65, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1906420858}
   m_SourcePrefab: {fileID: 100100000, guid: b9f258a086096d24aa7861fa20deed65, type: 3}
 --- !u!4 &1906420849 stripped
 Transform:
@@ -10347,6 +10380,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.20158564, y: 1.4435287, z: 0.5447369}
   m_Center: {x: 0.07344112, y: -0.00000008909851, z: -0.24664024}
+--- !u!114 &1906420858
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 298439894}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56120eff799b16848a08dc3a4ee27134, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  xRGrabInteractable: {fileID: 298439902}
 --- !u!1 &1923512087
 GameObject:
   m_ObjectHideFlags: 0

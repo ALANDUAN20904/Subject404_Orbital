@@ -7,15 +7,25 @@ public class StateManager : MonoBehaviour
     private TextUpdater textUpdater;
     private int sceneState = 0;
     public GameObject lampActive;
+    public GameObject fridgeRDoor;
+    public GameObject mainDoor;
     private bool playedAudio = false;
     private bool interactedFridge = false;
+    private ToggleInteraction toggleInteraction;
     public void setInteractedFridge(){
         interactedFridge = true;
     }
     public void setPlayedAudio(){
         playedAudio = true;
     }
-
+    public void enableFridgeInteraction(){
+        toggleInteraction = fridgeRDoor.GetComponent<ToggleInteraction>();
+        toggleInteraction.EnableObjectInteraction();
+    }
+    public void enableDoorInteraction(){
+        toggleInteraction = mainDoor.GetComponent<ToggleInteraction>();
+        toggleInteraction.EnableObjectInteraction();
+    }
     string[] instructions = {"Grab lamp interactable to turn on lamp", "Walk towards the table", "Open the fridge", "Exit the house"};
     private void Awake(){
         textUpdater = GetComponent<TextUpdater>();

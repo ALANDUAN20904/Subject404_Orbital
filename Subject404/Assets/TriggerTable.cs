@@ -12,5 +12,6 @@ public class TriggerTable : MonoBehaviour
     private void OnTriggerEnter(Collider other){
         Debug.Log("Entered");
         stateManager.setPlayedAudio();
+        stateManager.enableFridgeInteraction();
     }
 }
