@@ -1,0 +1,60 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class StateManager : MonoBehaviour
+{
+    private TextUpdater textUpdater;
+    private int sceneState = 0;
+    public GameObject lampActive;
+    public GameObject fridgeRDoor;
+    public GameObject mainDoor;
+    public GameObject radio;
+    private bool triggeredAudio = false;
+    private bool playedAudio = false;
+    private bool interactedFridge = false;
+    private ToggleInteraction toggleInteraction;
+    private AudioSource[] audioSources;
+    public void setInteractedFridge(){
+        interactedFridge = true;
+    }
+    public void playNewsAudio(){
+        StartCoroutine(playAudioAndWait());
+    }
+    public int getSceneState(){
+        return sceneState;
+    }
+
+    private IEnumerator playAudioAndWait(){
+        audioSources = radio.GetComponents<AudioSource>();
+        audioSources[1].enabled = false;
+        yield return new WaitForSeconds(2);
+        audioSources[0].enabled = true;
+        triggeredAudio = true;
+        yield return new WaitForSeconds(40);
+        playedAudio = true;
+        enableFridgeInteraction();
+    }
+    public void enableFridgeInteraction(){
+        toggleInteraction = fridgeRDoor.GetComponent<ToggleInteraction>();
+        toggleInteraction.EnableObjectInteraction();
+    }
+    public void enableDoorInteraction(){
+        toggleInteraction = mainDoor.GetComponent<ToggleInteraction>();
+        toggleInteraction.EnableObjectInteraction();
+    }
+    string[] instructions = {"Grab lamp interactable to turn on lamp", "Walk towards the table", "", "Grab the handle and open the fridge", "Grab the main door handle to exit the house"};
+    private void Awake(){
+        textUpdater = GetComponent<TextUpdater>();
+    }
+    private void Update(){
+        if (!lampActive.activeSelf) sceneState = 0;
+        else if (!triggeredAudio) sceneState = 1;
+        else if (!playedAudio) sceneState = 2;
+        else if (!interactedFridge) sceneState = 3;
+        else sceneState = 4;
+
+        string text = instructions[sceneState];
+        textUpdater.UpdateText(ref text);
+    }
+}
