@@ -10,7 +10,6 @@ public class TriggerTable : MonoBehaviour
         stateManager = gameInstructions.GetComponent<StateManager>();
     }
     private void OnTriggerEnter(Collider other){
-        Debug.Log("Entered");
         stateManager.playNewsAudio();
     }
 }
