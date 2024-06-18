@@ -8,7 +8,15 @@ public class StateManagerScene4 : MonoBehaviour
     public GameObject AxeSymbol;
     private ToggleInteraction toggleAxe;
     private bool collided = false;
+    private bool viewedEnemy = false;
+    public GameObject Enemy;
+    public GameObject EnemyCollider;
+    public Camera mainCamera;
+    private Raycast raycaster;
 
+    void Start(){
+        raycaster = mainCamera.GetComponent<Raycast>();
+    }
     public void enableAxeInteraction(){
         toggleAxe = Axe.GetComponent<ToggleInteraction>();
         toggleAxe.EnableObjectInteraction();
@@ -26,6 +34,12 @@ public class StateManagerScene4 : MonoBehaviour
         if (collided && !Axe.activeSelf){
             StartAxeMotion();
             AxeSymbol.SetActive(true);
+        }
+    
+       if (!viewedEnemy && raycaster.IsObjectInView(EnemyCollider))
+        {
+            Enemy.SetActive(false);
+            viewedEnemy = true;
         }
     }
 }
