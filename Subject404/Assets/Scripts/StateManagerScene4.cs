@@ -38,6 +38,9 @@ public class StateManagerScene4 : MonoBehaviour
         Rigidbody rb = Mirror.GetComponent<Rigidbody>();
         rb.AddForce(0,-10,0);
     }
+    public void activateParkEnemy(){
+        ParkEnemy.SetActive(true);
+    }
     public void disableParkEnemy(){
         ParkEnemy.SetActive(false);
     }
