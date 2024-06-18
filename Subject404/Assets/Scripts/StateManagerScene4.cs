@@ -11,6 +11,7 @@ public class StateManagerScene4 : MonoBehaviour
     private bool viewedEnemy = false;
     public GameObject Enemy;
     public GameObject EnemyCollider;
+    public GameObject Mirror;
     public Camera mainCamera;
     private Raycast raycaster;
 
@@ -30,6 +31,11 @@ public class StateManagerScene4 : MonoBehaviour
     }
     public void enableEnemy(){
         Enemy.SetActive(true);
+    }
+    public void activateMirror(){
+        Mirror.SetActive(true);
+        Rigidbody rb = Mirror.GetComponent<Rigidbody>();
+        rb.AddForce(0,-10,0);
     }
     void Update()
     {
