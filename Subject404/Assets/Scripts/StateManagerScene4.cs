@@ -38,8 +38,16 @@ public class StateManagerScene4 : MonoBehaviour
     
        if (!viewedEnemy && raycaster.IsObjectInView(EnemyCollider))
         {
-            Enemy.SetActive(false);
-            viewedEnemy = true;
+            DisableEnemy();
         }
+    }
+
+    void DisableEnemy(){
+        StartCoroutine(DisableEnemyAfterDelay());
+    }
+    private IEnumerator DisableEnemyAfterDelay(){
+        yield return new WaitForSeconds(1);
+        Enemy.SetActive(false);
+        viewedEnemy = true;
     }
 }
