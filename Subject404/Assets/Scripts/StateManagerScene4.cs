@@ -28,7 +28,9 @@ public class StateManagerScene4 : MonoBehaviour
     {
         Axe.SetActive(true);
     }
-
+    public void enableEnemy(){
+        Enemy.SetActive(true);
+    }
     void Update()
     {
         if (collided && !Axe.activeSelf){
