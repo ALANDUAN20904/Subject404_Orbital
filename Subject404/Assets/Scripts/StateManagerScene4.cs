@@ -12,6 +12,7 @@ public class StateManagerScene4 : MonoBehaviour
     public GameObject Enemy;
     public GameObject EnemyCollider;
     public GameObject Mirror;
+    public GameObject ParkEnemy;
     public Camera mainCamera;
     private Raycast raycaster;
 
@@ -36,6 +37,9 @@ public class StateManagerScene4 : MonoBehaviour
         Mirror.SetActive(true);
         Rigidbody rb = Mirror.GetComponent<Rigidbody>();
         rb.AddForce(0,-10,0);
+    }
+    public void disableParkEnemy(){
+        ParkEnemy.SetActive(false);
     }
     void Update()
     {
