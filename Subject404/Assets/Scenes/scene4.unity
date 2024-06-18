@@ -18930,7 +18930,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 53911ae9f8b41494b9885973695e2f3b, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.30588236}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -23604,7 +23604,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1605483281
 Transform:
   m_ObjectHideFlags: 0
@@ -28961,6 +28961,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Axe: {fileID: 1218858725}
+  AxeSymbol: {fileID: 1605483280}
 --- !u!1001 &2022590524
 PrefabInstance:
   m_ObjectHideFlags: 0

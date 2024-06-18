@@ -5,6 +5,7 @@ using UnityEngine;
 public class StateManagerScene4 : MonoBehaviour
 {
     public GameObject Axe;
+    public GameObject AxeSymbol;
     private bool collided = false;
 
     public void setCollided(){
@@ -19,6 +20,7 @@ public class StateManagerScene4 : MonoBehaviour
     {
         if (collided && !Axe.activeSelf){
             StartAxeMotion();
+            AxeSymbol.SetActive(true);
         }
     }
 }
