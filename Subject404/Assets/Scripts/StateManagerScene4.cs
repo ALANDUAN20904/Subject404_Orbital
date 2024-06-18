@@ -6,8 +6,13 @@ public class StateManagerScene4 : MonoBehaviour
 {
     public GameObject Axe;
     public GameObject AxeSymbol;
+    private ToggleInteraction toggleAxe;
     private bool collided = false;
 
+    public void enableAxeInteraction(){
+        toggleAxe = Axe.GetComponent<ToggleInteraction>();
+        toggleAxe.EnableObjectInteraction();
+    }
     public void setCollided(){
         collided = true;
     }

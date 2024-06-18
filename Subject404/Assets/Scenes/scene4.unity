@@ -16526,6 +16526,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1717991288866742, guid: 1c3945bda9991a64bb0a8ee9ea89a37c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1218858729}
+    - targetCorrespondingSourceObject: {fileID: 1717991288866742, guid: 1c3945bda9991a64bb0a8ee9ea89a37c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1218858730}
   m_SourcePrefab: {fileID: 100100000, guid: 1c3945bda9991a64bb0a8ee9ea89a37c, type: 3}
 --- !u!4 &944424927 stripped
 Transform:
@@ -19800,8 +19803,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  torque: {x: 0, y: 200, z: 0}
+  torque: {x: 0, y: 0, z: 500}
   endPos: {fileID: 1031895352}
+  gameInstructions: {fileID: 2022476206}
 --- !u!54 &1218858727
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -19836,7 +19840,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1218858725}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0ad34abafad169848a38072baa96cdb2, type: 3}
   m_Name: 
@@ -19876,7 +19880,19 @@ MonoBehaviour:
       m_Calls: []
   m_LastSelectExited:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1218858727}
+        m_TargetAssemblyTypeName: UnityEngine.Rigidbody, UnityEngine
+        m_MethodName: set_useGravity
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 1
   m_SelectEntered:
     m_PersistentCalls:
       m_Calls: []
@@ -20002,6 +20018,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 50, y: 2, z: 5}
   m_Center: {x: -4, y: 2, z: 0}
+--- !u!114 &1218858730
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1218858725}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56120eff799b16848a08dc3a4ee27134, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  xRGrabInteractable: {fileID: 1218858728}
 --- !u!1 &1240639891
 GameObject:
   m_ObjectHideFlags: 0
