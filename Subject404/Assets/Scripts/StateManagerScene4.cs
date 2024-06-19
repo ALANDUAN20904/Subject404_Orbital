@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class StateManagerScene4 : MonoBehaviour
 {
+    private int sceneState;
     public GameObject Axe;
     public GameObject AxeSymbol;
     private ToggleInteraction toggleAxe;
@@ -20,7 +21,12 @@ public class StateManagerScene4 : MonoBehaviour
     public GameObject ParkEnemy;
     public Camera mainCamera;
     private Raycast raycaster;
-
+    private TextUpdater textUpdater;
+    string[] instructions = {"Walk to the store", "Look behind", "Walk to the store", "Grab to inspect the axe", "Walk to the store"};
+    private void Awake(){
+        textUpdater = GetComponent<TextUpdater>();
+        sceneState = 0;
+    }
     void Start(){
         raycaster = mainCamera.GetComponent<Raycast>();
         bulbAudioPlayer = Bulb.GetComponent<BulbAudio>();
@@ -40,6 +46,7 @@ public class StateManagerScene4 : MonoBehaviour
         enemyFootsteps.SetActive(false);
         Enemy.SetActive(true);
         bulbAudioPlayer.playSparkAudio();
+        sceneState = 1;
     }
     public void activateMirror(){
         Mirror.SetActive(true);
@@ -54,9 +61,13 @@ public class StateManagerScene4 : MonoBehaviour
     }
     void Update()
     {
+        string text = instructions[sceneState];
+        textUpdater.UpdateText(ref text);
+
         if (collided && !Axe.activeSelf){
             StartAxeMotion();
             AxeSymbol.SetActive(true);
+            sceneState = 3;
         }
     
        if (!viewedEnemy && raycaster.IsObjectInView(EnemyCollider))
@@ -64,9 +75,15 @@ public class StateManagerScene4 : MonoBehaviour
             DisableEnemy();
             gameSound.SetActive(true);
             heartBeat.SetActive(true);
+            sceneState = 2;
         }
     }
-
+    public int getSceneState(){
+        return sceneState;
+    }
+    public void setSceneState(int state){
+        sceneState = state;
+    }
     void DisableEnemy(){
         StartCoroutine(DisableEnemyAfterDelay());
     }
