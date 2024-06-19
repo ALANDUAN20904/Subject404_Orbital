@@ -65,7 +65,6 @@ public class StateManagerScene4 : MonoBehaviour
         StartCoroutine(DisableEnemyAfterDelay());
     }
     private IEnumerator DisableEnemyAfterDelay(){
-        yield return new WaitForSeconds(1);
         yield return StartCoroutine(bulbAudioPlayer.playExplosion());
         Enemy.SetActive(false);
         viewedEnemy = true;

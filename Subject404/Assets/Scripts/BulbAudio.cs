@@ -22,10 +22,6 @@ public class BulbAudio : MonoBehaviour
         audioSource.loop = false;
         audioSource.clip = audioClips[1];
         audioSource.Play();
-        while (audioSource.isPlaying)
-        {
-            Debug.Log("Audio source playing");
-            yield return null;
-        }
+        yield return new WaitForSeconds(2.5f);
     }
 }
