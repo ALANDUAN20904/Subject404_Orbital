@@ -11,6 +11,8 @@ public class StateManagerScene4 : MonoBehaviour
     private bool viewedEnemy = false;
     public GameObject Enemy;
     public GameObject EnemyCollider;
+    public GameObject Bulb;
+    private BulbAudio bulbAudioPlayer;
     public GameObject Mirror;
     public GameObject ParkEnemy;
     public Camera mainCamera;
@@ -18,6 +20,7 @@ public class StateManagerScene4 : MonoBehaviour
 
     void Start(){
         raycaster = mainCamera.GetComponent<Raycast>();
+        bulbAudioPlayer = Bulb.GetComponent<BulbAudio>();
     }
     public void enableAxeInteraction(){
         toggleAxe = Axe.GetComponent<ToggleInteraction>();
@@ -32,6 +35,7 @@ public class StateManagerScene4 : MonoBehaviour
     }
     public void enableEnemy(){
         Enemy.SetActive(true);
+        bulbAudioPlayer.playSparkAudio();
     }
     public void activateMirror(){
         Mirror.SetActive(true);
@@ -62,6 +66,7 @@ public class StateManagerScene4 : MonoBehaviour
     }
     private IEnumerator DisableEnemyAfterDelay(){
         yield return new WaitForSeconds(1);
+        yield return StartCoroutine(bulbAudioPlayer.playExplosion());
         Enemy.SetActive(false);
         viewedEnemy = true;
     }
