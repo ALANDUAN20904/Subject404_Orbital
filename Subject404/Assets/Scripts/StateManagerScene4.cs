@@ -11,6 +11,11 @@ public class StateManagerScene4 : MonoBehaviour
     private bool viewedEnemy = false;
     public GameObject Enemy;
     public GameObject EnemyCollider;
+    public GameObject Bulb;
+    private BulbAudio bulbAudioPlayer;
+    public GameObject gameSound;
+    public GameObject heartBeat;
+    public GameObject enemyFootsteps;
     public GameObject Mirror;
     public GameObject ParkEnemy;
     public Camera mainCamera;
@@ -18,6 +23,7 @@ public class StateManagerScene4 : MonoBehaviour
 
     void Start(){
         raycaster = mainCamera.GetComponent<Raycast>();
+        bulbAudioPlayer = Bulb.GetComponent<BulbAudio>();
     }
     public void enableAxeInteraction(){
         toggleAxe = Axe.GetComponent<ToggleInteraction>();
@@ -31,7 +37,9 @@ public class StateManagerScene4 : MonoBehaviour
         Axe.SetActive(true);
     }
     public void enableEnemy(){
+        enemyFootsteps.SetActive(false);
         Enemy.SetActive(true);
+        bulbAudioPlayer.playSparkAudio();
     }
     public void activateMirror(){
         Mirror.SetActive(true);
@@ -54,6 +62,8 @@ public class StateManagerScene4 : MonoBehaviour
        if (!viewedEnemy && raycaster.IsObjectInView(EnemyCollider))
         {
             DisableEnemy();
+            gameSound.SetActive(true);
+            heartBeat.SetActive(true);
         }
     }
 
@@ -61,7 +71,7 @@ public class StateManagerScene4 : MonoBehaviour
         StartCoroutine(DisableEnemyAfterDelay());
     }
     private IEnumerator DisableEnemyAfterDelay(){
-        yield return new WaitForSeconds(1);
+        yield return StartCoroutine(bulbAudioPlayer.playExplosion());
         Enemy.SetActive(false);
         viewedEnemy = true;
     }
