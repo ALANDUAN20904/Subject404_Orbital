@@ -10,8 +10,10 @@ public class Raycast : MonoBehaviour
     public bool IsObjectInView(GameObject target)
     {
         ray = new Ray(transform.position, transform.forward);
+        Vector3 vec = target.transform.position - transform.position;
         if (Physics.Raycast(ray, out raycastHit)){
-            return raycastHit.collider.gameObject == target;
+            Vector3 vec2 = raycastHit.point - transform.position;
+            return Vector3.Angle(vec2, vec) < 45.0f;
         }
         return false;
     }
