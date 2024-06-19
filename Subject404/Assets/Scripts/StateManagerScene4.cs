@@ -15,6 +15,7 @@ public class StateManagerScene4 : MonoBehaviour
     private BulbAudio bulbAudioPlayer;
     public GameObject gameSound;
     public GameObject heartBeat;
+    public GameObject enemyFootsteps;
     public GameObject Mirror;
     public GameObject ParkEnemy;
     public Camera mainCamera;
@@ -36,6 +37,7 @@ public class StateManagerScene4 : MonoBehaviour
         Axe.SetActive(true);
     }
     public void enableEnemy(){
+        enemyFootsteps.SetActive(false);
         Enemy.SetActive(true);
         bulbAudioPlayer.playSparkAudio();
     }
