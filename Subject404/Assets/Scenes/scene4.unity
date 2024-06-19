@@ -20690,6 +20690,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 1
+      - m_Target: {fileID: 2022476213}
+        m_TargetAssemblyTypeName: StateManagerScene4, Assembly-CSharp
+        m_MethodName: setSceneState
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 4
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 1
   m_SelectEntered:
     m_PersistentCalls:
       m_Calls: []
@@ -22638,6 +22650,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7105bef98c27b584fb721ac7e643c85b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 32
 --- !u!223 &1359544388
 Canvas:
   m_ObjectHideFlags: 0
@@ -31494,7 +31509,7 @@ GameObject:
   - component: {fileID: 2022476209}
   - component: {fileID: 2022476208}
   - component: {fileID: 2022476213}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: gameInstructions
   m_TagString: Untagged
   m_Icon: {fileID: 0}
