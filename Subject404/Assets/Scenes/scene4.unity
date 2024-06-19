@@ -12905,7 +12905,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &691411911
 Transform:
   m_ObjectHideFlags: 0
@@ -22343,7 +22343,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1367832724
 Transform:
   m_ObjectHideFlags: 0
@@ -30880,6 +30880,8 @@ MonoBehaviour:
   Enemy: {fileID: 455301936}
   EnemyCollider: {fileID: 541865788}
   Bulb: {fileID: 1840035533}
+  gameSound: {fileID: 691411910}
+  heartBeat: {fileID: 1367832723}
   Mirror: {fileID: 449889469}
   ParkEnemy: {fileID: 1459073578}
   mainCamera: {fileID: 1359544386}

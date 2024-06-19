@@ -13,6 +13,8 @@ public class StateManagerScene4 : MonoBehaviour
     public GameObject EnemyCollider;
     public GameObject Bulb;
     private BulbAudio bulbAudioPlayer;
+    public GameObject gameSound;
+    public GameObject heartBeat;
     public GameObject Mirror;
     public GameObject ParkEnemy;
     public Camera mainCamera;
@@ -58,6 +60,8 @@ public class StateManagerScene4 : MonoBehaviour
        if (!viewedEnemy && raycaster.IsObjectInView(EnemyCollider))
         {
             DisableEnemy();
+            gameSound.SetActive(true);
+            heartBeat.SetActive(true);
         }
     }
 
