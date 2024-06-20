@@ -22,6 +22,7 @@ public class StateManagerScene4 : MonoBehaviour
     public Camera mainCamera;
     private Raycast raycaster;
     private TextUpdater textUpdater;
+
     string[] instructions = {"Walk to the store", "Look behind", "Walk to the store", "Grab to inspect the axe", "Walk to the store"};
     private void Awake(){
         textUpdater = GetComponent<TextUpdater>();

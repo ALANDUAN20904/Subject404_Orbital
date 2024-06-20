@@ -898,10 +898,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 61428480}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c4a483316330ece44b72910e61d3d6d9, type: 3}
+  m_Script: {fileID: 11500000, guid: 6df4a0d9eb8953a4bbc00b26fd74214f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  screamSource: {fileID: 1990138412}
+  objectToEnable: {fileID: 1990138412}
 --- !u!1 &66482732
 GameObject:
   m_ObjectHideFlags: 0
@@ -10074,7 +10074,7 @@ GameObject:
   m_Component:
   - component: {fileID: 438581139}
   - component: {fileID: 438581140}
-  - component: {fileID: 438581141}
+  - component: {fileID: 438581142}
   m_Layer: 0
   m_Name: AxeMotionTrigger
   m_TagString: Untagged
@@ -10119,7 +10119,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &438581141
+--- !u!114 &438581142
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -10128,10 +10128,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 438581138}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e5d31939254ea5b40be54275cb47363d, type: 3}
+  m_Script: {fileID: 11500000, guid: 08d34c6fac711564190406ccb75ce92f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameInstructions: {fileID: 2022476206}
+  objectAssociated: {fileID: 2022476206}
+  componentType: StateManagerScene4
+  methodName: setCollided
 --- !u!1001 &440862527
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22060,7 +22062,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1332912585}
   - component: {fileID: 1332912586}
-  - component: {fileID: 1332912587}
+  - component: {fileID: 1332912588}
   m_Layer: 0
   m_Name: MirrorTrigger
   m_TagString: Untagged
@@ -22104,7 +22106,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2, y: 3, z: 20}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1332912587
+--- !u!114 &1332912588
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -22113,10 +22115,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1332912584}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4001b1b86d7035940a1347d705fe64c1, type: 3}
+  m_Script: {fileID: 11500000, guid: 08d34c6fac711564190406ccb75ce92f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameInstructions: {fileID: 2022476206}
+  objectAssociated: {fileID: 2022476206}
+  componentType: StateManagerScene4
+  methodName: activateMirror
 --- !u!1 &1333864341
 GameObject:
   m_ObjectHideFlags: 0
@@ -23564,8 +23568,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1413769729}
   - component: {fileID: 1413769730}
-  - component: {fileID: 1413769731}
   - component: {fileID: 1413769732}
+  - component: {fileID: 1413769733}
   m_Layer: 0
   m_Name: ParkEnemyMotionTrigger
   m_TagString: Untagged
@@ -23609,19 +23613,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.01, y: 1, z: 10}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1413769731
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1413769728}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5dda0ed3ba1bc4648a0f8de92deaaf6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameInstructions: {fileID: 2022476206}
 --- !u!114 &1413769732
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23631,10 +23622,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 1413769728}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c4a483316330ece44b72910e61d3d6d9, type: 3}
+  m_Script: {fileID: 11500000, guid: 6df4a0d9eb8953a4bbc00b26fd74214f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  screamSource: {fileID: 1463924245}
+  objectToEnable: {fileID: 1463924245}
+--- !u!114 &1413769733
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1413769728}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08d34c6fac711564190406ccb75ce92f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectAssociated: {fileID: 2022476206}
+  componentType: StateManagerScene4
+  methodName: activateParkEnemy
 --- !u!1 &1420256753
 GameObject:
   m_ObjectHideFlags: 0
@@ -23884,7 +23890,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1446196493}
   - component: {fileID: 1446196495}
-  - component: {fileID: 1446196494}
+  - component: {fileID: 1446196496}
   m_Layer: 0
   m_Name: EnemyActivateTrigger
   m_TagString: Untagged
@@ -23908,19 +23914,6 @@ Transform:
   - {fileID: 1615817398}
   m_Father: {fileID: 194812745}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1446196494
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1446196492}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7513fa10db6d25f4787f34d4ee16c72b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameInstructions: {fileID: 2022476206}
 --- !u!65 &1446196495
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -23942,6 +23935,21 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1446196496
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1446196492}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08d34c6fac711564190406ccb75ce92f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectAssociated: {fileID: 2022476206}
+  componentType: StateManagerScene4
+  methodName: enableEnemy
 --- !u!1 &1451768392
 GameObject:
   m_ObjectHideFlags: 0
@@ -31234,10 +31242,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 2003759248}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c4a483316330ece44b72910e61d3d6d9, type: 3}
+  m_Script: {fileID: 11500000, guid: 6df4a0d9eb8953a4bbc00b26fd74214f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  screamSource: {fileID: 1769350697}
+  objectToEnable: {fileID: 1769350697}
 --- !u!65 &2003759251
 BoxCollider:
   m_ObjectHideFlags: 0
