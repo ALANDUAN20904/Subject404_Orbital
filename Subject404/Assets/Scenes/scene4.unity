@@ -14241,7 +14241,7 @@ GameObject:
   - component: {fileID: 778215726}
   - component: {fileID: 778215729}
   - component: {fileID: 778215728}
-  - component: {fileID: 778215727}
+  - component: {fileID: 778215730}
   m_Layer: 0
   m_Name: pauseMenu
   m_TagString: Untagged
@@ -14280,18 +14280,6 @@ MonoBehaviour:
   pauseMenu: {fileID: 834133441}
   openMenuAction: {fileID: 8140522927452443309, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   LeftLaser: {fileID: 1740579349}
---- !u!114 &778215727
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 778215724}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ded5f60929c502248a6e598310823706, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &778215728
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14419,6 +14407,18 @@ MonoBehaviour:
     m_Interactions: 
     m_SingletonActionBindings: []
     m_Flags: 0
+--- !u!114 &778215730
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 778215724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ded5f60929c502248a6e598310823706, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &790658577
 GameObject:
   m_ObjectHideFlags: 0
@@ -16637,7 +16637,7 @@ MonoBehaviour:
       m_Name: Pinch Animation
       m_Type: 0
       m_ExpectedControlType: 
-      m_Id: 26be965c-4a4f-4ddb-b84b-0fdddf49c03e
+      m_Id: b2b9b6c4-42d3-4ea9-a989-c9334efeaa0d
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
@@ -16649,7 +16649,7 @@ MonoBehaviour:
       m_Name: Grip Animation
       m_Type: 0
       m_ExpectedControlType: 
-      m_Id: bec9a84f-6588-473b-9e5b-d39cfcca15dc
+      m_Id: 6edb68f5-b8c7-40eb-b86b-a56a2bfad7d4
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
@@ -29524,7 +29524,7 @@ MonoBehaviour:
       m_Name: Pinch Animation
       m_Type: 0
       m_ExpectedControlType: 
-      m_Id: e8120708-dc02-4d94-bbbd-be86b0eda7e9
+      m_Id: c47d4cf9-03d5-4c5e-9a1f-155ab98c6bac
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
@@ -29536,7 +29536,7 @@ MonoBehaviour:
       m_Name: Grip Animation
       m_Type: 0
       m_ExpectedControlType: 
-      m_Id: a8aaf550-a103-45ba-8158-f5bb11b724f5
+      m_Id: b65ae514-f177-469b-a1de-2caded9a08e3
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
@@ -31519,9 +31519,9 @@ GameObject:
   - component: {fileID: 2022476212}
   - component: {fileID: 2022476211}
   - component: {fileID: 2022476210}
-  - component: {fileID: 2022476209}
-  - component: {fileID: 2022476208}
   - component: {fileID: 2022476213}
+  - component: {fileID: 2022476214}
+  - component: {fileID: 2022476215}
   m_Layer: 5
   m_Name: gameInstructions
   m_TagString: Untagged
@@ -31529,31 +31529,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &2022476208
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2022476206}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: be43e5003c59bcd43a559cc77e918ecb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  textField: {fileID: 2089767297}
---- !u!114 &2022476209
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2022476206}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ded5f60929c502248a6e598310823706, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &2022476210
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31720,6 +31695,31 @@ MonoBehaviour:
   Mirror: {fileID: 449889469}
   ParkEnemy: {fileID: 1459073578}
   mainCamera: {fileID: 1359544386}
+--- !u!114 &2022476214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2022476206}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ded5f60929c502248a6e598310823706, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2022476215
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2022476206}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be43e5003c59bcd43a559cc77e918ecb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textField: {fileID: 2089767297}
 --- !u!1001 &2022590524
 PrefabInstance:
   m_ObjectHideFlags: 0
