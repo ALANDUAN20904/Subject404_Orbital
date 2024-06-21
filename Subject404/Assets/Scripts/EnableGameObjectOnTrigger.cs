@@ -7,9 +7,14 @@ public class EnableGameObjectOnTrigger : MonoBehaviour
     public GameObject objectToEnable;
     private bool isEnabled = false;
     void OnTriggerEnter(){
-        if (!isEnabled){
-            objectToEnable.SetActive(true);
-            isEnabled = true;
+        if (objectToEnable != null){
+            if (!isEnabled){
+                objectToEnable.SetActive(true);
+                isEnabled = true;
+            }
+        }
+        else{
+            Debug.LogError("Object to enable not set");
         }
     }
 }
