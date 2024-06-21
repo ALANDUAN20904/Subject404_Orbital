@@ -17,9 +17,20 @@ public class GameObjectMotion : MonoBehaviour
     void Start(){
         if (hasTorque){
             rigidBody = GetComponent<Rigidbody>();
-            rigidBody.AddTorque(torque, ForceMode.Impulse);
+            if (rigidBody != null && torque != null){
+                rigidBody.AddTorque(torque, ForceMode.Impulse);
+            }
+            else{
+                Debug.LogError("rigidBody or torque parameters not found");
+            }
         }
         stateManager = gameInstructions.GetComponent<StateManagerScene4>();
+        if (stateManager == null){
+            Debug.LogError("State Manager not found");
+        }
+        if (endPos == null){
+            Debug.LogError("End Position not set");
+        }
     }
     void Update()
     {
