@@ -9,19 +9,35 @@ public class BulbAudio : MonoBehaviour
     private bool playedSparks = false;
     void Awake(){
         audioSource = gameObject.GetComponent<AudioSource>();
+        if (audioSource == null){
+            Debug.LogWarning("Audio Source attached to " + gameObject.name + " not found, creating new");
+            audioSource = gameObject.AddComponent<AudioSource>();
+            audioSource.spatialBlend = 1;
+            audioSource.rolloffMode = AudioRolloffMode.Linear;
+        }
     }
     public void playSparkAudio(){
         if (!playedSparks){
-            audioSource.clip = audioClips[0];
-            audioSource.loop = true;
-            audioSource.Play();
-            playedSparks = true;
+            if (audioClips[0] != null){
+                audioSource.clip = audioClips[0];
+                audioSource.loop = true;
+                audioSource.Play();
+                playedSparks = true;
+            }
+            else{
+                Debug.LogError("Audio Clip not attached to " + gameObject.name);
+            }
         }
     }
     public IEnumerator playExplosion(){
-        audioSource.loop = false;
-        audioSource.clip = audioClips[1];
-        audioSource.Play();
-        yield return new WaitForSeconds(2.5f);
+        if (audioClips[1] != null){
+            audioSource.loop = false;
+            audioSource.clip = audioClips[1];
+            audioSource.Play();
+            yield return new WaitForSeconds(audioClips[1].length);
+        }
+        else{
+            Debug.LogError("Audio Clip not attached to " + gameObject.name);
+        }
     }
 }

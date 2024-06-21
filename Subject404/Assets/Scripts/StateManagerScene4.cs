@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class StateManagerScene4 : MonoBehaviour
 {
@@ -9,7 +10,6 @@ public class StateManagerScene4 : MonoBehaviour
     public GameObject AxeSymbol;
     private ToggleInteraction toggleAxe;
     private bool collided = false;
-    private bool viewedEnemy = false;
     public GameObject Enemy;
     public GameObject EnemyCollider;
     public GameObject Bulb;
@@ -22,60 +22,131 @@ public class StateManagerScene4 : MonoBehaviour
     public Camera mainCamera;
     private Raycast raycaster;
     private TextUpdater textUpdater;
+
     string[] instructions = {"Walk to the store", "Look behind", "Walk to the store", "Grab to inspect the axe", "Walk to the store"};
     private void Awake(){
         textUpdater = GetComponent<TextUpdater>();
+        if (textUpdater == null){
+            Debug.LogError("Text Updater component not found");
+        }
         sceneState = 0;
     }
     void Start(){
-        raycaster = mainCamera.GetComponent<Raycast>();
-        bulbAudioPlayer = Bulb.GetComponent<BulbAudio>();
+        if (mainCamera != null){
+            raycaster = mainCamera.GetComponent<Raycast>();
+            if (raycaster == null){
+                Debug.LogWarning("Raycaster component not found on attached camera, creating new raycaster");
+                raycaster = mainCamera.gameObject.AddComponent<Raycast>();
+            }
+        }
+        else{
+            Debug.LogError("Main Camera not set");
+        }
+        if (Bulb != null){
+            bulbAudioPlayer = Bulb.GetComponent<BulbAudio>();
+            if (bulbAudioPlayer == null){
+                Debug.LogError("Bulb Audio component not found");
+            }
+        }
+        else{
+            Debug.LogError("Bulb GameObject not set");
+        }
     }
     public void enableAxeInteraction(){
-        toggleAxe = Axe.GetComponent<ToggleInteraction>();
-        toggleAxe.EnableObjectInteraction();
+        if (Axe != null){
+            toggleAxe = Axe.GetComponent<ToggleInteraction>();
+            if (toggleAxe == null){
+                Debug.LogWarning("ToggleInteraction component not found, creating new");
+                toggleAxe = Axe.AddComponent<ToggleInteraction>();
+                toggleAxe.xRGrabInteractable = Axe.GetComponent<XRGrabInteractable>();
+            }
+            toggleAxe.EnableObjectInteraction();
+        }
+        else{
+            Debug.LogError("Axe GameObject not set");
+        }
     }
     public void setCollided(){
         collided = true;
     }
     void StartAxeMotion()
     {
-        Axe.SetActive(true);
+        if (Axe != null){
+            Axe.SetActive(true);
+        }
+        else{
+            Debug.LogError("Axe GameObjet not set");
+        }
     }
     public void enableEnemy(){
-        enemyFootsteps.SetActive(false);
-        Enemy.SetActive(true);
-        bulbAudioPlayer.playSparkAudio();
-        sceneState = 1;
+        if (enemyFootsteps != null && Enemy != null && bulbAudioPlayer != null){
+            enemyFootsteps.SetActive(false);
+            Enemy.SetActive(true);
+            bulbAudioPlayer.playSparkAudio();
+            sceneState = 1;
+        }
+        else{
+            Debug.LogError("One or more parameters missing");
+        }
     }
     public void activateMirror(){
-        Mirror.SetActive(true);
-        Rigidbody rb = Mirror.GetComponent<Rigidbody>();
-        rb.AddForce(0,-10,0);
+        if (Mirror != null){
+            Mirror.SetActive(true);
+            Rigidbody rb = Mirror.GetComponent<Rigidbody>();
+            if (rb == null){
+                Debug.LogWarning("Rigidbody component not found on Mirror GameObject, creating new");
+                rb = Mirror.AddComponent<Rigidbody>();
+                rb.useGravity = true;
+            }
+            rb.AddForce(0,-10,0);
+        }
+        else{
+            Debug.LogError("Mirror GameObject not set");
+        }
     }
     public void activateParkEnemy(){
-        ParkEnemy.SetActive(true);
+        if (ParkEnemy != null){
+            ParkEnemy.SetActive(true);
+        }
+        else{
+            Debug.LogError("ParkEnemy GameObject not set");
+        }
     }
     public void disableParkEnemy(){
-        ParkEnemy.SetActive(false);
+        if (ParkEnemy != null){
+            ParkEnemy.SetActive(false);
+        }
+        else{
+            Debug.LogError("ParkEnemy GameObject not set");
+        }
     }
     void Update()
     {
         string text = instructions[sceneState];
         textUpdater.UpdateText(ref text);
 
-        if (collided && !Axe.activeSelf){
-            StartAxeMotion();
-            AxeSymbol.SetActive(true);
-            sceneState = 3;
+        if (Axe != null){
+            if (collided && !Axe.activeSelf){
+                StartAxeMotion();
+                AxeSymbol.SetActive(true);
+                sceneState = 3;
+            }
+        }
+        else{
+            Debug.LogError("Axe GameObject not set");
         }
     
-       if (!viewedEnemy && raycaster.IsObjectInView(EnemyCollider))
+       if (Enemy.activeSelf && raycaster.IsObjectInView(EnemyCollider))
         {
             DisableEnemy();
-            gameSound.SetActive(true);
-            heartBeat.SetActive(true);
-            sceneState = 2;
+            if (gameSound != null && heartBeat != null){
+                gameSound.SetActive(true);
+                heartBeat.SetActive(true);
+                sceneState = 2;
+            }
+            else{
+                Debug.LogError("One or more parameters missing");
+            }
         }
     }
     public int getSceneState(){
@@ -89,7 +160,11 @@ public class StateManagerScene4 : MonoBehaviour
     }
     private IEnumerator DisableEnemyAfterDelay(){
         yield return StartCoroutine(bulbAudioPlayer.playExplosion());
-        Enemy.SetActive(false);
-        viewedEnemy = true;
+        if (Enemy != null){
+            Enemy.SetActive(false);
+        }
+        else{
+            Debug.LogError("Enemy GameObject not set");
+        }
     }
 }

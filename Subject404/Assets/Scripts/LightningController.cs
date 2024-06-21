@@ -7,7 +7,10 @@ public class LightningController : MonoBehaviour
    public GameObject LightningSource;
    private bool lightningTimed;
    void Start(){
-        lightningTimed = false;
+     if (LightningSource == null){
+          Debug.LogError("Lightning Source not set");
+     }
+     lightningTimed = false;
    }
    void Update(){
         if (!lightningTimed) StartCoroutine(ControlLightning(Random.Range(0, 20)));
