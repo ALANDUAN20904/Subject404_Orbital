@@ -24,7 +24,7 @@ public class Raycast : MonoBehaviour
 
     private bool hasObstacle(GameObject target)
     {
-        Ray obstacleCheckRay = new Ray(transform.position, target.transform.position - transform.forward);
+        Ray obstacleCheckRay = new Ray(transform.position, target.transform.position - transform.position);
         RaycastHit obstacleHit;
         if (Physics.Raycast(obstacleCheckRay, out obstacleHit, layerMask)){
             return obstacleHit.collider.gameObject.name != target.name;

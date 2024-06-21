@@ -10,7 +10,6 @@ public class StateManagerScene4 : MonoBehaviour
     public GameObject AxeSymbol;
     private ToggleInteraction toggleAxe;
     private bool collided = false;
-    private bool viewedEnemy = false;
     public GameObject Enemy;
     public GameObject EnemyCollider;
     public GameObject Bulb;
@@ -137,7 +136,7 @@ public class StateManagerScene4 : MonoBehaviour
             Debug.LogError("Axe GameObject not set");
         }
     
-       if (!viewedEnemy && raycaster.IsObjectInView(EnemyCollider))
+       if (Enemy.activeSelf && raycaster.IsObjectInView(EnemyCollider))
         {
             DisableEnemy();
             if (gameSound != null && heartBeat != null){
@@ -163,7 +162,6 @@ public class StateManagerScene4 : MonoBehaviour
         yield return StartCoroutine(bulbAudioPlayer.playExplosion());
         if (Enemy != null){
             Enemy.SetActive(false);
-            viewedEnemy = true;
         }
         else{
             Debug.LogError("Enemy GameObject not set");
