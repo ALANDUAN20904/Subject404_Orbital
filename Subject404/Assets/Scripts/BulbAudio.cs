@@ -10,7 +10,10 @@ public class BulbAudio : MonoBehaviour
     void Awake(){
         audioSource = gameObject.GetComponent<AudioSource>();
         if (audioSource == null){
-            Debug.LogError("Audio Source attached to " + gameObject.name + " not found");
+            Debug.LogWarning("Audio Source attached to " + gameObject.name + " not found, creating new");
+            audioSource = gameObject.AddComponent<AudioSource>();
+            audioSource.spatialBlend = 1;
+            audioSource.rolloffMode = AudioRolloffMode.Linear;
         }
     }
     public void playSparkAudio(){
