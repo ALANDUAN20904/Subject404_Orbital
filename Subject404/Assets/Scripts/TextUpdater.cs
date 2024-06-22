@@ -9,6 +9,6 @@ public class TextUpdater : MonoBehaviour
     public TMP_Text textField;
     public void UpdateText(ref string text)
     {
-       textField.text = text;
+        textField.text = text;
     }
 }

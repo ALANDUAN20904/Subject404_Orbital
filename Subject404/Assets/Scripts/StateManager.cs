@@ -15,20 +15,26 @@ public class StateManager : MonoBehaviour
     private bool interactedFridge = false;
     private ToggleInteraction toggleInteraction;
     private AudioSource[] audioSources;
-    public void setInteractedFridge(){
+    public void setInteractedFridge()
+    {
         interactedFridge = true;
     }
-    public void playNewsAudio(){
+    public void playNewsAudio()
+    {
         StartCoroutine(playAudioAndWait());
     }
-    public int getSceneState(){
+    public int getSceneState()
+    {
         return sceneState;
     }
 
-    private IEnumerator playAudioAndWait(){
-        if (radio != null){
+    private IEnumerator playAudioAndWait()
+    {
+        if (radio != null)
+        {
             audioSources = radio.GetComponents<AudioSource>();
-            if (audioSources == null){
+            if (audioSources == null)
+            {
                 Debug.LogError("Audio Source components not found");
             }
             audioSources[1].enabled = false;
@@ -39,46 +45,60 @@ public class StateManager : MonoBehaviour
             playedAudio = true;
             enableFridgeInteraction();
         }
-        else{
+        else
+        {
             Debug.LogError("Radio GameObject not set");
         }
     }
-    public void enableFridgeInteraction(){
-        if (fridgeRDoor != null){
+    public void enableFridgeInteraction()
+    {
+        if (fridgeRDoor != null)
+        {
             toggleInteraction = fridgeRDoor.GetComponent<ToggleInteraction>();
-            if (toggleInteraction != null){
+            if (toggleInteraction != null)
+            {
                 toggleInteraction.EnableObjectInteraction();
             }
-            else{
+            else
+            {
                 Debug.LogError("Toggle Interaction Component not found on fridgeRDoor");
             }
         }
-        else{
+        else
+        {
             Debug.LogError("fridgeRDoor GameObject not set");
         }
     }
-    public void enableDoorInteraction(){
-        if (mainDoor != null){
+    public void enableDoorInteraction()
+    {
+        if (mainDoor != null)
+        {
             toggleInteraction = mainDoor.GetComponent<ToggleInteraction>();
-            if (toggleInteraction != null){
+            if (toggleInteraction != null)
+            {
                 toggleInteraction.EnableObjectInteraction();
             }
-            else{
+            else
+            {
                 Debug.LogError("Toggle Interaction Component not found on main door");
             }
         }
-        else{
+        else
+        {
             Debug.LogError("Main Door GameObject not set");
         }
     }
-    string[] instructions = {"Grab lamp interactable to turn on lamp", "Walk towards the table", "", "Grab the handle and open the fridge", "Grab the main door handle to exit the house"};
-    private void Awake(){
+    string[] instructions = { "Grab lamp interactable to turn on lamp", "Walk towards the table", "", "Grab the handle and open the fridge", "Grab the main door handle to exit the house" };
+    private void Awake()
+    {
         textUpdater = GetComponent<TextUpdater>();
-        if (textUpdater == null){
+        if (textUpdater == null)
+        {
             Debug.LogError("Text Updater component not found");
         }
     }
-    private void Update(){
+    private void Update()
+    {
         if (!lampActive.activeSelf) sceneState = 0;
         else if (!triggeredAudio) sceneState = 1;
         else if (!playedAudio) sceneState = 2;

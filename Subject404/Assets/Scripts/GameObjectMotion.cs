@@ -14,43 +14,55 @@ public class GameObjectMotion : MonoBehaviour
     public GameObject gameInstructions;
     private StateManagerScene4 stateManager;
 
-    void Start(){
-        if (hasTorque){
+    void Start()
+    {
+        if (hasTorque)
+        {
             rigidBody = GetComponent<Rigidbody>();
-            if (rigidBody != null && torque != null){
+            if (rigidBody != null && torque != null)
+            {
                 rigidBody.AddTorque(torque, ForceMode.Impulse);
             }
-            else{
+            else
+            {
                 Debug.LogError("rigidBody or torque parameters not found");
             }
         }
         stateManager = gameInstructions.GetComponent<StateManagerScene4>();
-        if (stateManager == null){
+        if (stateManager == null)
+        {
             Debug.LogError("State Manager not found");
         }
-        if (endPos == null){
+        if (endPos == null)
+        {
             Debug.LogError("End Position not set");
         }
     }
     void Update()
     {
         var step = speed * Time.deltaTime;
-        if (Vector3.Distance(transform.position, endPos.position) < 0.001f){
-            if (!hasReached){
-                if (hasTorque){
+        if (Vector3.Distance(transform.position, endPos.position) < 0.001f)
+        {
+            if (!hasReached)
+            {
+                if (hasTorque)
+                {
                     rigidBody.angularVelocity = Vector3.zero;
                 }
-                if (gameObject.name == "Ghoul (1)"){
+                if (gameObject.name == "Ghoul (1)")
+                {
                     stateManager.disableParkEnemy();
                 }
                 hasReached = true;
             }
             stateManager.enableAxeInteraction();
         }
-        if (!hasReached){
-            if (hasLinearVel){
+        if (!hasReached)
+        {
+            if (hasLinearVel)
+            {
                 transform.position = Vector3.MoveTowards(transform.position, endPos.position, step);
             }
-        } 
+        }
     }
 }

@@ -23,100 +23,129 @@ public class StateManagerScene4 : MonoBehaviour
     private Raycast raycaster;
     private TextUpdater textUpdater;
 
-    string[] instructions = {"Walk to the store", "Look behind", "Walk to the store", "Grab to inspect the axe", "Walk to the store"};
-    private void Awake(){
+    string[] instructions = { "Walk to the store", "Look behind", "Walk to the store", "Grab to inspect the axe", "Walk to the store" };
+    private void Awake()
+    {
         textUpdater = GetComponent<TextUpdater>();
-        if (textUpdater == null){
+        if (textUpdater == null)
+        {
             Debug.LogError("Text Updater component not found");
         }
         sceneState = 0;
     }
-    void Start(){
-        if (mainCamera != null){
+    void Start()
+    {
+        if (mainCamera != null)
+        {
             raycaster = mainCamera.GetComponent<Raycast>();
-            if (raycaster == null){
+            if (raycaster == null)
+            {
                 Debug.LogWarning("Raycaster component not found on attached camera, creating new raycaster");
                 raycaster = mainCamera.gameObject.AddComponent<Raycast>();
             }
         }
-        else{
+        else
+        {
             Debug.LogError("Main Camera not set");
         }
-        if (Bulb != null){
+        if (Bulb != null)
+        {
             bulbAudioPlayer = Bulb.GetComponent<BulbAudio>();
-            if (bulbAudioPlayer == null){
+            if (bulbAudioPlayer == null)
+            {
                 Debug.LogError("Bulb Audio component not found");
             }
         }
-        else{
+        else
+        {
             Debug.LogError("Bulb GameObject not set");
         }
     }
-    public void enableAxeInteraction(){
-        if (Axe != null){
+    public void enableAxeInteraction()
+    {
+        if (Axe != null)
+        {
             toggleAxe = Axe.GetComponent<ToggleInteraction>();
-            if (toggleAxe == null){
+            if (toggleAxe == null)
+            {
                 Debug.LogWarning("ToggleInteraction component not found, creating new");
                 toggleAxe = Axe.AddComponent<ToggleInteraction>();
                 toggleAxe.xRGrabInteractable = Axe.GetComponent<XRGrabInteractable>();
             }
             toggleAxe.EnableObjectInteraction();
         }
-        else{
+        else
+        {
             Debug.LogError("Axe GameObject not set");
         }
     }
-    public void setCollided(){
+    public void setCollided()
+    {
         collided = true;
     }
     void StartAxeMotion()
     {
-        if (Axe != null){
+        if (Axe != null)
+        {
             Axe.SetActive(true);
         }
-        else{
+        else
+        {
             Debug.LogError("Axe GameObjet not set");
         }
     }
-    public void enableEnemy(){
-        if (enemyFootsteps != null && Enemy != null && bulbAudioPlayer != null){
+    public void enableEnemy()
+    {
+        if (enemyFootsteps != null && Enemy != null && bulbAudioPlayer != null)
+        {
             enemyFootsteps.SetActive(false);
             Enemy.SetActive(true);
             bulbAudioPlayer.playSparkAudio();
             sceneState = 1;
         }
-        else{
+        else
+        {
             Debug.LogError("One or more parameters missing");
         }
     }
-    public void activateMirror(){
-        if (Mirror != null){
+    public void activateMirror()
+    {
+        if (Mirror != null)
+        {
             Mirror.SetActive(true);
             Rigidbody rb = Mirror.GetComponent<Rigidbody>();
-            if (rb == null){
+            if (rb == null)
+            {
                 Debug.LogWarning("Rigidbody component not found on Mirror GameObject, creating new");
                 rb = Mirror.AddComponent<Rigidbody>();
                 rb.useGravity = true;
             }
-            rb.AddForce(0,-10,0);
+            rb.AddForce(0, -10, 0);
         }
-        else{
+        else
+        {
             Debug.LogError("Mirror GameObject not set");
         }
     }
-    public void activateParkEnemy(){
-        if (ParkEnemy != null){
+    public void activateParkEnemy()
+    {
+        if (ParkEnemy != null)
+        {
             ParkEnemy.SetActive(true);
         }
-        else{
+        else
+        {
             Debug.LogError("ParkEnemy GameObject not set");
         }
     }
-    public void disableParkEnemy(){
-        if (ParkEnemy != null){
+    public void disableParkEnemy()
+    {
+        if (ParkEnemy != null)
+        {
             ParkEnemy.SetActive(false);
         }
-        else{
+        else
+        {
             Debug.LogError("ParkEnemy GameObject not set");
         }
     }
@@ -125,45 +154,56 @@ public class StateManagerScene4 : MonoBehaviour
         string text = instructions[sceneState];
         textUpdater.UpdateText(ref text);
 
-        if (Axe != null){
-            if (collided && !Axe.activeSelf){
+        if (Axe != null)
+        {
+            if (collided && !Axe.activeSelf)
+            {
                 StartAxeMotion();
                 AxeSymbol.SetActive(true);
                 sceneState = 3;
             }
         }
-        else{
+        else
+        {
             Debug.LogError("Axe GameObject not set");
         }
-    
-       if (Enemy.activeSelf && raycaster.IsObjectInView(EnemyCollider))
+
+        if (Enemy.activeSelf && raycaster.IsObjectInView(EnemyCollider))
         {
             DisableEnemy();
-            if (gameSound != null && heartBeat != null){
+            if (gameSound != null && heartBeat != null)
+            {
                 gameSound.SetActive(true);
                 heartBeat.SetActive(true);
                 sceneState = 2;
             }
-            else{
+            else
+            {
                 Debug.LogError("One or more parameters missing");
             }
         }
     }
-    public int getSceneState(){
+    public int getSceneState()
+    {
         return sceneState;
     }
-    public void setSceneState(int state){
+    public void setSceneState(int state)
+    {
         sceneState = state;
     }
-    void DisableEnemy(){
+    void DisableEnemy()
+    {
         StartCoroutine(DisableEnemyAfterDelay());
     }
-    private IEnumerator DisableEnemyAfterDelay(){
+    private IEnumerator DisableEnemyAfterDelay()
+    {
         yield return StartCoroutine(bulbAudioPlayer.playExplosion());
-        if (Enemy != null){
+        if (Enemy != null)
+        {
             Enemy.SetActive(false);
         }
-        else{
+        else
+        {
             Debug.LogError("Enemy GameObject not set");
         }
     }

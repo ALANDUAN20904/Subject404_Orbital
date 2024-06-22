@@ -8,11 +8,13 @@ public class Raycast : MonoBehaviour
 
     public bool IsObjectInView(GameObject target)
     {
-        if (target != null){
+        if (target != null)
+        {
             Ray ray = new Ray(transform.position, transform.forward);
             Vector3 vec = target.transform.position - transform.position;
             RaycastHit raycastHit;
-            if (Physics.Raycast(ray, out raycastHit, layerMask)){
+            if (Physics.Raycast(ray, out raycastHit, layerMask))
+            {
                 Vector3 vec2 = raycastHit.point - transform.position;
                 return !hasObstacle(target) && Vector3.Angle(vec2, vec) < 45.0f;
             }
@@ -26,7 +28,8 @@ public class Raycast : MonoBehaviour
     {
         Ray obstacleCheckRay = new Ray(transform.position, target.transform.position - transform.position);
         RaycastHit obstacleHit;
-        if (Physics.Raycast(obstacleCheckRay, out obstacleHit, layerMask)){
+        if (Physics.Raycast(obstacleCheckRay, out obstacleHit, layerMask))
+        {
             return obstacleHit.collider.gameObject.name != target.name;
         }
         return true;

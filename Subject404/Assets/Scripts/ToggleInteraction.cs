@@ -6,13 +6,16 @@ using UnityEngine.XR.Interaction.Toolkit;
 public class ToggleInteraction : MonoBehaviour
 {
     public XRGrabInteractable xRGrabInteractable;
-    public void EnableObjectInteraction(){
+    public void EnableObjectInteraction()
+    {
         xRGrabInteractable.enabled = true;
     }
-    public void DisableObjectInteraction(){
+    public void DisableObjectInteraction()
+    {
         xRGrabInteractable.enabled = false;
     }
-    public void ToggleObjectInteraction(){
+    public void ToggleObjectInteraction()
+    {
         xRGrabInteractable.enabled = !xRGrabInteractable.enabled;
     }
 }

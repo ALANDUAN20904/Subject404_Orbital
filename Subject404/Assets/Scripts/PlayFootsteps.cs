@@ -12,7 +12,8 @@ public class PlayFootsteps : MonoBehaviour
     {
         prevPos = transform.position;
         audioSource = GetComponent<AudioSource>();
-        if (audioSource == null){
+        if (audioSource == null)
+        {
             Debug.LogError("Audio Source not found");
         }
         isPlaying = false;
@@ -22,7 +23,8 @@ public class PlayFootsteps : MonoBehaviour
     {
         isPlaying = audioSource.isPlaying;
         currPos = transform.position;
-        if (currPos != prevPos){
+        if (currPos != prevPos)
+        {
             if (!isPlaying) audioSource.Play();
         }
         else audioSource.Pause();

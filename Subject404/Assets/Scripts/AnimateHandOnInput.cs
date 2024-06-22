@@ -15,7 +15,7 @@ public class AnimateHandOnInput : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -27,7 +27,7 @@ public class AnimateHandOnInput : MonoBehaviour
         // Check our input
         // Debug.Log(TriggerValue);
 
-        handAnimator.SetFloat("Trigger" , TriggerValue);
+        handAnimator.SetFloat("Trigger", TriggerValue);
 
         // Create local variable TriggerValue for "grip"
         float GripValue = gripAnimationAction.action.ReadValue<float>();
