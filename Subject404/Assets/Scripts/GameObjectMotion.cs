@@ -51,11 +51,11 @@ public class GameObjectMotion : MonoBehaviour
                 }
                 if (gameObject.name == "Ghoul (1)")
                 {
-                    stateManager.disableParkEnemy();
+                    stateManager.DisableParkEnemy();
                 }
                 hasReached = true;
             }
-            stateManager.enableAxeInteraction();
+            stateManager.EnableAxeInteraction();
         }
         if (!hasReached)
         {

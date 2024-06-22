@@ -15,20 +15,20 @@ public class StateManager : MonoBehaviour
     private bool interactedFridge = false;
     private ToggleInteraction toggleInteraction;
     private AudioSource[] audioSources;
-    public void setInteractedFridge()
+    public void SetInteractedFridge()
     {
         interactedFridge = true;
     }
-    public void playNewsAudio()
+    public void PlayNewsAudio()
     {
-        StartCoroutine(playAudioAndWait());
+        StartCoroutine(PlayAudioAndWait());
     }
-    public int getSceneState()
+    public int GetSceneState()
     {
         return sceneState;
     }
 
-    private IEnumerator playAudioAndWait()
+    private IEnumerator PlayAudioAndWait()
     {
         if (radio != null)
         {
@@ -43,14 +43,14 @@ public class StateManager : MonoBehaviour
             triggeredAudio = true;
             yield return new WaitForSeconds(40);
             playedAudio = true;
-            enableFridgeInteraction();
+            EnableFridgeInteraction();
         }
         else
         {
             Debug.LogError("Radio GameObject not set");
         }
     }
-    public void enableFridgeInteraction()
+    public void EnableFridgeInteraction()
     {
         if (fridgeRDoor != null)
         {
@@ -69,7 +69,7 @@ public class StateManager : MonoBehaviour
             Debug.LogError("fridgeRDoor GameObject not set");
         }
     }
-    public void enableDoorInteraction()
+    public void EnableDoorInteraction()
     {
         if (mainDoor != null)
         {

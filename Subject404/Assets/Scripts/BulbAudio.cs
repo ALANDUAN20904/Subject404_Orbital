@@ -18,7 +18,7 @@ public class BulbAudio : MonoBehaviour
             audioSource.rolloffMode = AudioRolloffMode.Linear;
         }
     }
-    public void playSparkAudio()
+    public void PlaySparkAudio()
     {
         if (!playedSparks)
         {
@@ -35,7 +35,7 @@ public class BulbAudio : MonoBehaviour
             }
         }
     }
-    public IEnumerator playExplosion()
+    public IEnumerator PlayExplosion()
     {
         if (audioClips[1] != null)
         {

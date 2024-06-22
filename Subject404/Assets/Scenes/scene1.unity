@@ -1274,7 +1274,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 66754277}
         m_TargetAssemblyTypeName: StateManager, Assembly-CSharp
-        m_MethodName: setInteractedFridge
+        m_MethodName: SetInteractedFridge
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1286,7 +1286,7 @@ MonoBehaviour:
         m_CallState: 1
       - m_Target: {fileID: 66754277}
         m_TargetAssemblyTypeName: StateManager, Assembly-CSharp
-        m_MethodName: enableDoorInteraction
+        m_MethodName: EnableDoorInteraction
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -11574,7 +11574,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectAssociated: {fileID: 66754269}
   componentType: StateManager
-  methodName: playNewsAudio
+  methodName: PlayNewsAudio
 --- !u!1001 &1961571989
 PrefabInstance:
   m_ObjectHideFlags: 0

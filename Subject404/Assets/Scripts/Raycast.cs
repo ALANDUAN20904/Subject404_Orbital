@@ -16,7 +16,7 @@ public class Raycast : MonoBehaviour
             if (Physics.Raycast(ray, out raycastHit, layerMask))
             {
                 Vector3 vec2 = raycastHit.point - transform.position;
-                return !hasObstacle(target) && Vector3.Angle(vec2, vec) < 45.0f;
+                return !HasObstacle(target) && Vector3.Angle(vec2, vec) < 45.0f;
             }
             return false;
         }
@@ -24,7 +24,7 @@ public class Raycast : MonoBehaviour
         return false;
     }
 
-    private bool hasObstacle(GameObject target)
+    private bool HasObstacle(GameObject target)
     {
         Ray obstacleCheckRay = new Ray(transform.position, target.transform.position - transform.position);
         RaycastHit obstacleHit;

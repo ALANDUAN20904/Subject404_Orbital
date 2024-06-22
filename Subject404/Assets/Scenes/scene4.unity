@@ -10133,7 +10133,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectAssociated: {fileID: 2022476206}
   componentType: StateManagerScene4
-  methodName: setCollided
+  methodName: SetCollided
 --- !u!1001 &440862527
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20790,7 +20790,7 @@ MonoBehaviour:
         m_CallState: 1
       - m_Target: {fileID: 2022476213}
         m_TargetAssemblyTypeName: StateManagerScene4, Assembly-CSharp
-        m_MethodName: setSceneState
+        m_MethodName: SetSceneState
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -22234,7 +22234,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectAssociated: {fileID: 2022476206}
   componentType: StateManagerScene4
-  methodName: activateMirror
+  methodName: ActivateMirror
 --- !u!1 &1333864341
 GameObject:
   m_ObjectHideFlags: 0
@@ -23754,7 +23754,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectAssociated: {fileID: 2022476206}
   componentType: StateManagerScene4
-  methodName: activateParkEnemy
+  methodName: ActivateParkEnemy
 --- !u!1 &1420256753
 GameObject:
   m_ObjectHideFlags: 0
@@ -24063,7 +24063,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectAssociated: {fileID: 2022476206}
   componentType: StateManagerScene4
-  methodName: enableEnemy
+  methodName: EnableEnemy
 --- !u!1 &1451768392
 GameObject:
   m_ObjectHideFlags: 0

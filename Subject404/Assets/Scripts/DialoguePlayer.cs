@@ -25,7 +25,7 @@ public class DialoguePlayer : MonoBehaviour
     }
     void Update()
     {
-        sceneState = stateManager.getSceneState();
+        sceneState = stateManager.GetSceneState();
         if (!flag[sceneState])
         {
             flag[sceneState] = true;

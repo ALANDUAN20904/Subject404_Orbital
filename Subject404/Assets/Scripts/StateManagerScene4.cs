@@ -61,7 +61,7 @@ public class StateManagerScene4 : MonoBehaviour
             Debug.LogError("Bulb GameObject not set");
         }
     }
-    public void enableAxeInteraction()
+    public void EnableAxeInteraction()
     {
         if (Axe != null)
         {
@@ -79,7 +79,7 @@ public class StateManagerScene4 : MonoBehaviour
             Debug.LogError("Axe GameObject not set");
         }
     }
-    public void setCollided()
+    public void SetCollided()
     {
         collided = true;
     }
@@ -94,13 +94,13 @@ public class StateManagerScene4 : MonoBehaviour
             Debug.LogError("Axe GameObjet not set");
         }
     }
-    public void enableEnemy()
+    public void EnableEnemy()
     {
         if (enemyFootsteps != null && Enemy != null && bulbAudioPlayer != null)
         {
             enemyFootsteps.SetActive(false);
             Enemy.SetActive(true);
-            bulbAudioPlayer.playSparkAudio();
+            bulbAudioPlayer.PlaySparkAudio();
             sceneState = 1;
         }
         else
@@ -108,7 +108,7 @@ public class StateManagerScene4 : MonoBehaviour
             Debug.LogError("One or more parameters missing");
         }
     }
-    public void activateMirror()
+    public void ActivateMirror()
     {
         if (Mirror != null)
         {
@@ -127,7 +127,7 @@ public class StateManagerScene4 : MonoBehaviour
             Debug.LogError("Mirror GameObject not set");
         }
     }
-    public void activateParkEnemy()
+    public void ActivateParkEnemy()
     {
         if (ParkEnemy != null)
         {
@@ -138,7 +138,7 @@ public class StateManagerScene4 : MonoBehaviour
             Debug.LogError("ParkEnemy GameObject not set");
         }
     }
-    public void disableParkEnemy()
+    public void DisableParkEnemy()
     {
         if (ParkEnemy != null)
         {
@@ -183,11 +183,11 @@ public class StateManagerScene4 : MonoBehaviour
             }
         }
     }
-    public int getSceneState()
+    public int GetSceneState()
     {
         return sceneState;
     }
-    public void setSceneState(int state)
+    public void SetSceneState(int state)
     {
         sceneState = state;
     }
@@ -197,7 +197,7 @@ public class StateManagerScene4 : MonoBehaviour
     }
     private IEnumerator DisableEnemyAfterDelay()
     {
-        yield return StartCoroutine(bulbAudioPlayer.playExplosion());
+        yield return StartCoroutine(bulbAudioPlayer.PlayExplosion());
         if (Enemy != null)
         {
             Enemy.SetActive(false);
