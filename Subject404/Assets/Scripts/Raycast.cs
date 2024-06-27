@@ -10,13 +10,13 @@ public class Raycast : MonoBehaviour
     {
         if (target != null)
         {
-            Ray ray = new Ray(transform.position, transform.forward);
-            Vector3 vec = target.transform.position - transform.position;
-            RaycastHit raycastHit;
-            if (Physics.Raycast(ray, out raycastHit, layerMask))
+            Ray _ray = new Ray(transform.position, transform.forward);
+            Vector3 _vec = target.transform.position - transform.position;
+            RaycastHit _raycastHit;
+            if (Physics.Raycast(_ray, out _raycastHit, layerMask))
             {
-                Vector3 vec2 = raycastHit.point - transform.position;
-                return !HasObstacle(target) && Vector3.Angle(vec2, vec) < 45.0f;
+                Vector3 _vec2 = _raycastHit.point - transform.position;
+                return !HasObstacle(target) && Vector3.Angle(_vec2, _vec) < 45.0f;
             }
             return false;
         }
@@ -26,11 +26,11 @@ public class Raycast : MonoBehaviour
 
     private bool HasObstacle(GameObject target)
     {
-        Ray obstacleCheckRay = new Ray(transform.position, target.transform.position - transform.position);
-        RaycastHit obstacleHit;
-        if (Physics.Raycast(obstacleCheckRay, out obstacleHit, layerMask))
+        Ray _obstacleCheckRay = new Ray(transform.position, target.transform.position - transform.position);
+        RaycastHit _obstacleHit;
+        if (Physics.Raycast(_obstacleCheckRay, out _obstacleHit, layerMask))
         {
-            return obstacleHit.collider.gameObject.name != target.name;
+            return _obstacleHit.collider.gameObject.name != target.name;
         }
         return true;
     }

@@ -4,20 +4,20 @@ using UnityEngine;
 
 public class StateManager : MonoBehaviour
 {
-    private TextUpdater textUpdater;
-    private int sceneState = 0;
+    private TextUpdater _textUpdater;
+    private int _sceneState = 0;
     public GameObject lampActive;
     public GameObject fridgeRDoor;
     public GameObject mainDoor;
     public GameObject radio;
-    private bool triggeredAudio = false;
-    private bool playedAudio = false;
-    private bool interactedFridge = false;
-    private ToggleInteraction toggleInteraction;
-    private AudioSource[] audioSources;
+    private bool _triggeredAudio = false;
+    private bool _playedAudio = false;
+    private bool _interactedFridge = false;
+    private ToggleInteraction _toggleInteraction;
+    private AudioSource[] _audioSources;
     public void SetInteractedFridge()
     {
-        interactedFridge = true;
+        _interactedFridge = true;
     }
     public void PlayNewsAudio()
     {
@@ -25,24 +25,24 @@ public class StateManager : MonoBehaviour
     }
     public int GetSceneState()
     {
-        return sceneState;
+        return _sceneState;
     }
 
     private IEnumerator PlayAudioAndWait()
     {
         if (radio != null)
         {
-            audioSources = radio.GetComponents<AudioSource>();
-            if (audioSources == null)
+            _audioSources = radio.GetComponents<AudioSource>();
+            if (_audioSources == null)
             {
                 Debug.LogError("Audio Source components not found");
             }
-            audioSources[1].enabled = false;
+            _audioSources[1].enabled = false;
             yield return new WaitForSeconds(2);
-            audioSources[0].enabled = true;
-            triggeredAudio = true;
+            _audioSources[0].enabled = true;
+            _triggeredAudio = true;
             yield return new WaitForSeconds(40);
-            playedAudio = true;
+            _playedAudio = true;
             EnableFridgeInteraction();
         }
         else
@@ -54,10 +54,10 @@ public class StateManager : MonoBehaviour
     {
         if (fridgeRDoor != null)
         {
-            toggleInteraction = fridgeRDoor.GetComponent<ToggleInteraction>();
-            if (toggleInteraction != null)
+            _toggleInteraction = fridgeRDoor.GetComponent<ToggleInteraction>();
+            if (_toggleInteraction != null)
             {
-                toggleInteraction.EnableObjectInteraction();
+                _toggleInteraction.EnableObjectInteraction();
             }
             else
             {
@@ -73,10 +73,10 @@ public class StateManager : MonoBehaviour
     {
         if (mainDoor != null)
         {
-            toggleInteraction = mainDoor.GetComponent<ToggleInteraction>();
-            if (toggleInteraction != null)
+            _toggleInteraction = mainDoor.GetComponent<ToggleInteraction>();
+            if (_toggleInteraction != null)
             {
-                toggleInteraction.EnableObjectInteraction();
+                _toggleInteraction.EnableObjectInteraction();
             }
             else
             {
@@ -88,24 +88,24 @@ public class StateManager : MonoBehaviour
             Debug.LogError("Main Door GameObject not set");
         }
     }
-    string[] instructions = { "Grab lamp interactable to turn on lamp", "Walk towards the table", "", "Grab the handle and open the fridge", "Grab the main door handle to exit the house" };
+    string[] _instructions = { "Grab lamp interactable to turn on lamp", "Walk towards the table", "", "Grab the handle and open the fridge", "Grab the main door handle to exit the house" };
     private void Awake()
     {
-        textUpdater = GetComponent<TextUpdater>();
-        if (textUpdater == null)
+        _textUpdater = GetComponent<TextUpdater>();
+        if (_textUpdater == null)
         {
             Debug.LogError("Text Updater component not found");
         }
     }
     private void Update()
     {
-        if (!lampActive.activeSelf) sceneState = 0;
-        else if (!triggeredAudio) sceneState = 1;
-        else if (!playedAudio) sceneState = 2;
-        else if (!interactedFridge) sceneState = 3;
-        else sceneState = 4;
+        if (!lampActive.activeSelf) _sceneState = 0;
+        else if (!_triggeredAudio) _sceneState = 1;
+        else if (!_playedAudio) _sceneState = 2;
+        else if (!_interactedFridge) _sceneState = 3;
+        else _sceneState = 4;
 
-        string text = instructions[sceneState];
-        textUpdater.UpdateText(ref text);
+        string _text = _instructions[_sceneState];
+        _textUpdater.UpdateText(ref _text);
     }
 }

@@ -4,30 +4,30 @@ using UnityEngine;
 
 public class BulbAudio : MonoBehaviour
 {
-    private AudioSource audioSource;
+    private AudioSource _audioSource;
     public AudioClip[] audioClips;
-    private bool playedSparks = false;
+    private bool _playedSparks = false;
     void Awake()
     {
-        audioSource = gameObject.GetComponent<AudioSource>();
-        if (audioSource == null)
+        _audioSource = gameObject.GetComponent<AudioSource>();
+        if (_audioSource == null)
         {
             Debug.LogWarning("Audio Source attached to " + gameObject.name + " not found, creating new");
-            audioSource = gameObject.AddComponent<AudioSource>();
-            audioSource.spatialBlend = 1;
-            audioSource.rolloffMode = AudioRolloffMode.Linear;
+            _audioSource = gameObject.AddComponent<AudioSource>();
+            _audioSource.spatialBlend = 1;
+            _audioSource.rolloffMode = AudioRolloffMode.Linear;
         }
     }
     public void PlaySparkAudio()
     {
-        if (!playedSparks)
+        if (!_playedSparks)
         {
             if (audioClips[0] != null)
             {
-                audioSource.clip = audioClips[0];
-                audioSource.loop = true;
-                audioSource.Play();
-                playedSparks = true;
+                _audioSource.clip = audioClips[0];
+                _audioSource.loop = true;
+                _audioSource.Play();
+                _playedSparks = true;
             }
             else
             {
@@ -39,9 +39,9 @@ public class BulbAudio : MonoBehaviour
     {
         if (audioClips[1] != null)
         {
-            audioSource.loop = false;
-            audioSource.clip = audioClips[1];
-            audioSource.Play();
+            _audioSource.loop = false;
+            _audioSource.clip = audioClips[1];
+            _audioSource.Play();
             yield return new WaitForSeconds(audioClips[1].length);
         }
         else

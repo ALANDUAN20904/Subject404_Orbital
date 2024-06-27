@@ -9,27 +9,27 @@ public class GameObjectMotion : MonoBehaviour
     public bool hasLinearVel = true;
     public Vector3 torque;
     public Transform endPos;
-    private Rigidbody rigidBody;
-    private bool hasReached = false;
+    private Rigidbody _rigidBody;
+    private bool _hasReached = false;
     public GameObject gameInstructions;
-    private StateManagerScene4 stateManager;
+    private StateManagerScene4 _stateManager;
 
     void Start()
     {
         if (hasTorque)
         {
-            rigidBody = GetComponent<Rigidbody>();
-            if (rigidBody != null && torque != null)
+            _rigidBody = GetComponent<Rigidbody>();
+            if (_rigidBody != null && torque != null)
             {
-                rigidBody.AddTorque(torque, ForceMode.Impulse);
+                _rigidBody.AddTorque(torque, ForceMode.Impulse);
             }
             else
             {
                 Debug.LogError("rigidBody or torque parameters not found");
             }
         }
-        stateManager = gameInstructions.GetComponent<StateManagerScene4>();
-        if (stateManager == null)
+        _stateManager = gameInstructions.GetComponent<StateManagerScene4>();
+        if (_stateManager == null)
         {
             Debug.LogError("State Manager not found");
         }
@@ -43,21 +43,21 @@ public class GameObjectMotion : MonoBehaviour
         var step = speed * Time.deltaTime;
         if (Vector3.Distance(transform.position, endPos.position) < 0.001f)
         {
-            if (!hasReached)
+            if (!_hasReached)
             {
                 if (hasTorque)
                 {
-                    rigidBody.angularVelocity = Vector3.zero;
+                    _rigidBody.angularVelocity = Vector3.zero;
                 }
                 if (gameObject.name == "Ghoul (1)")
                 {
-                    stateManager.DisableParkEnemy();
+                    _stateManager.DisableParkEnemy();
                 }
-                hasReached = true;
+                _hasReached = true;
             }
-            stateManager.EnableAxeInteraction();
+            _stateManager.EnableAxeInteraction();
         }
-        if (!hasReached)
+        if (!_hasReached)
         {
             if (hasLinearVel)
             {

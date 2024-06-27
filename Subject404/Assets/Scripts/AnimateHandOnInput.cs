@@ -12,27 +12,20 @@ public class AnimateHandOnInput : MonoBehaviour
     public InputActionProperty gripAnimationAction;
     public Animator handAnimator;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
     void Update()
     {
         // Create local variable TriggerValue for "pinch"
-        float TriggerValue = pinchAnimationAction.action.ReadValue<float>();
+        float _triggerValue = pinchAnimationAction.action.ReadValue<float>();
 
         // Check our input
         // Debug.Log(TriggerValue);
 
-        handAnimator.SetFloat("Trigger", TriggerValue);
+        handAnimator.SetFloat("Trigger", _triggerValue);
 
         // Create local variable TriggerValue for "grip"
-        float GripValue = gripAnimationAction.action.ReadValue<float>();
+        float _gripValue = gripAnimationAction.action.ReadValue<float>();
 
-        handAnimator.SetFloat("Grip", GripValue);
+        handAnimator.SetFloat("Grip", _gripValue);
 
     }
 }

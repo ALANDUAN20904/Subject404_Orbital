@@ -5,15 +5,15 @@ using UnityEngine;
 public class EnableGameObjectOnTrigger : MonoBehaviour
 {
     public GameObject objectToEnable;
-    private bool isEnabled = false;
+    private bool _isEnabled = false;
     void OnTriggerEnter()
     {
         if (objectToEnable != null)
         {
-            if (!isEnabled)
+            if (!_isEnabled)
             {
                 objectToEnable.SetActive(true);
-                isEnabled = true;
+                _isEnabled = true;
             }
         }
         else
