@@ -6,15 +6,15 @@ public class StateManager : MonoBehaviour
 {
     private TextUpdater _textUpdater;
     private int _sceneState = 0;
-    public GameObject lampActive;
-    public GameObject fridgeRDoor;
-    public GameObject mainDoor;
-    public GameObject radio;
     private bool _triggeredAudio = false;
     private bool _playedAudio = false;
     private bool _interactedFridge = false;
     private ToggleInteraction _toggleInteraction;
     private AudioSource[] _audioSources;
+    public GameObject lampActive;
+    public GameObject fridgeRDoor;
+    public GameObject mainDoor;
+    public GameObject radio;
     public void SetInteractedFridge()
     {
         _interactedFridge = true;

@@ -4,16 +4,15 @@ using UnityEngine;
 
 public class GameObjectMotion : MonoBehaviour
 {
+    private Rigidbody _rigidBody;
+    private bool _hasReached = false;
+    private StateManagerScene4 _stateManager;
     public float speed = 10.0f;
     public bool hasTorque = false;
     public bool hasLinearVel = true;
     public Vector3 torque;
     public Transform endPos;
-    private Rigidbody _rigidBody;
-    private bool _hasReached = false;
     public GameObject gameInstructions;
-    private StateManagerScene4 _stateManager;
-
     void Start()
     {
         if (hasTorque)

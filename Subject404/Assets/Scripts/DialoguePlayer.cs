@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class DialoguePlayer : MonoBehaviour
 {
-    public AudioSource audioSource;
-    private StateManager _stateManager;
-    public GameObject gameInstructions;
     private int _sceneState;
     private bool[] _flag;
+    private StateManager _stateManager;
+    public AudioSource audioSource;
+    public GameObject gameInstructions;
     public AudioClip[] audioClips;
     void Start()
     {

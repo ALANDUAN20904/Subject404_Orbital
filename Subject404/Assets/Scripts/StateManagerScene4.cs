@@ -6,24 +6,23 @@ using UnityEngine.XR.Interaction.Toolkit;
 public class StateManagerScene4 : MonoBehaviour
 {
     private int _sceneState;
+    private Raycast _raycaster;
+    private TextUpdater _textUpdater;
+    private ToggleInteraction _toggleAxe;
+    private BulbAudio _bulbAudioPlayer;
+    private bool _collided = false;
+    private string[] _instructions = { "Walk to the store", "Look behind", "Walk to the store", "Grab to inspect the axe", "Walk to the store" };
     public GameObject Axe;
     public GameObject AxeSymbol;
-    private ToggleInteraction _toggleAxe;
-    private bool _collided = false;
     public GameObject Enemy;
     public GameObject EnemyCollider;
     public GameObject Bulb;
-    private BulbAudio _bulbAudioPlayer;
     public GameObject gameSound;
     public GameObject heartBeat;
     public GameObject enemyFootsteps;
     public GameObject Mirror;
     public GameObject ParkEnemy;
     public Camera mainCamera;
-    private Raycast _raycaster;
-    private TextUpdater _textUpdater;
-
-    private string[] _instructions = { "Walk to the store", "Look behind", "Walk to the store", "Grab to inspect the axe", "Walk to the store" };
     private void Awake()
     {
         _textUpdater = GetComponent<TextUpdater>();

@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class EnableGameObjectOnTrigger : MonoBehaviour
 {
-    public GameObject objectToEnable;
     private bool _isEnabled = false;
+    public GameObject objectToEnable;
     void OnTriggerEnter(Collider other)
     {
         if (objectToEnable != null)

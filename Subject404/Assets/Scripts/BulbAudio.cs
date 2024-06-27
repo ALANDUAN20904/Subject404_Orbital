@@ -5,8 +5,9 @@ using UnityEngine;
 public class BulbAudio : MonoBehaviour
 {
     private AudioSource _audioSource;
-    public AudioClip[] audioClips;
     private bool _playedSparks = false;
+    public AudioClip[] audioClips;
+    
     void Awake()
     {
         _audioSource = gameObject.GetComponent<AudioSource>();

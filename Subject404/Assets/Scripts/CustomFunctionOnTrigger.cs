@@ -3,12 +3,12 @@ using UnityEngine;
 
 public class CustomFunctionOnTrigger : MonoBehaviour
 {
+    private Component _componentInstance;
+    private bool _isEnabled = false;
     public GameObject objectAssociated;
     public string componentType;
     public string methodName;
-    private Component _componentInstance;
-    private bool _isEnabled = false;
-
+    
     void Awake()
     {
         if (objectAssociated != null && !string.IsNullOrEmpty(componentType))

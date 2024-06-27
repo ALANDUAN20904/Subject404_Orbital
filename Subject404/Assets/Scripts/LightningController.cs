@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class LightningController : MonoBehaviour
 {
-     public GameObject LightningSource;
      private bool _lightningTimed;
+     public GameObject LightningSource;
      void Start()
      {
           if (LightningSource == null)
