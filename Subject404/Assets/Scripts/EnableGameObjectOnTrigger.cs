@@ -6,7 +6,7 @@ public class EnableGameObjectOnTrigger : MonoBehaviour
 {
     public GameObject objectToEnable;
     private bool _isEnabled = false;
-    void OnTriggerEnter()
+    void OnTriggerEnter(Collider other)
     {
         if (objectToEnable != null)
         {

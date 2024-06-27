@@ -33,10 +33,10 @@ public class CustomFunctionOnTrigger : MonoBehaviour
     {
         if (!_isEnabled && _componentInstance != null && !string.IsNullOrEmpty(methodName))
         {
-            var _method = _componentInstance.GetType().GetMethod(methodName);
-            if (_method != null)
+            var method = _componentInstance.GetType().GetMethod(methodName);
+            if (method != null)
             {
-                _method.Invoke(_componentInstance, null);
+                method.Invoke(_componentInstance, null);
                 _isEnabled = true;
             }
             else

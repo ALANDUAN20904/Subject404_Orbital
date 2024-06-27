@@ -23,7 +23,7 @@ public class StateManagerScene4 : MonoBehaviour
     private Raycast _raycaster;
     private TextUpdater _textUpdater;
 
-    string[] _instructions = { "Walk to the store", "Look behind", "Walk to the store", "Grab to inspect the axe", "Walk to the store" };
+    private string[] _instructions = { "Walk to the store", "Look behind", "Walk to the store", "Grab to inspect the axe", "Walk to the store" };
     private void Awake()
     {
         _textUpdater = GetComponent<TextUpdater>();
@@ -113,14 +113,14 @@ public class StateManagerScene4 : MonoBehaviour
         if (Mirror != null)
         {
             Mirror.SetActive(true);
-            Rigidbody _rb = Mirror.GetComponent<Rigidbody>();
-            if (_rb == null)
+            Rigidbody rb = Mirror.GetComponent<Rigidbody>();
+            if (rb == null)
             {
                 Debug.LogWarning("Rigidbody component not found on Mirror GameObject, creating new");
-                _rb = Mirror.AddComponent<Rigidbody>();
-                _rb.useGravity = true;
+                rb = Mirror.AddComponent<Rigidbody>();
+                rb.useGravity = true;
             }
-            _rb.AddForce(0, -10, 0);
+            rb.AddForce(0, -10, 0);
         }
         else
         {
@@ -151,8 +151,8 @@ public class StateManagerScene4 : MonoBehaviour
     }
     void Update()
     {
-        string _text = _instructions[_sceneState];
-        _textUpdater.UpdateText(ref _text);
+        string text = _instructions[_sceneState];
+        _textUpdater.UpdateText(ref text);
 
         if (Axe != null)
         {

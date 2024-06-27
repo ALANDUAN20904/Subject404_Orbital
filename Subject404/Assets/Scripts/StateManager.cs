@@ -105,7 +105,7 @@ public class StateManager : MonoBehaviour
         else if (!_interactedFridge) _sceneState = 3;
         else _sceneState = 4;
 
-        string _text = _instructions[_sceneState];
-        _textUpdater.UpdateText(ref _text);
+        string text = _instructions[_sceneState];
+        _textUpdater.UpdateText(ref text);
     }
 }

@@ -15,17 +15,17 @@ public class AnimateHandOnInput : MonoBehaviour
     void Update()
     {
         // Create local variable TriggerValue for "pinch"
-        float _triggerValue = pinchAnimationAction.action.ReadValue<float>();
+        float triggerValue = pinchAnimationAction.action.ReadValue<float>();
 
         // Check our input
         // Debug.Log(TriggerValue);
 
-        handAnimator.SetFloat("Trigger", _triggerValue);
+        handAnimator.SetFloat("Trigger", triggerValue);
 
         // Create local variable TriggerValue for "grip"
-        float _gripValue = gripAnimationAction.action.ReadValue<float>();
+        float gripValue = gripAnimationAction.action.ReadValue<float>();
 
-        handAnimator.SetFloat("Grip", _gripValue);
+        handAnimator.SetFloat("Grip", gripValue);
 
     }
 }
