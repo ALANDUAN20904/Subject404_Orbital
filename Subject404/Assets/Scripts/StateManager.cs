@@ -99,11 +99,23 @@ public class StateManager : MonoBehaviour
     }
     private void Update()
     {
-        if (!lampActive.activeSelf) _sceneState = 0;
-        else if (!_triggeredAudio) _sceneState = 1;
-        else if (!_playedAudio) _sceneState = 2;
-        else if (!_interactedFridge) _sceneState = 3;
-        else _sceneState = 4;
+        if (!lampActive.activeSelf)
+        {
+            _sceneState = 0;
+        }
+        else if (!_triggeredAudio)
+        {
+            _sceneState = 1;
+        }
+        else if (!_playedAudio){
+            _sceneState = 2;
+        }
+        else if (!_interactedFridge){
+            _sceneState = 3;
+        }
+        else{
+            _sceneState = 4;
+        }
 
         string text = _instructions[_sceneState];
         _textUpdater.UpdateText(ref text);

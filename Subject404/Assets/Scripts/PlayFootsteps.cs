@@ -25,9 +25,15 @@ public class PlayFootsteps : MonoBehaviour
         _currPos = transform.position;
         if (_currPos != _prevPos)
         {
-            if (!_isPlaying) _audioSource.Play();
+            if (!_isPlaying)
+            {
+                _audioSource.Play();
+            }
         }
-        else _audioSource.Pause();
+        else
+        {
+            _audioSource.Pause();
+        }
         _prevPos = _currPos;
     }
 }
