@@ -4,16 +4,20 @@ using UnityEngine;
 
 public class EnableGameObjectOnTrigger : MonoBehaviour
 {
+    private bool _isEnabled = false;
     public GameObject objectToEnable;
-    private bool isEnabled = false;
-    void OnTriggerEnter(){
-        if (objectToEnable != null){
-            if (!isEnabled){
+    void OnTriggerEnter(Collider other)
+    {
+        if (objectToEnable != null)
+        {
+            if (!_isEnabled)
+            {
                 objectToEnable.SetActive(true);
-                isEnabled = true;
+                _isEnabled = true;
             }
         }
-        else{
+        else
+        {
             Debug.LogError("Object to enable not set");
         }
     }

@@ -4,39 +4,49 @@ using UnityEngine;
 
 public class BulbAudio : MonoBehaviour
 {
-    private AudioSource audioSource;
-    public AudioClip[] audioClips; 
-    private bool playedSparks = false;
-    void Awake(){
-        audioSource = gameObject.GetComponent<AudioSource>();
-        if (audioSource == null){
+    private AudioSource _audioSource;
+    private bool _playedSparks = false;
+    public AudioClip[] audioClips;
+    
+    void Awake()
+    {
+        _audioSource = gameObject.GetComponent<AudioSource>();
+        if (_audioSource == null)
+        {
             Debug.LogWarning("Audio Source attached to " + gameObject.name + " not found, creating new");
-            audioSource = gameObject.AddComponent<AudioSource>();
-            audioSource.spatialBlend = 1;
-            audioSource.rolloffMode = AudioRolloffMode.Linear;
+            _audioSource = gameObject.AddComponent<AudioSource>();
+            _audioSource.spatialBlend = 1;
+            _audioSource.rolloffMode = AudioRolloffMode.Linear;
         }
     }
-    public void playSparkAudio(){
-        if (!playedSparks){
-            if (audioClips[0] != null){
-                audioSource.clip = audioClips[0];
-                audioSource.loop = true;
-                audioSource.Play();
-                playedSparks = true;
+    public void PlaySparkAudio()
+    {
+        if (!_playedSparks)
+        {
+            if (audioClips[0] != null)
+            {
+                _audioSource.clip = audioClips[0];
+                _audioSource.loop = true;
+                _audioSource.Play();
+                _playedSparks = true;
             }
-            else{
+            else
+            {
                 Debug.LogError("Audio Clip not attached to " + gameObject.name);
             }
         }
     }
-    public IEnumerator playExplosion(){
-        if (audioClips[1] != null){
-            audioSource.loop = false;
-            audioSource.clip = audioClips[1];
-            audioSource.Play();
+    public IEnumerator PlayExplosion()
+    {
+        if (audioClips[1] != null)
+        {
+            _audioSource.loop = false;
+            _audioSource.clip = audioClips[1];
+            _audioSource.Play();
             yield return new WaitForSeconds(audioClips[1].length);
         }
-        else{
+        else
+        {
             Debug.LogError("Audio Clip not attached to " + gameObject.name);
         }
     }

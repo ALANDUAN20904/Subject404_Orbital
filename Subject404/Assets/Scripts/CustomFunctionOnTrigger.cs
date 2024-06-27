@@ -3,12 +3,12 @@ using UnityEngine;
 
 public class CustomFunctionOnTrigger : MonoBehaviour
 {
+    private Component _componentInstance;
+    private bool _isEnabled = false;
     public GameObject objectAssociated;
     public string componentType;
     public string methodName;
-    private Component componentInstance;
-    private bool isEnabled = false;
-
+    
     void Awake()
     {
         if (objectAssociated != null && !string.IsNullOrEmpty(componentType))
@@ -16,7 +16,7 @@ public class CustomFunctionOnTrigger : MonoBehaviour
             Type type = Type.GetType(componentType);
             if (type != null)
             {
-                componentInstance = objectAssociated.GetComponent(type);
+                _componentInstance = objectAssociated.GetComponent(type);
             }
             else
             {
@@ -31,13 +31,13 @@ public class CustomFunctionOnTrigger : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (!isEnabled && componentInstance != null && !string.IsNullOrEmpty(methodName))
+        if (!_isEnabled && _componentInstance != null && !string.IsNullOrEmpty(methodName))
         {
-            var method = componentInstance.GetType().GetMethod(methodName);
+            var method = _componentInstance.GetType().GetMethod(methodName);
             if (method != null)
             {
-                method.Invoke(componentInstance, null);
-                isEnabled = true;
+                method.Invoke(_componentInstance, null);
+                _isEnabled = true;
             }
             else
             {

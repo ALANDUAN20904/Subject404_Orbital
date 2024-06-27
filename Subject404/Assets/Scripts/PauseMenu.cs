@@ -9,8 +9,10 @@ public class PauseMenu : MonoBehaviour
     public InputActionReference openMenuAction;
     public GameObject LeftLaser;
 
-    private void Awake() {
-        if (pauseMenu == null || LeftLaser == null){
+    private void Awake()
+    {
+        if (pauseMenu == null || LeftLaser == null)
+        {
             Debug.LogError("One or more parameters not set");
         }
         openMenuAction.action.Enable();
@@ -18,20 +20,24 @@ public class PauseMenu : MonoBehaviour
         openMenuAction.action.performed += ToggleMenu;
         InputSystem.onDeviceChange += OnDeviceChange;
     }
-    private void OnDestroy() {
+    private void OnDestroy()
+    {
         openMenuAction.action.Disable();
         openMenuAction.action.performed -= ToggleMenu;
         InputSystem.onDeviceChange -= OnDeviceChange;
     }
-    private void ToggleMenu(InputAction.CallbackContext context) {
+    private void ToggleMenu(InputAction.CallbackContext context)
+    {
         bool isActive = pauseMenu.activeSelf;
         bool LaserActive = LeftLaser.activeSelf;
         pauseMenu.SetActive(!isActive);
         LeftLaser.SetActive(!LaserActive);
         Time.timeScale = isActive ? 1f : 0f;
     }
-    private void OnDeviceChange(InputDevice device, InputDeviceChange change) {
-        switch(change) {
+    private void OnDeviceChange(InputDevice device, InputDeviceChange change)
+    {
+        switch (change)
+        {
             case InputDeviceChange.Disconnected:
                 openMenuAction.action.Disable();
                 openMenuAction.action.performed -= ToggleMenu;

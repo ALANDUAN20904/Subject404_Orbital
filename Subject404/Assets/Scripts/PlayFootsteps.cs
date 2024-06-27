@@ -4,28 +4,36 @@ using UnityEngine;
 
 public class PlayFootsteps : MonoBehaviour
 {
-    private Vector3 prevPos;
-    private Vector3 currPos;
-    private AudioSource audioSource;
-    private bool isPlaying;
+    private Vector3 _prevPos;
+    private Vector3 _currPos;
+    private AudioSource _audioSource;
+    private bool _isPlaying;
     void Start()
     {
-        prevPos = transform.position;
-        audioSource = GetComponent<AudioSource>();
-        if (audioSource == null){
+        _prevPos = transform.position;
+        _audioSource = GetComponent<AudioSource>();
+        if (_audioSource == null)
+        {
             Debug.LogError("Audio Source not found");
         }
-        isPlaying = false;
+        _isPlaying = false;
     }
 
     void Update()
     {
-        isPlaying = audioSource.isPlaying;
-        currPos = transform.position;
-        if (currPos != prevPos){
-            if (!isPlaying) audioSource.Play();
+        _isPlaying = _audioSource.isPlaying;
+        _currPos = transform.position;
+        if (_currPos != _prevPos)
+        {
+            if (!_isPlaying)
+            {
+                _audioSource.Play();
+            }
         }
-        else audioSource.Pause();
-        prevPos = currPos;
+        else
+        {
+            _audioSource.Pause();
+        }
+        _prevPos = _currPos;
     }
 }

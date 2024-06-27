@@ -4,31 +4,38 @@ using UnityEngine;
 
 public class DialoguePlayer : MonoBehaviour
 {
+    private int _sceneState;
+    private bool[] _flag;
+    private StateManager _stateManager;
     public AudioSource audioSource;
-    private StateManager stateManager;
     public GameObject gameInstructions;
-    private int sceneState;
-    private bool[] flag;
-    public AudioClip[] audioClips; 
-    void Start(){
-        stateManager = gameInstructions.GetComponent<StateManager>();
-        if (stateManager == null){
+    public AudioClip[] audioClips;
+    void Start()
+    {
+        _stateManager = gameInstructions.GetComponent<StateManager>();
+        if (_stateManager == null)
+        {
             Debug.LogError("State Manager not found");
         }
-        if (audioSource == null){
+        if (audioSource == null)
+        {
             Debug.LogError("Audio Source not set");
         }
-        flag = new bool[] {false, false, true, false, false};
+        _flag = new bool[] { false, false, true, false, false };
     }
-    void Update(){
-        sceneState = stateManager.getSceneState();
-        if (!flag[sceneState]){
-            flag[sceneState] = true;
-            if (audioClips[sceneState] != null){
-                audioSource.clip = audioClips[sceneState];
+    void Update()
+    {
+        _sceneState = _stateManager.GetSceneState();
+        if (!_flag[_sceneState])
+        {
+            _flag[_sceneState] = true;
+            if (audioClips[_sceneState] != null)
+            {
+                audioSource.clip = audioClips[_sceneState];
                 audioSource.Play();
             }
-            else{
+            else
+            {
                 Debug.LogError("Audio Clip not found");
             }
         }

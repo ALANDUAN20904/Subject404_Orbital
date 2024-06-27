@@ -4,53 +4,64 @@ using UnityEngine;
 
 public class GameObjectMotion : MonoBehaviour
 {
+    private Rigidbody _rigidBody;
+    private bool _hasReached = false;
+    private StateManagerScene4 _stateManager;
     public float speed = 10.0f;
     public bool hasTorque = false;
     public bool hasLinearVel = true;
     public Vector3 torque;
     public Transform endPos;
-    private Rigidbody rigidBody;
-    private bool hasReached = false;
     public GameObject gameInstructions;
-    private StateManagerScene4 stateManager;
-
-    void Start(){
-        if (hasTorque){
-            rigidBody = GetComponent<Rigidbody>();
-            if (rigidBody != null && torque != null){
-                rigidBody.AddTorque(torque, ForceMode.Impulse);
+    void Start()
+    {
+        if (hasTorque)
+        {
+            _rigidBody = GetComponent<Rigidbody>();
+            if (_rigidBody != null && torque != null)
+            {
+                _rigidBody.AddTorque(torque, ForceMode.Impulse);
             }
-            else{
+            else
+            {
                 Debug.LogError("rigidBody or torque parameters not found");
             }
         }
-        stateManager = gameInstructions.GetComponent<StateManagerScene4>();
-        if (stateManager == null){
+        _stateManager = gameInstructions.GetComponent<StateManagerScene4>();
+        if (_stateManager == null)
+        {
             Debug.LogError("State Manager not found");
         }
-        if (endPos == null){
+        if (endPos == null)
+        {
             Debug.LogError("End Position not set");
         }
     }
     void Update()
     {
         var step = speed * Time.deltaTime;
-        if (Vector3.Distance(transform.position, endPos.position) < 0.001f){
-            if (!hasReached){
-                if (hasTorque){
-                    rigidBody.angularVelocity = Vector3.zero;
+        if (Vector3.Distance(transform.position, endPos.position) < 0.001f)
+        {
+            if (!_hasReached)
+            {
+                if (hasTorque)
+                {
+                    _rigidBody.angularVelocity = Vector3.zero;
                 }
-                if (gameObject.name == "Ghoul (1)"){
-                    stateManager.disableParkEnemy();
+                if (gameObject.name == "Ghoul (1)")
+                {
+                    _stateManager.DisableParkEnemy();
                 }
-                hasReached = true;
+                _hasReached = true;
             }
-            stateManager.enableAxeInteraction();
+            _stateManager.EnableAxeInteraction();
         }
-        if (!hasReached){
-            if (hasLinearVel){
+        if (!_hasReached)
+        {
+            if (hasLinearVel)
+            {
                 transform.position = Vector3.MoveTowards(transform.position, endPos.position, step);
             }
-        } 
+        }
     }
 }
