@@ -11,6 +11,7 @@ public class TextUpdaterTest
     private TMP_Text _textField;
     private TextUpdater _textUpdater;
     private string _text;
+    private TMP_FontAsset _fontAsset;
 
     [SetUp]
     public void Setup()
@@ -18,9 +19,15 @@ public class TextUpdaterTest
         GameObject stateManager = new GameObject("TestManager");
         _textUpdater = stateManager.AddComponent<TextUpdater>();
         GameObject textObject = new GameObject("TextObject");
+        string fontAssetPath = "Assets/TextMesh Pro/Resources/Fonts & Materials/BlastineFont SDF.asset";
+        _fontAsset = UnityEditor.AssetDatabase.LoadAssetAtPath<TMP_FontAsset>(fontAssetPath);
         _textField = textObject.AddComponent<TextMeshProUGUI>();
-        string fontAssetPath = "Assets/TextMeshPro/Resources/Fonts & Materials/BlastineFont SDF.asset";
-        _textField.font = UnityEditor.AssetDatabase.LoadAssetAtPath<TMP_FontAsset>(fontAssetPath);
+        _textField.font = _fontAsset;
+
+        if (_fontAsset == null)
+        {
+            Debug.LogWarning("Font Asset was not found. Please ensure the path is correct and the asset exists.");
+        }
 
         _textUpdater.textField = _textField;
         _text = "updated string";
@@ -29,10 +36,7 @@ public class TextUpdaterTest
     [Test]
     public void TextUpdateTest()
     {
-        // Perform the text update
         _textUpdater.UpdateText(ref _text);
-
-        // Assert the result
-        Assert.AreEqual("test string", _textField.text);
+        Assert.AreEqual(_text, _textField.text);
     }
 }
