@@ -17460,15 +17460,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 758bcf6a98b61f84187c5f4f553de705, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 209.34523
+      value: 201.81
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 758bcf6a98b61f84187c5f4f553de705, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.000006556511
+      value: 0.117
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 758bcf6a98b61f84187c5f4f553de705, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 248.93884
+      value: 231.96
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 758bcf6a98b61f84187c5f4f553de705, type: 3}
       propertyPath: m_LocalRotation.w
@@ -17500,7 +17500,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 758bcf6a98b61f84187c5f4f553de705, type: 3}
       propertyPath: m_Name
-      value: Ch01_nonPBR (1)
+      value: Cashier
+      objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: 758bcf6a98b61f84187c5f4f553de705, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: f4e758c5e319ad048b15b07cda56650d, type: 2}
+    - target: {fileID: 5866666021909216657, guid: 758bcf6a98b61f84187c5f4f553de705, type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
