@@ -19,6 +19,14 @@ public class StateManager : MonoBehaviour
     {
         _interactedFridge = true;
     }
+    public void SetTriggered()
+    {
+        _triggeredAudio = true;
+    }
+    public void SetPlayedAudio()
+    {
+        _playedAudio = true;
+    }
     public void PlayNewsAudio()
     {
         StartCoroutine(PlayAudioAndWait());
