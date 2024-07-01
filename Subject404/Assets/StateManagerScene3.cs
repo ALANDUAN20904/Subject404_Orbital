@@ -9,21 +9,11 @@ public class StateManagerScene3 : MonoBehaviour
     public GameObject DoorKnob;
     public GameObject Milk;
     public GameObject Policeman;
-    private DialoguePoliceman _policeDialogue;
-    private bool _triggeredAudio = false;
-    private bool _playedAudio = false;
-    private AudioSource _audioSources;
-    private ToggleInteraction _toggleInteraction;
     private bool _grabbedMilk = false;
     private bool _putDownMilk = false;
     private TextUpdater _textUpdater;
-    string[] _instructions = {"Grab a milk","","","","","Put the milk down at the cashier","","","","","Grab door knob to exit" };
+    string[] _instructions = {"Grab milk","","","","Put the milk down at the cashier","","","","","Grab door knob to exit" };
 
-
-    void Start()
-    {
-        _policeDialogue = Policeman.GetComponent<DialoguePoliceman>();
-    }
 
     private void Awake()
     {

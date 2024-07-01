@@ -6,7 +6,7 @@ using UnityEngine;
 public class DialoguePoliceman : MonoBehaviour
 {
     private int _sceneState;
-    private bool[] _flag;
+    public bool[] _flag;
     public AudioSource audioSource;
     public GameObject gameInstructions;
     public AudioClip[] audioClips;
