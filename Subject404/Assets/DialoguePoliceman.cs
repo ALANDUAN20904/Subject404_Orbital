@@ -22,14 +22,12 @@ public class DialoguePoliceman : MonoBehaviour
         {
             Debug.LogError("Audio Source not set");
         }
-        //_flag = new bool[] { true, false, true, false, true, true, true, true, true, true, true };
     }
 
     private IEnumerator WaitAndUpdateState()
     {
         yield return new WaitForSeconds(audioClips[_sceneState].length);
         _stateManager.SetSceneState(_sceneState + 1);
-        Debug.Log("next state");
     }
 
     void Update()
