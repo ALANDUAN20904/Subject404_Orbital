@@ -29,6 +29,7 @@ public class DialoguePoliceman : MonoBehaviour
     {
         yield return new WaitForSeconds(audioClips[_sceneState].length);
         _stateManager.SetSceneState(_sceneState + 1);
+        Debug.Log("next state");
     }
 
     void Update()

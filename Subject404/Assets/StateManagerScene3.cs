@@ -48,6 +48,7 @@ public class StateManagerScene3 : MonoBehaviour
     {
         string text = _instructions[_sceneState];
         _textUpdater.UpdateText(ref text);
+        Debug.Log(_sceneState);
 
         if (_grabbedMilk)
         {
