@@ -22,7 +22,7 @@ public class DialoguePoliceman : MonoBehaviour
         {
             Debug.LogError("Audio Source not set");
         }
-        _flag = new bool[] { true, false, true, false, true, true, true, true, true, true, true };
+        //_flag = new bool[] { true, false, true, false, true, true, true, true, true, true, true };
     }
 
     private IEnumerator WaitAndUpdateState()

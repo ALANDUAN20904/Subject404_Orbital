@@ -50,11 +50,11 @@ public class StateManagerScene3 : MonoBehaviour
         _textUpdater.UpdateText(ref text);
         Debug.Log(_sceneState);
 
-        if (_grabbedMilk)
+        if (_grabbedMilk && _sceneState == 0)
         {
             _sceneState = 1;
         }
-        else if (_putDownMilk)
+        if (_putDownMilk && _sceneState == 4)
         {
             _sceneState = 5;
         }
