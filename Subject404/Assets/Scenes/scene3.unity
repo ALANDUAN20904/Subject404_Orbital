@@ -4597,9 +4597,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8309c8a72798af4983786fe4a294864, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DoorKnob: {fileID: 0}
-  Milk: {fileID: 0}
-  Policeman: {fileID: 0}
+  DoorKnob: {fileID: 498323814}
 --- !u!1001 &354224476
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6279,7 +6277,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.061, y: 1.253, z: -0}
-  m_LocalScale: {x: 0.061003488, y: 0.13966, z: 0.13966}
+  m_LocalScale: {x: 0.061003488, y: 0.7119867, z: 0.13966}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2063258254}

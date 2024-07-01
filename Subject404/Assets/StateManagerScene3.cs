@@ -7,8 +7,6 @@ public class StateManagerScene3 : MonoBehaviour
 {
     private int _sceneState = 0;
     public GameObject DoorKnob;
-    public GameObject Milk;
-    public GameObject Policeman;
     private bool _grabbedMilk = false;
     private bool _putDownMilk = false;
     private TextUpdater _textUpdater;
