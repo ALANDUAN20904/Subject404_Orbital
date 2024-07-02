@@ -5,10 +5,10 @@ using UnityEngine.Video;
 
 public class StateManagerScene8 : MonoBehaviour
 {
+    private bool _isSafe;
     public VideoPlayer videoPlayer;
     public GameObject material;
     public VideoClip[] videoClips;
-    public bool isSafe = false;
 
     void Awake()
     {
@@ -16,13 +16,21 @@ public class StateManagerScene8 : MonoBehaviour
     }    
     void Start()
     {
-        if (!isSafe)
+        if (MainManager.Instance != null)
         {
-            videoPlayer.clip = videoClips[0];
+            _isSafe = MainManager.Instance.GetSafe();
+            if (!_isSafe)
+            {
+                videoPlayer.clip = videoClips[0];
+            }
+            else{
+                videoPlayer.clip = videoClips[1];
+            }
+            videoPlayer.Play();
         }
-        else{
-            videoPlayer.clip = videoClips[1];
+        else
+        {
+            Debug.LogError("MainManager instance is not available");
         }
-        videoPlayer.Play();
     }
 }
