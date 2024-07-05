@@ -3518,7 +3518,6 @@ MonoBehaviour:
   videoClips:
   - {fileID: 32900000, guid: fc5a520227d514f4ea18cb5339f350fd, type: 3}
   - {fileID: 32900000, guid: 427eb0ad13fd9e546a411c7a193aaa2e, type: 3}
-  isSafe: 0
 --- !u!1 &815382785
 GameObject:
   m_ObjectHideFlags: 0
@@ -7483,7 +7482,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: ba4536a3cfd05624eb9fd23013674f4b, type: 3}
+  - {fileID: 2100000, guid: e5c4083dd79ad1d419e34eb944538426, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
