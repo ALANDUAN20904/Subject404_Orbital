@@ -388,7 +388,7 @@ MonoBehaviour:
   m_Device: 0
   m_PoseSource: 2
   m_PoseProviderComponent: {fileID: 0}
-  m_TrackingType: 0
+  m_TrackingType: 1
   m_UpdateType: 0
   m_UseRelativeTransform: 0
 --- !u!114 &75524725
@@ -403,7 +403,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2fadf230d1919748a9aa21d40f74619, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_TrackingType: 0
+  m_TrackingType: 1
   m_UpdateType: 0
   m_IgnoreTrackingState: 0
   m_PositionInput:
@@ -1018,7 +1018,7 @@ Transform:
   m_GameObject: {fileID: 210699990}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 16.11, y: 1.7, z: 23.164}
+  m_LocalPosition: {x: 15.885, y: 1.7, z: 23.164}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1119,7 +1119,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_System: {fileID: 210699998}
-  m_MoveSpeed: 3
+  m_MoveSpeed: 5
   m_EnableStrafe: 1
   m_EnableFly: 0
   m_UseGravity: 1
@@ -1198,7 +1198,7 @@ MonoBehaviour:
   m_OriginBaseGameObject: {fileID: 210699990}
   m_CameraFloorOffsetObject: {fileID: 1085390803}
   m_RequestedTrackingOriginMode: 1
-  m_CameraYOffset: 0.5
+  m_CameraYOffset: 0.6
 --- !u!1 &266096390
 GameObject:
   m_ObjectHideFlags: 0
