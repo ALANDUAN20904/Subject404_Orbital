@@ -42,6 +42,10 @@ jobs:
           git status
           git diff
         continue-on-error: true
+      - name: Clean up after tests
+        run: |
+          git restore Subject404/Packages/manifest.json
+          git restore Subject404/Packages/packages-lock.json
       - name: Build Project
         if: github.ref == 'refs/heads/main'
         uses: game-ci/unity-builder@v4
