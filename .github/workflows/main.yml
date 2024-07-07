@@ -18,6 +18,10 @@ jobs:
           lfs: true
       - name: Clean workspace
         run: git clean -fdx
+      - name: Check for Modified Files
+        run: |
+          git status
+          git diff
       - uses: actions/cache@v3
         with:
           path: Library
@@ -33,6 +37,11 @@ jobs:
           UNITY_SERIAL: ${{ secrets.UNITY_SERIAL }}
         with:
           projectPath: Subject404/
+      - name: Check for Modified Files
+        run: |
+          git status
+          git diff
+        continue-on-error: true
       - name: Build Project
         if: github.ref == 'refs/heads/main'
         uses: game-ci/unity-builder@v4
