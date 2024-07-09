@@ -6,7 +6,10 @@ using UnityEngine;
 
 public class CultistController : MonoBehaviour
 {
+    //speed variable controlls NPC's speed
     [SerializeField] private float speed = 2.0f;
+
+    //detectionRadius variable defines the radius within which the cultist can detect the player
     [SerializeField] private float detectionRadius = 10f;
     [SerializeField] private float minDistanceToTarget = 0.1f;
 
@@ -29,6 +32,7 @@ public class CultistController : MonoBehaviour
         }
         else
         {
+            //if target is not found within 3s, random movement triggered
             timeSinceLastTargetChange += Time.deltaTime;
             if (timeSinceLastTargetChange >= targetChangeInterval)
             {
