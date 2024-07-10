@@ -118,7 +118,7 @@ Preset:
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-    value: StateManagerScene3, Assembly-CSharp
+    value: StateManagerScene3, Scripts
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName

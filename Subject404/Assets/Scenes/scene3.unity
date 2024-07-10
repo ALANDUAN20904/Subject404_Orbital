@@ -478,7 +478,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ad34abafad169848a38072baa96cdb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_InteractionManager: {fileID: 577354186}
+  m_InteractionManager: {fileID: 0}
   m_Colliders: []
   m_InteractionLayerMask:
     serializedVersion: 2
@@ -518,7 +518,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 349395094}
-        m_TargetAssemblyTypeName: StateManagerScene3, Assembly-CSharp
+        m_TargetAssemblyTypeName: StateManagerScene3, Scripts
         m_MethodName: SetGrabbedMilk
         m_Mode: 1
         m_Arguments:
@@ -752,33 +752,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 0bf1c914349e10948aaf69c1882d6186, type: 3}
   m_PrefabInstance: {fileID: 1317264856}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &70750211
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 70750208}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 04a923a6b1bc5e4428091f2b177941b6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _flag: 0100010001010101010101
-  audioSource: {fileID: 563116651}
-  gameInstructions: {fileID: 349395087}
-  audioClips:
-  - {fileID: 0}
-  - {fileID: 8300000, guid: abe392770cc4dcc44b412ec26c21633f, type: 3}
-  - {fileID: 0}
-  - {fileID: 8300000, guid: 6e2a2937c13004e47bff78197d4772df, type: 3}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
 --- !u!1001 &104799541
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2946,7 +2919,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ad34abafad169848a38072baa96cdb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_InteractionManager: {fileID: 577354186}
+  m_InteractionManager: {fileID: 0}
   m_Colliders: []
   m_InteractionLayerMask:
     serializedVersion: 2
@@ -2986,7 +2959,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 349395094}
-        m_TargetAssemblyTypeName: StateManagerScene3, Assembly-CSharp
+        m_TargetAssemblyTypeName: StateManagerScene3, Scripts
         m_MethodName: SetGrabbedMilk
         m_Mode: 1
         m_Arguments:
@@ -3449,7 +3422,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ad34abafad169848a38072baa96cdb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_InteractionManager: {fileID: 577354186}
+  m_InteractionManager: {fileID: 0}
   m_Colliders: []
   m_InteractionLayerMask:
     serializedVersion: 2
@@ -3489,7 +3462,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 349395094}
-        m_TargetAssemblyTypeName: StateManagerScene3, Assembly-CSharp
+        m_TargetAssemblyTypeName: StateManagerScene3, Scripts
         m_MethodName: SetGrabbedMilk
         m_Mode: 1
         m_Arguments:
@@ -3878,7 +3851,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ad34abafad169848a38072baa96cdb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_InteractionManager: {fileID: 577354186}
+  m_InteractionManager: {fileID: 0}
   m_Colliders: []
   m_InteractionLayerMask:
     serializedVersion: 2
@@ -3918,7 +3891,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 349395094}
-        m_TargetAssemblyTypeName: StateManagerScene3, Assembly-CSharp
+        m_TargetAssemblyTypeName: StateManagerScene3, Scripts
         m_MethodName: SetGrabbedMilk
         m_Mode: 1
         m_Arguments:
@@ -4173,7 +4146,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ad34abafad169848a38072baa96cdb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_InteractionManager: {fileID: 577354186}
+  m_InteractionManager: {fileID: 0}
   m_Colliders: []
   m_InteractionLayerMask:
     serializedVersion: 2
@@ -4213,7 +4186,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 349395094}
-        m_TargetAssemblyTypeName: StateManagerScene3, Assembly-CSharp
+        m_TargetAssemblyTypeName: StateManagerScene3, Scripts
         m_MethodName: SetGrabbedMilk
         m_Mode: 1
         m_Arguments:
@@ -6734,7 +6707,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ad34abafad169848a38072baa96cdb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_InteractionManager: {fileID: 577354186}
+  m_InteractionManager: {fileID: 0}
   m_Colliders: []
   m_InteractionLayerMask:
     serializedVersion: 2
@@ -6774,7 +6747,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 349395094}
-        m_TargetAssemblyTypeName: StateManagerScene3, Assembly-CSharp
+        m_TargetAssemblyTypeName: StateManagerScene3, Scripts
         m_MethodName: SetGrabbedMilk
         m_Mode: 1
         m_Arguments:
@@ -7420,7 +7393,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ad34abafad169848a38072baa96cdb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_InteractionManager: {fileID: 577354186}
+  m_InteractionManager: {fileID: 0}
   m_Colliders: []
   m_InteractionLayerMask:
     serializedVersion: 2
@@ -7460,7 +7433,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 349395094}
-        m_TargetAssemblyTypeName: StateManagerScene3, Assembly-CSharp
+        m_TargetAssemblyTypeName: StateManagerScene3, Scripts
         m_MethodName: SetGrabbedMilk
         m_Mode: 1
         m_Arguments:
@@ -7715,7 +7688,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ad34abafad169848a38072baa96cdb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_InteractionManager: {fileID: 577354186}
+  m_InteractionManager: {fileID: 0}
   m_Colliders: []
   m_InteractionLayerMask:
     serializedVersion: 2
@@ -7755,7 +7728,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 349395094}
-        m_TargetAssemblyTypeName: StateManagerScene3, Assembly-CSharp
+        m_TargetAssemblyTypeName: StateManagerScene3, Scripts
         m_MethodName: SetGrabbedMilk
         m_Mode: 1
         m_Arguments:
@@ -8447,7 +8420,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ad34abafad169848a38072baa96cdb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_InteractionManager: {fileID: 577354186}
+  m_InteractionManager: {fileID: 0}
   m_Colliders: []
   m_InteractionLayerMask:
     serializedVersion: 2
@@ -8487,7 +8460,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 349395094}
-        m_TargetAssemblyTypeName: StateManagerScene3, Assembly-CSharp
+        m_TargetAssemblyTypeName: StateManagerScene3, Scripts
         m_MethodName: SetGrabbedMilk
         m_Mode: 1
         m_Arguments:
@@ -10727,7 +10700,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ad34abafad169848a38072baa96cdb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_InteractionManager: {fileID: 577354186}
+  m_InteractionManager: {fileID: 0}
   m_Colliders: []
   m_InteractionLayerMask:
     serializedVersion: 2
@@ -10767,7 +10740,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 349395094}
-        m_TargetAssemblyTypeName: StateManagerScene3, Assembly-CSharp
+        m_TargetAssemblyTypeName: StateManagerScene3, Scripts
         m_MethodName: SetGrabbedMilk
         m_Mode: 1
         m_Arguments:
@@ -12768,7 +12741,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ad34abafad169848a38072baa96cdb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_InteractionManager: {fileID: 577354186}
+  m_InteractionManager: {fileID: 0}
   m_Colliders: []
   m_InteractionLayerMask:
     serializedVersion: 2
@@ -12808,7 +12781,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 349395094}
-        m_TargetAssemblyTypeName: StateManagerScene3, Assembly-CSharp
+        m_TargetAssemblyTypeName: StateManagerScene3, Scripts
         m_MethodName: SetGrabbedMilk
         m_Mode: 1
         m_Arguments:
@@ -14583,7 +14556,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ad34abafad169848a38072baa96cdb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_InteractionManager: {fileID: 577354186}
+  m_InteractionManager: {fileID: 0}
   m_Colliders: []
   m_InteractionLayerMask:
     serializedVersion: 2
@@ -14623,7 +14596,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 349395094}
-        m_TargetAssemblyTypeName: StateManagerScene3, Assembly-CSharp
+        m_TargetAssemblyTypeName: StateManagerScene3, Scripts
         m_MethodName: SetGrabbedMilk
         m_Mode: 1
         m_Arguments:
@@ -15016,7 +14989,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ad34abafad169848a38072baa96cdb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_InteractionManager: {fileID: 577354186}
+  m_InteractionManager: {fileID: 0}
   m_Colliders: []
   m_InteractionLayerMask:
     serializedVersion: 2
@@ -15056,7 +15029,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 349395094}
-        m_TargetAssemblyTypeName: StateManagerScene3, Assembly-CSharp
+        m_TargetAssemblyTypeName: StateManagerScene3, Scripts
         m_MethodName: SetGrabbedMilk
         m_Mode: 1
         m_Arguments:
@@ -15868,13 +15841,40 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 0bf1c914349e10948aaf69c1882d6186, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 70750211}
+      addedObject: {fileID: 1317264859}
   m_SourcePrefab: {fileID: 100100000, guid: 0bf1c914349e10948aaf69c1882d6186, type: 3}
 --- !u!4 &1317264857 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 0bf1c914349e10948aaf69c1882d6186, type: 3}
   m_PrefabInstance: {fileID: 1317264856}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1317264859
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 70750208}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04a923a6b1bc5e4428091f2b177941b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _flag: 0100010001010101010101
+  audioSource: {fileID: 563116651}
+  gameInstructions: {fileID: 349395087}
+  audioClips:
+  - {fileID: 0}
+  - {fileID: 8300000, guid: abe392770cc4dcc44b412ec26c21633f, type: 3}
+  - {fileID: 0}
+  - {fileID: 8300000, guid: 6e2a2937c13004e47bff78197d4772df, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1001 &1320133807
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16372,7 +16372,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ad34abafad169848a38072baa96cdb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_InteractionManager: {fileID: 577354186}
+  m_InteractionManager: {fileID: 0}
   m_Colliders: []
   m_InteractionLayerMask:
     serializedVersion: 2
@@ -16412,7 +16412,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 349395094}
-        m_TargetAssemblyTypeName: StateManagerScene3, Assembly-CSharp
+        m_TargetAssemblyTypeName: StateManagerScene3, Scripts
         m_MethodName: SetGrabbedMilk
         m_Mode: 1
         m_Arguments:
@@ -16736,7 +16736,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ad34abafad169848a38072baa96cdb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_InteractionManager: {fileID: 577354186}
+  m_InteractionManager: {fileID: 0}
   m_Colliders: []
   m_InteractionLayerMask:
     serializedVersion: 2
@@ -16776,7 +16776,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 349395094}
-        m_TargetAssemblyTypeName: StateManagerScene3, Assembly-CSharp
+        m_TargetAssemblyTypeName: StateManagerScene3, Scripts
         m_MethodName: SetGrabbedMilk
         m_Mode: 1
         m_Arguments:
@@ -17031,7 +17031,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ad34abafad169848a38072baa96cdb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_InteractionManager: {fileID: 577354186}
+  m_InteractionManager: {fileID: 0}
   m_Colliders: []
   m_InteractionLayerMask:
     serializedVersion: 2
@@ -17071,7 +17071,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 349395094}
-        m_TargetAssemblyTypeName: StateManagerScene3, Assembly-CSharp
+        m_TargetAssemblyTypeName: StateManagerScene3, Scripts
         m_MethodName: SetGrabbedMilk
         m_Mode: 1
         m_Arguments:
@@ -18039,7 +18039,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ad34abafad169848a38072baa96cdb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_InteractionManager: {fileID: 577354186}
+  m_InteractionManager: {fileID: 0}
   m_Colliders: []
   m_InteractionLayerMask:
     serializedVersion: 2
@@ -18079,7 +18079,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 349395094}
-        m_TargetAssemblyTypeName: StateManagerScene3, Assembly-CSharp
+        m_TargetAssemblyTypeName: StateManagerScene3, Scripts
         m_MethodName: SetGrabbedMilk
         m_Mode: 1
         m_Arguments:
@@ -19562,7 +19562,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ad34abafad169848a38072baa96cdb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_InteractionManager: {fileID: 577354186}
+  m_InteractionManager: {fileID: 0}
   m_Colliders: []
   m_InteractionLayerMask:
     serializedVersion: 2
@@ -19602,7 +19602,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 349395094}
-        m_TargetAssemblyTypeName: StateManagerScene3, Assembly-CSharp
+        m_TargetAssemblyTypeName: StateManagerScene3, Scripts
         m_MethodName: SetGrabbedMilk
         m_Mode: 1
         m_Arguments:
@@ -20202,7 +20202,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ad34abafad169848a38072baa96cdb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_InteractionManager: {fileID: 577354186}
+  m_InteractionManager: {fileID: 0}
   m_Colliders: []
   m_InteractionLayerMask:
     serializedVersion: 2
@@ -20242,7 +20242,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 349395094}
-        m_TargetAssemblyTypeName: StateManagerScene3, Assembly-CSharp
+        m_TargetAssemblyTypeName: StateManagerScene3, Scripts
         m_MethodName: SetGrabbedMilk
         m_Mode: 1
         m_Arguments:
@@ -21432,7 +21432,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ad34abafad169848a38072baa96cdb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_InteractionManager: {fileID: 577354186}
+  m_InteractionManager: {fileID: 0}
   m_Colliders: []
   m_InteractionLayerMask:
     serializedVersion: 2
@@ -21472,7 +21472,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 349395094}
-        m_TargetAssemblyTypeName: StateManagerScene3, Assembly-CSharp
+        m_TargetAssemblyTypeName: StateManagerScene3, Scripts
         m_MethodName: SetGrabbedMilk
         m_Mode: 1
         m_Arguments:
@@ -22183,7 +22183,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ad34abafad169848a38072baa96cdb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_InteractionManager: {fileID: 577354186}
+  m_InteractionManager: {fileID: 0}
   m_Colliders: []
   m_InteractionLayerMask:
     serializedVersion: 2
@@ -22223,7 +22223,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 349395094}
-        m_TargetAssemblyTypeName: StateManagerScene3, Assembly-CSharp
+        m_TargetAssemblyTypeName: StateManagerScene3, Scripts
         m_MethodName: SetGrabbedMilk
         m_Mode: 1
         m_Arguments:
