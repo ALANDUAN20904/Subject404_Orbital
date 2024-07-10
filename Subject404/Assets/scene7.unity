@@ -1498,8 +1498,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44cccc7af6dd4d24ab77e7488785f1d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 6
-  detectionRadius: 10
+  walkSpeed: 1
+  runSpeed: 6
+  detectionRadius: 20
   minDistanceToTarget: 0.1
 --- !u!136 &375001067
 CapsuleCollider:

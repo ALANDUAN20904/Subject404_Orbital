@@ -6,8 +6,9 @@ using UnityEngine;
 
 public class CultistController : MonoBehaviour
 {
-    //speed variable controlls NPC's speed
-    [SerializeField] private float speed = 2.0f;
+    //speed variable controlls NPC's speed when walking and running
+    [SerializeField] private float walkSpeed = 2.0f;
+    [SerializeField] private float runSpeed = 6.0f;
 
     //detectionRadius variable defines the radius within which the cultist can detect the player
     [SerializeField] private float detectionRadius = 10f;
@@ -17,24 +18,36 @@ public class CultistController : MonoBehaviour
     private GameObject player;
     private float timeSinceLastTargetChange = 0f;
     private float targetChangeInterval = 3f;
-    private bool _PlayerCaught = false;
+    private bool _isPlayerCaught = false;
+    private Animator animator;
 
+
+    private const string ANIM_ORC_WALK = "Orc Walk";
+    private const string ANIM_FAST_RUN = "Fast Run";
+
+    bool IsPlayerInRange()
+    {
+        return Vector3.Distance(transform.position, player.transform.position) <= detectionRadius;
+    }
 
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         SetNewRandomTarget();
+
+        animator = GetComponent<Animator>();
+        animator.Play(ANIM_ORC_WALK);
     }
 
     void Update()
     {
-        if (!_PlayerCaught)
+        if (!_isPlayerCaught)
         {
-
 
             if (player != null && IsPlayerInRange())
             {
                 target = player.transform.position;
+                animator.Play(ANIM_FAST_RUN);   
             }
             else
             {
@@ -45,6 +58,8 @@ public class CultistController : MonoBehaviour
                     SetNewRandomTarget();
                     timeSinceLastTargetChange = 0f;
                 }
+
+                animator.Play(ANIM_ORC_WALK);
             }
             MoveTowardsTarget();
         }
@@ -53,15 +68,25 @@ public class CultistController : MonoBehaviour
 
     public void SetPlayerCaught()
     {
-        _PlayerCaught = true;
+        _isPlayerCaught = true;
     }
 
     void MoveTowardsTarget()
     {
         if (Vector3.Distance(transform.position, target) > minDistanceToTarget)
         {
-            float step = speed * Time.deltaTime;
-            transform.position = Vector3.MoveTowards(transform.position, target,step);
+            // Determine the current speed based on the animation state
+            float currentSpeed;
+            if (animator.GetCurrentAnimatorStateInfo(0).IsName(ANIM_FAST_RUN))
+            {
+                currentSpeed = runSpeed;
+            }
+            else
+            {
+                currentSpeed = walkSpeed;
+            }
+            float step = currentSpeed * Time.deltaTime;
+            transform.position = Vector3.MoveTowards(transform.position, target, step);
             transform.LookAt(target);
         }
     }
@@ -73,10 +98,6 @@ public class CultistController : MonoBehaviour
         target = transform.position + new Vector3(randomX, 0, randomZ);
     }
 
-    bool IsPlayerInRange()
-    {
-        return Vector3.Distance(transform.position, player.transform.position) <= detectionRadius;
-    }
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -88,7 +109,7 @@ public class CultistController : MonoBehaviour
 
     private void HandlePlayerCollision()
     {
-        _PlayerCaught = true;
+        _isPlayerCaught = true;
         Debug.Log("Player caught by cultist!");
         
     }
