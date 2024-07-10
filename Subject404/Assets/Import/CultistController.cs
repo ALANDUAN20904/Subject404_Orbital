@@ -17,6 +17,8 @@ public class CultistController : MonoBehaviour
     private GameObject player;
     private float timeSinceLastTargetChange = 0f;
     private float targetChangeInterval = 3f;
+    private bool _PlayerCaught = false;
+
 
     void Start()
     {
@@ -26,22 +28,32 @@ public class CultistController : MonoBehaviour
 
     void Update()
     {
-        if (player != null && IsPlayerInRange())
+        if (!_PlayerCaught)
         {
-            target = player.transform.position;
-        }
-        else
-        {
-            //if target is not found within 3s, random movement triggered
-            timeSinceLastTargetChange += Time.deltaTime;
-            if (timeSinceLastTargetChange >= targetChangeInterval)
-            {
-                SetNewRandomTarget();
-                timeSinceLastTargetChange = 0f;
-            }
-        }
 
-        MoveTowardsTarget();
+
+            if (player != null && IsPlayerInRange())
+            {
+                target = player.transform.position;
+            }
+            else
+            {
+                //if target is not found within 3s, random movement triggered
+                timeSinceLastTargetChange += Time.deltaTime;
+                if (timeSinceLastTargetChange >= targetChangeInterval)
+                {
+                    SetNewRandomTarget();
+                    timeSinceLastTargetChange = 0f;
+                }
+            }
+            MoveTowardsTarget();
+        }
+        
+    }
+
+    public void SetPlayerCaught()
+    {
+        _PlayerCaught = true;
     }
 
     void MoveTowardsTarget()
@@ -49,7 +61,7 @@ public class CultistController : MonoBehaviour
         if (Vector3.Distance(transform.position, target) > minDistanceToTarget)
         {
             float step = speed * Time.deltaTime;
-            transform.position = Vector3.MoveTowards(transform.position, target, step);
+            transform.position = Vector3.MoveTowards(transform.position, target,step);
             transform.LookAt(target);
         }
     }
@@ -66,5 +78,25 @@ public class CultistController : MonoBehaviour
         return Vector3.Distance(transform.position, player.transform.position) <= detectionRadius;
     }
 
-    
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            HandlePlayerCollision();
+        }
+    }
+
+    private void HandlePlayerCollision()
+    {
+        _PlayerCaught = true;
+        Debug.Log("Player caught by cultist!");
+        
+    }
+
+    void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(transform.position, detectionRadius);
+    }
+
 }
