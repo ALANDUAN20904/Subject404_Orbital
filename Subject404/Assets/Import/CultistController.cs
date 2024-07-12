@@ -16,6 +16,7 @@ public class CultistController : MonoBehaviour
     [SerializeField] private float walkSpeed = 2.0f;
     [SerializeField] private float runSpeed = 6.0f;
     [SerializeField] private float detectionRadius = 30f;
+    [SerializeField] private float detectionAngle = 90.0f;
     [SerializeField] private float minDistanceToTarget = 0.1f;
     [SerializeField] private Transform teleportTarget;
     [SerializeField] private Camera playerCamera;
@@ -136,7 +137,33 @@ public class CultistController : MonoBehaviour
 
     bool IsPlayerInRange()
     {
-        return Vector3.Distance(transform.position, player.transform.position) <= detectionRadius;
+        
+        if (player == null) return false;
+        Vector3 cultistPosition = transform.position;
+        Vector3 distanceToPlayer = player.transform.position - transform.position;
+
+        if (distanceToPlayer.magnitude <= detectionRadius)
+        {
+            float dotProduct = Vector3.Dot(distanceToPlayer.normalized, transform.forward);
+            float angleThreshold = Mathf.Cos(detectionAngle * 0.5f * Mathf.Deg2Rad);
+
+            if (dotProduct > angleThreshold)
+            {
+                Debug.Log("Player detected!");
+                return true;
+            }
+        }
+        return false;
+        
+        
+
+        /*
+        if ((Vector3.Distance(transform.position, player.transform.position)) <= detectionRadius)
+        {
+            return true;
+        }
+        else { return false; }  
+        */
     }
 
     void MoveTowardsTarget(float speed)
@@ -166,8 +193,32 @@ public class CultistController : MonoBehaviour
 
     void OnDrawGizmosSelected()
     {
-        //update detection method Gizmos
+ 
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, detectionRadius);
+        Gizmos.color = Color.blue;
+        Vector3 forward = transform.forward;
+        Vector3 right = transform.right;
+        float halfAngle = detectionAngle * 0.5f * Mathf.Deg2Rad;
+        Vector3 leftBoundary = Quaternion.Euler(0, -detectionAngle * 0.5f, 0) * forward;
+        Vector3 rightBoundary = Quaternion.Euler(0, detectionAngle * 0.5f, 0) * forward;
+
+        Gizmos.DrawLine(transform.position, transform.position + leftBoundary * detectionRadius);
+        Gizmos.DrawLine(transform.position, transform.position + rightBoundary * detectionRadius);
+
+        // Draw arc
+        int segments = 20;
+        Vector3 previousPoint = transform.position + leftBoundary * detectionRadius;
+        for (int i = 1; i <= segments; i++)
+        {
+            float angle = -halfAngle + (i * detectionAngle / segments) * Mathf.Deg2Rad;
+            Vector3 newPoint = transform.position + (forward * Mathf.Cos(angle) + right * Mathf.Sin(angle)) * detectionRadius;
+            Gizmos.DrawLine(previousPoint, newPoint);
+            previousPoint = newPoint;
+        }
+
+        // Draw cultist forward direction
+        Gizmos.color = Color.red;
+        Gizmos.DrawRay(transform.position, forward * detectionRadius);
     }
 }
