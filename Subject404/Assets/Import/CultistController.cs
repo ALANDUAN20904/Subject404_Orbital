@@ -6,86 +6,144 @@ using UnityEngine;
 
 public class CultistController : MonoBehaviour
 {
-    //speed variable controlls NPC's speed when walking and running
+    public enum CultistState
+    {
+        Patrolling,
+        Chasing,
+        Caught
+    }
+
     [SerializeField] private float walkSpeed = 2.0f;
     [SerializeField] private float runSpeed = 6.0f;
-
-    //detectionRadius variable defines the radius within which the cultist can detect the player
-    [SerializeField] private float detectionRadius = 10f;
+    [SerializeField] private float detectionRadius = 30f;
     [SerializeField] private float minDistanceToTarget = 0.1f;
+    [SerializeField] private Transform teleportTarget;
+    [SerializeField] private Camera playerCamera;
 
     private Vector3 target;
     private GameObject player;
-    private float timeSinceLastTargetChange = 0f;
-    private float targetChangeInterval = 3f;
-    private bool _isPlayerCaught = false;
+    private float stateTimer = 0f;
+    private float targetChangeInterval = 1f;
     private Animator animator;
-
+    private CultistState currentState = CultistState.Patrolling;
 
     private const string ANIM_ORC_WALK = "Orc Walk";
     private const string ANIM_FAST_RUN = "Fast Run";
 
-    bool IsPlayerInRange()
-    {
-        return Vector3.Distance(transform.position, player.transform.position) <= detectionRadius;
-    }
+    private bool isPlayerCaught = false;
 
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         SetNewRandomTarget();
-
         animator = GetComponent<Animator>();
         animator.Play(ANIM_ORC_WALK);
     }
 
     void Update()
     {
-        if (!_isPlayerCaught)
+        stateTimer += Time.deltaTime;
+
+        switch (currentState)
+        {
+            case CultistState.Patrolling:
+                UpdatePatrollingState();
+                break;
+            case CultistState.Chasing:
+                UpdateChasingState();
+                break;
+            case CultistState.Caught:
+                UpdateCaughtState();
+                break;
+        }
+    }
+
+    void UpdatePatrollingState()
+    {
+        animator.Play(ANIM_ORC_WALK);
+
+        if (player != null && IsPlayerInRange())
+        {
+            TransitionToState(CultistState.Chasing);
+        }
+        else if (stateTimer >= targetChangeInterval)
+        {
+            SetNewRandomTarget();
+            stateTimer = 0f;
+        }
+
+        MoveTowardsTarget(walkSpeed);
+    }
+
+    void UpdateChasingState()
+    {
+        animator.Play(ANIM_FAST_RUN);
+
+        if (player != null && IsPlayerInRange())
+        {
+            target = player.transform.position;
+            MoveTowardsTarget(runSpeed);
+            Debug.Log("Player is spotted");
+        }
+        else
+        {
+            TransitionToState(CultistState.Patrolling);
+        }
+    }
+
+    void UpdateCaughtState()
+    {
+        if (teleportTarget != null)
         {
 
-            if (player != null && IsPlayerInRange())
-            {
-                target = player.transform.position;
-                animator.Play(ANIM_FAST_RUN);   
-            }
-            else
-            {
-                //if target is not found within 3s, random movement triggered
-                timeSinceLastTargetChange += Time.deltaTime;
-                if (timeSinceLastTargetChange >= targetChangeInterval)
-                {
-                    SetNewRandomTarget();
-                    timeSinceLastTargetChange = 0f;
-                }
+            Vector3 cameraForward = playerCamera.transform.forward;
+            cameraForward.y = 0; // Flatten the vector to ignore vertical tilt
+            cameraForward = cameraForward.normalized;
 
-                animator.Play(ANIM_ORC_WALK);
-            }
-            MoveTowardsTarget();
+            // Calculate new position
+            Vector3 newPosition = playerCamera.transform.position + (cameraForward * 0.7f);
+            newPosition.y = transform.position.y; 
+            
+            transform.position = newPosition;
+
+            transform.LookAt(new Vector3(playerCamera.transform.position.x, transform.position.y, playerCamera.transform.position.z));
+
+            animator.speed = 0;
+            Debug.Log("cultist transformed");
+            isPlayerCaught = true;  
         }
         
     }
 
-    public void SetPlayerCaught()
+    void TransitionToState(CultistState newState)
     {
-        _isPlayerCaught = true;
+        currentState = newState;
+        stateTimer = 0f;
+
+        switch (newState)
+        {
+            case CultistState.Patrolling:
+                SetNewRandomTarget();
+                break;
+            case CultistState.Chasing:
+                // Setup for chasing state if needed
+                break;
+            case CultistState.Caught:
+                // Setup for caught state if needed
+                break;
+        }
     }
 
-    void MoveTowardsTarget()
+    bool IsPlayerInRange()
+    {
+        return Vector3.Distance(transform.position, player.transform.position) <= detectionRadius;
+    }
+
+    void MoveTowardsTarget(float speed)
     {
         if (Vector3.Distance(transform.position, target) > minDistanceToTarget)
         {
-            // Determine the current speed based on the animation state
-            float currentSpeed;
-            if (animator.GetCurrentAnimatorStateInfo(0).IsName(ANIM_FAST_RUN))
-            {
-                currentSpeed = runSpeed;
-            }
-            else
-            {
-                currentSpeed = walkSpeed;
-            }
-            float step = currentSpeed * Time.deltaTime;
+            float step = speed * Time.deltaTime;
             transform.position = Vector3.MoveTowards(transform.position, target, step);
             transform.LookAt(target);
         }
@@ -93,31 +151,23 @@ public class CultistController : MonoBehaviour
 
     void SetNewRandomTarget()
     {
-        float randomX = Random.Range(-10f, 10f);
-        float randomZ = Random.Range(-10f, 10f);
+        float randomX = Random.Range(-3f, 3f);
+        float randomZ = Random.Range(-3f, 3f);
         target = transform.position + new Vector3(randomX, 0, randomZ);
     }
-
 
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            HandlePlayerCollision();
+            TransitionToState(CultistState.Caught);
         }
-    }
-
-    private void HandlePlayerCollision()
-    {
-        _isPlayerCaught = true;
-        Debug.Log("Player caught by cultist!");
-        
     }
 
     void OnDrawGizmosSelected()
     {
+        //update detection method Gizmos
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, detectionRadius);
     }
-
 }
