@@ -139,6 +139,15 @@ public class CultistController : MonoBehaviour
     {
         
         if (player == null) return false;
+
+        // Check if the player is in the safe zone
+        if (SafeZone.isPlayerInSafeZone)
+        {
+            Debug.Log("Player is in the safe zone and undetectable");
+            return false;
+        }
+
+
         Vector3 cultistPosition = transform.position;
         Vector3 distanceToPlayer = player.transform.position - transform.position;
 
@@ -185,6 +194,7 @@ public class CultistController : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        //if cultist's collider collides with Player's collider
         if (collision.gameObject.CompareTag("Player"))
         {
             TransitionToState(CultistState.Caught);
