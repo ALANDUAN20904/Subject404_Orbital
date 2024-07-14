@@ -32,6 +32,7 @@ public class CultistController : MonoBehaviour
     private const string ANIM_FAST_RUN = "Fast Run";
 
     private bool isPlayerCaught = false;
+    private bool isInSafeZone = false;
 
     void Start()
     {
@@ -103,17 +104,17 @@ public class CultistController : MonoBehaviour
 
             // Calculate new position
             Vector3 newPosition = playerCamera.transform.position + (cameraForward * 0.7f);
-            newPosition.y = transform.position.y; 
-            
+            newPosition.y = transform.position.y;
+
             transform.position = newPosition;
 
             transform.LookAt(new Vector3(playerCamera.transform.position.x, transform.position.y, playerCamera.transform.position.z));
 
             animator.speed = 0;
             Debug.Log("cultist transformed");
-            isPlayerCaught = true;  
+            isPlayerCaught = true;
         }
-        
+
     }
 
     void TransitionToState(CultistState newState)
@@ -137,7 +138,7 @@ public class CultistController : MonoBehaviour
 
     bool IsPlayerInRange()
     {
-        
+
         if (player == null) return false;
 
         // Check if the player is in the safe zone
@@ -163,8 +164,8 @@ public class CultistController : MonoBehaviour
             }
         }
         return false;
-        
-        
+
+
 
         /*
         if ((Vector3.Distance(transform.position, player.transform.position)) <= detectionRadius)
@@ -177,7 +178,7 @@ public class CultistController : MonoBehaviour
 
     void MoveTowardsTarget(float speed)
     {
-        if (Vector3.Distance(transform.position, target) > minDistanceToTarget)
+        if (Vector3.Distance(transform.position, target) > minDistanceToTarget && !isInSafeZone)
         {
             float step = speed * Time.deltaTime;
             transform.position = Vector3.MoveTowards(transform.position, target, step);
@@ -201,9 +202,10 @@ public class CultistController : MonoBehaviour
         }
     }
 
+    //visulisation of enemy's detection
     void OnDrawGizmosSelected()
     {
- 
+
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, detectionRadius);
         Gizmos.color = Color.blue;
@@ -230,5 +232,21 @@ public class CultistController : MonoBehaviour
         // Draw cultist forward direction
         Gizmos.color = Color.red;
         Gizmos.DrawRay(transform.position, forward * detectionRadius);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("SafeZone"))
+        {
+            isInSafeZone = true;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("SafeZone"))
+        {
+            isInSafeZone = false;
+        }
     }
 }
