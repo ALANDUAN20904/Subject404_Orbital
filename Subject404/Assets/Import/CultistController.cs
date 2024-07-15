@@ -20,6 +20,11 @@ public class CultistController : MonoBehaviour
     [SerializeField] private float minDistanceToTarget = 0.1f;
     [SerializeField] private Transform teleportTarget;
     [SerializeField] private Camera playerCamera;
+    
+    //changes
+    [SerializeField] private LayerMask safeZoneLayer; // Assign this in the inspector
+    private float cultistRadius = 0.5f; // Adjust based on your cultist's size
+
 
     private Vector3 target;
     private GameObject player;
@@ -178,11 +183,22 @@ public class CultistController : MonoBehaviour
 
     void MoveTowardsTarget(float speed)
     {
-        if (Vector3.Distance(transform.position, target) > minDistanceToTarget && !isInSafeZone)
+        if (Vector3.Distance(transform.position, target) > minDistanceToTarget)
         {
-            float step = speed * Time.deltaTime;
-            transform.position = Vector3.MoveTowards(transform.position, target, step);
-            transform.LookAt(target);
+            Vector3 direction = (target - transform.position).normalized;
+            Vector3 newPosition = transform.position + direction * speed * Time.deltaTime;
+
+            // Check if the new position would be inside the safe zone
+            if (!Physics.CheckSphere(newPosition, cultistRadius, safeZoneLayer))
+            {
+                transform.position = newPosition;
+                transform.LookAt(target);
+            }
+            else
+            {
+                // Optional: Add logic for what the cultist should do when blocked
+                Debug.Log("Cultist blocked by safe zone");
+            }
         }
     }
 
@@ -239,6 +255,7 @@ public class CultistController : MonoBehaviour
         if (other.CompareTag("SafeZone"))
         {
             isInSafeZone = true;
+            
         }
     }
 
