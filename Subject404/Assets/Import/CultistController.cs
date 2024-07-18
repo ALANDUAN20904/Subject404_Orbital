@@ -196,7 +196,6 @@ public class CultistController : MonoBehaviour
             }
             else
             {
-                // Optional: Add logic for what the cultist should do when blocked
                 Debug.Log("Cultist blocked by safe zone");
             }
         }
@@ -245,9 +244,7 @@ public class CultistController : MonoBehaviour
             previousPoint = newPoint;
         }
 
-        // Draw cultist forward direction
-        Gizmos.color = Color.red;
-        Gizmos.DrawRay(transform.position, forward * detectionRadius);
+ 
     }
 
     private void OnTriggerEnter(Collider other)
