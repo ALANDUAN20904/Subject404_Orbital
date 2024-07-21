@@ -10,6 +10,8 @@ public class AiChasePlayerState : AiState
     public float maxTime = 1.0f;
     public float maxDistance = 1.0f;
     float timer = 0.0f;
+    public float detectionRadius = 30.0f;
+    public float detectionAngle = 90.0f;
 
     public AiStateId GetId()
     {
@@ -22,6 +24,9 @@ public class AiChasePlayerState : AiState
         {
             playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
         }
+
+        agent.navMeshAgent.speed = agent.chaseSpeed;
+        agent.SetAnimationSpeed(agent.chaseSpeed);
     }
 
     public void Update(AiAgent agent)
@@ -30,13 +35,19 @@ public class AiChasePlayerState : AiState
         {
             return;
         }
-
-        timer -= Time.deltaTime;
+       
         if (!agent.navMeshAgent.hasPath)
         {
             agent.navMeshAgent.destination = playerTransform.position;
         }
 
+        if (SafeZone.isPlayerInSafeZone)
+        {
+            agent.stateMachine.ChangeState(AiStateId.Patrol);
+            return;
+        }
+
+        timer -= Time.deltaTime;
         if (timer < 0.0f)
         {
             Vector3 direction = (playerTransform.position - agent.navMeshAgent.destination);
@@ -50,6 +61,10 @@ public class AiChasePlayerState : AiState
             }
             timer = maxTime;
         }
+
+        float currentSpeed = agent.navMeshAgent.speed;
+        agent.SetAnimationSpeed(currentSpeed);
+        Debug.Log("cultist at chase state");
     }
 
     public void Exit(AiAgent agent)

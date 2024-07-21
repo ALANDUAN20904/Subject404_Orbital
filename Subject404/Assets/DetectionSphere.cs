@@ -24,6 +24,11 @@ public class SafeZone : MonoBehaviour
             Debug.Log("Player exited safe zone");
         }
     }
+
+    public bool IsPlayerInSafeZone()
+    {
+        return isPlayerInSafeZone;
+    }
 }
 
 

@@ -8,7 +8,7 @@ using UnityEngine.AI;
 public class AiPatrolState : AiState
 
 {
-    public float patrolRadius = 10.0f;
+    public float patrolRadius = 20.0f;
     public float detectionRadius = 30.0f;
     public float detectionAngle = 90.0f;
     private Vector3 patrolTarget;
@@ -28,14 +28,17 @@ public class AiPatrolState : AiState
         Animator animator = agent.GetComponent<Animator>();
         if (animator != null)
         {
-            animator.Play("Orc Walk"); // Make sure this animation exists
+            animator.Play("Orc Walk"); 
         }
+        agent.navMeshAgent.speed = agent.patrolSpeed;
+        agent.SetAnimationSpeed(agent.patrolSpeed);
     }
+
     public void Update(AiAgent agent)
     {
         stateTimer += Time.deltaTime;
 
-        if (IsPlayerDetected(agent))
+        if (agent.IsPlayerDetected(detectionRadius,detectionAngle))
         {
             agent.stateMachine.ChangeState(AiStateId.chasePlayer);
             return;
@@ -49,7 +52,9 @@ public class AiPatrolState : AiState
 
         // Move towards patrol target
         agent.navMeshAgent.SetDestination(patrolTarget);
-
+        float currentSpeed = agent.navMeshAgent.speed;
+        agent.SetAnimationSpeed(currentSpeed);
+        Debug.Log("cultist at patrol state");
     }
     public void Exit(AiAgent agent)
     {
@@ -63,29 +68,5 @@ public class AiPatrolState : AiState
         NavMeshHit hit;
         NavMesh.SamplePosition(randomDirection, out hit, patrolRadius, 1);
         patrolTarget = hit.position;
-    }
-
-
-    private bool IsPlayerDetected(AiAgent agent)
-    {
-        Collider[] colliders = Physics.OverlapSphere(agent.transform.position, detectionRadius);
-        foreach (Collider collider in colliders)
-        {
-            if (collider.CompareTag("Player"))
-            {
-                Vector3 directionToPlayer = (collider.transform.position - agent.transform.position).normalized;
-                float angle = Vector3.Angle(agent.transform.forward, directionToPlayer);
-                if (angle < detectionAngle * 0.5f)
-                {
-                    // Check if there's no obstacle between the agent and the player
-                    RaycastHit hit;
-                    if (!Physics.Raycast(agent.transform.position, directionToPlayer, out hit, detectionRadius) || hit.collider.CompareTag("Player"))
-                    {
-                        return true;
-                    }
-                }
-            }
-        }
-        return false;
     }
 }

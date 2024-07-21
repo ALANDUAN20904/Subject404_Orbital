@@ -7,6 +7,8 @@ public enum AiStateId
     chasePlayer,
     Patrol
 }
+
+//convenience for creating new Aistates
 public interface AiState
 {
       AiStateId GetId();
