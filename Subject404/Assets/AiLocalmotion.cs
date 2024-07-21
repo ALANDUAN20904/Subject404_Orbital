@@ -7,18 +7,44 @@ using UnityEngine.AI;
 
 public class AiLocalmotion : MonoBehaviour
 {
+   
     NavMeshAgent agent;
+    Animator animator;
+    
+
     public Transform PlayerTransform;
 
-    // Start is called before the first frame update
+    
     void Start()
     {
+        if (PlayerTransform == null)
+        {
+            PlayerTransform = GameObject.FindGameObjectWithTag("Player").transform;
+        }
         agent = GetComponent<NavMeshAgent>();
+        animator = GetComponent<Animator> ();
     }
 
-    // Update is called once per frame
+    
     void Update()
     {
-        agent.destination = PlayerTransform.position;
+
+
+
+        if (agent.hasPath)
+        {
+            animator.SetFloat("Speed", agent.velocity.magnitude);
+        }
+        else
+        {
+            animator.SetFloat("Speed", 0);
+        }
+        
+
+    }
+
+    void OnDrawGizmos()
+    {
+        
     }
 }
