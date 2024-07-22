@@ -25,6 +25,7 @@ public class AiAgent : MonoBehaviour
         stateMachine = new AiStateMachine(this);
         stateMachine.RegisterState(new AiChasePlayerState());
         stateMachine.RegisterState(new AiPatrolState());
+        stateMachine.RegisterState(new AiCaughtState());
         stateMachine.ChangeState(initialState);
         
     }
@@ -73,5 +74,13 @@ public class AiAgent : MonoBehaviour
             }
         }
         return false;
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            stateMachine.ChangeState(AiStateId.Caught);
+        }
     }
 }

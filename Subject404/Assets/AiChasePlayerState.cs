@@ -11,7 +11,7 @@ public class AiChasePlayerState : AiState
     public float maxDistance = 1.0f;
     float timer = 0.0f;
     public float detectionRadius = 30.0f;
-    public float detectionAngle = 90.0f;
+    //private bool isPlayerCaught = false;
 
     public AiStateId GetId()
     {
@@ -66,6 +66,8 @@ public class AiChasePlayerState : AiState
         agent.SetAnimationSpeed(currentSpeed);
         Debug.Log("cultist at chase state");
     }
+
+
 
     public void Exit(AiAgent agent)
     {

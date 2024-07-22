@@ -5,7 +5,8 @@ using UnityEngine;
 public enum AiStateId
 {
     chasePlayer,
-    Patrol
+    Patrol,
+    Caught
 }
 
 //convenience for creating new Aistates
