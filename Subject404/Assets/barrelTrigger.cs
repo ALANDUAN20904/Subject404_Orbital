@@ -42,35 +42,19 @@ public class barrelTrigger : MonoBehaviour
             if (barrelRenderer != null)
             {
                 Vector3 barrelCenter = barrelRenderer.bounds.center;
-                Vector3 teleportPosition = barrelCenter ;
-                
 
-                // Debug information
-                Debug.Log($"Barrel Center: {barrelCenter}");
-                Debug.Log($"Teleport Position: {teleportPosition}");
+                //adjust teleportation y-axis
+                float yOffset = barrelRenderer.bounds.extents.y;
 
+                Vector3 teleportPosition = new Vector3(barrelCenter.x,barrelCenter.y-yOffset,barrelCenter.z);
+
+                //teleportation{osition.y += 0.1f; //small upwards offset, just in case player is stuck in the ground
                 player.transform.position = teleportPosition;
-                Debug.Log($"Player Position After Teleport: {player.transform.position}");
+                
 
                 // Start the coroutine for the second teleport
                 StartCoroutine(SecondTeleport(player, teleportPosition));
             }
-            else
-            {
-                Debug.LogWarning("Barrel doesn't have a Renderer component");
-            }
-        }
-        else
-        {
-            Debug.LogWarning("Barrel center not assigned!");
-        }
+        }   
     }
-    
-    
-
-
-
-
-
-
 }
