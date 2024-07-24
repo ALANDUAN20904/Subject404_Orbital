@@ -1,0 +1,11 @@
+Model Information:
+* title:	MODULO_sewer_02
+* source:	https://sketchfab.com/3d-models/modulo-sewer-02-e8cef7031e3b49f296d728f375138c27
+* author:	polo_art (https://sketchfab.com/polo_art)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "MODULO_sewer_02" (https://sketchfab.com/3d-models/modulo-sewer-02-e8cef7031e3b49f296d728f375138c27) by polo_art (https://sketchfab.com/polo_art) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
