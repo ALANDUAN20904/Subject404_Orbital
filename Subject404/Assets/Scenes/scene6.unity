@@ -779,6 +779,37 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!1 &43241215
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 43241216}
+  m_Layer: 0
+  m_Name: Receiver
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &43241216
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 43241215}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.75, y: 4.335, z: 2.69}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1024628728}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &47364710
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15043,6 +15074,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5467950155827954109, guid: befa682ad44dc804a8955f7ac494bc18, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1393936545}
+    - targetCorrespondingSourceObject: {fileID: 5467950155827954109, guid: befa682ad44dc804a8955f7ac494bc18, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2040658893}
+    - targetCorrespondingSourceObject: {fileID: 5467950155827954109, guid: befa682ad44dc804a8955f7ac494bc18, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 43241216}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: befa682ad44dc804a8955f7ac494bc18, type: 3}
 --- !u!1 &737227520
@@ -31334,7 +31371,7 @@ GameObject:
   - component: {fileID: 1797506484}
   m_Layer: 0
   m_Name: XR Origin (XR Rig)
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -34640,6 +34677,75 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4321637437612654, guid: 408af9f2b6062b4449d4b84d945fdd57, type: 3}
   m_PrefabInstance: {fileID: 2022590524}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2040658892
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2040658893}
+  - component: {fileID: 2040658895}
+  - component: {fileID: 2040658894}
+  m_Layer: 0
+  m_Name: Sender
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2040658893
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2040658892}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.129, y: 4.229, z: 2.655}
+  m_LocalScale: {x: 0.40741765, y: 0.48499322, z: 0.58756}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1024628728}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2040658894
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2040658892}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24e5e5f026ab2b047a7c34401bdb5c18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1797506483}
+  destination: {fileID: 43241216}
+  playerObject: {fileID: 1797506478}
+--- !u!65 &2040658895
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2040658892}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2045423227
 GameObject:
   m_ObjectHideFlags: 0
