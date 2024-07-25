@@ -71,6 +71,7 @@ public class AiAgent : MonoBehaviour
                         return true;
                     }
                 }
+                Debug.Log("detected");
             }
         }
         return false;
