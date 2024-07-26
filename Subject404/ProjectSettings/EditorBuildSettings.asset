@@ -27,6 +27,12 @@ EditorBuildSettings:
     path: Assets/Scenes/scene6-interior.unity
     guid: b0321a70c4c77e349b540d1614b91b4a
   - enabled: 1
+    path: Assets/Scenes/scene6-cult.unity
+    guid: bc6d5332150bc384aa07106e6b4542c0
+  - enabled: 1
+    path: Assets/scene7.unity
+    guid: cd5059a991c0da941b00721b43254992
+  - enabled: 1
     path: Assets/Scenes/scene8.unity
     guid: ffd2db099ce719e46b6f7af320eacbfd
   m_configObjects:

@@ -5,8 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class TransitionOnTrigger : MonoBehaviour
 {
+    public int num;
     void OnTriggerEnter(Collider other)
     {
-        SceneManager.LoadScene(7);
+        SceneManager.LoadScene(num);
     }
 }

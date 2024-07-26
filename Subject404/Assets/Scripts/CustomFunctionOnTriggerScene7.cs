@@ -10,7 +10,7 @@ public class CustomFunctionOnTriggerScene7 : MonoBehaviour
         if (MainManager.Instance != null)
         {
             MainManager.Instance.SetSafe();
-            SceneManager.LoadScene(4);
+            SceneManager.LoadScene(9);
         }
     }
 }

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.SceneManagement;
 
 public class AiCaughtState : AiState
 {
@@ -39,7 +40,7 @@ public class AiCaughtState : AiState
 
     public void Exit(AiAgent agent)
     {
-
+        SceneManager.LoadScene(9);
     }
 
     private void UpdatePosition(AiAgent agent)
