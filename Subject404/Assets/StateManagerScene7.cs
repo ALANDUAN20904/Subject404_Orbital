@@ -2,15 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
+using UnityEngine.SceneManagement;
 
 public class StateManagerScene7 : MonoBehaviour
 {
     private int _sceneState = 0;
     private TextUpdater _textUpdater;
-    string[] _instructions = { "Walk towards barrel to hide", "Find and open Exit door",""};
+    string[] _instructions = { "Walk towards barrel to hide", "Find and open Exit door","jump into sewer"};
     private bool _interactedDoorKnob2 =  false; 
     private bool _interactedSafeZone = false;
-
+    
     private void Awake()
     {
         _textUpdater = GetComponent<TextUpdater>();
@@ -58,4 +59,6 @@ public class StateManagerScene7 : MonoBehaviour
         string text = _instructions[_sceneState];
         _textUpdater.UpdateText(ref text);        
     }
+
+    
 }
