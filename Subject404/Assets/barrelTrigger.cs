@@ -10,12 +10,15 @@ public class barrelTrigger : MonoBehaviour
     public GameObject barrel;
     public float delay = 5.0f;
     public Vector3 teleportationOffset = new Vector3(1.0f, 0, 0);
-    
-
+    private StateManagerScene7 stateManager;
 
     void Start()
     {
-        
+        stateManager = FindObjectOfType<StateManagerScene7>();
+        if (stateManager == null)
+        {
+            Debug.LogError("StateManagerScene7 not found in the scene");
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -23,6 +26,10 @@ public class barrelTrigger : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             TeleportPlayer(other.gameObject);
+            if (stateManager != null)
+            {
+                stateManager.SetInteractedSafeZone();
+            }
         }
     }
 

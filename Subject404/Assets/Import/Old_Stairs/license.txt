@@ -1,0 +1,11 @@
+Model Information:
+* title:	Old Stairs
+* source:	https://sketchfab.com/3d-models/old-stairs-ab944a74b855447da97912ed5f5e7bd7
+* author:	MrUnity (https://sketchfab.com/MrUnityCreations)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Old Stairs" (https://sketchfab.com/3d-models/old-stairs-ab944a74b855447da97912ed5f5e7bd7) by MrUnity (https://sketchfab.com/MrUnityCreations) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
