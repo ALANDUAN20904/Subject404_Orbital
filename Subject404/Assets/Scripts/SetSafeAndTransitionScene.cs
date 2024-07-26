@@ -6,7 +6,6 @@ public class SetSafeAndTransitionScene : MonoBehaviour
 {
     void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Reached");
         if (MainManager.Instance != null)
         {
             MainManager.Instance.SetSafe();
