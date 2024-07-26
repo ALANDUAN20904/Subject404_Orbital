@@ -6,8 +6,13 @@ public class TeleportPlayer : MonoBehaviour
 {
     public Transform player, destination;
     public CharacterController playerObject;
+    public GameObject gameInstructions;
+    private StateManagerScene6 _stateManager;
 
-    // Update is called once per frame
+    void Start()
+    {
+        _stateManager = gameInstructions.GetComponent<StateManagerScene6>();
+    }
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
@@ -16,6 +21,7 @@ public class TeleportPlayer : MonoBehaviour
             player.position = destination.position;
             playerObject.enabled = true;
             Physics.SyncTransforms();
+            _stateManager.SetSceneState(2);
         }
     }
 }
