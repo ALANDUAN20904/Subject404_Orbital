@@ -2,15 +2,15 @@ using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class CustomFunctionOnTriggerScene7 : MonoBehaviour
+public class SetSafeAndTransitionScene : MonoBehaviour
 {
-    
-    void OnTriggerEnter()
+    void OnTriggerEnter(Collider other)
     {
+        Debug.Log("Reached");
         if (MainManager.Instance != null)
         {
             MainManager.Instance.SetSafe();
-            SceneManager.LoadScene(9);
         }
+        SceneManager.LoadScene(9);
     }
 }
