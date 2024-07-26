@@ -16,6 +16,7 @@ public class StateManagerScene4 : MonoBehaviour
     public GameObject AxeSymbol;
     public GameObject Enemy;
     public GameObject EnemyCollider;
+    public GameObject PlayerMotionBlock;
     public GameObject Bulb;
     public GameObject gameSound;
     public GameObject heartBeat;
@@ -200,6 +201,7 @@ public class StateManagerScene4 : MonoBehaviour
         if (Enemy != null)
         {
             Enemy.SetActive(false);
+            PlayerMotionBlock.SetActive(false);
         }
         else
         {
