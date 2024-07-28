@@ -9,6 +9,12 @@ public class MainMenu : MonoBehaviour
     {
         SceneManager.LoadScene(sceneId);
     }
+    public void RestartScene()
+    {
+        Time.timeScale = 1.0f;
+        Scene currentScene = SceneManager.GetActiveScene();
+        SceneManager.LoadScene(currentScene.buildIndex);
+    }
     public void ExitGame()
     {
         Debug.Log("Session terminated successfully");
