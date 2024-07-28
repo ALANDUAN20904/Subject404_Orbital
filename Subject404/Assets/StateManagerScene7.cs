@@ -8,7 +8,7 @@ public class StateManagerScene7 : MonoBehaviour
 {
     private int _sceneState = 0;
     private TextUpdater _textUpdater;
-    string[] _instructions = { "Walk towards barrel to hide", "Find and open Exit door","jump into sewer"};
+    string[] _instructions = { "Find a barrel to hide!", "Find and open Exit door","Go to exit!"};
     private bool _interactedDoorKnob2 =  false; 
     private bool _interactedSafeZone = false;
     
