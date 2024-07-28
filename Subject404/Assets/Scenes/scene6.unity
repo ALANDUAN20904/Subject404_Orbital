@@ -788,7 +788,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 43241216}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Receiver
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -904,7 +904,7 @@ GameObject:
   m_Component:
   - component: {fileID: 48422721}
   - component: {fileID: 48422722}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Collision 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -960,7 +960,7 @@ GameObject:
   - component: {fileID: 50034004}
   - component: {fileID: 50034006}
   - component: {fileID: 50034005}
-  m_Layer: 3
+  m_Layer: 8
   m_Name: Door_Open (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1429,7 +1429,7 @@ GameObject:
   - component: {fileID: 73728496}
   - component: {fileID: 73728498}
   - component: {fileID: 73728497}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SteelLadder B (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2359,7 +2359,7 @@ GameObject:
   - component: {fileID: 111579207}
   - component: {fileID: 111579206}
   - component: {fileID: 111579205}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2570,7 +2570,7 @@ GameObject:
   - component: {fileID: 124206342}
   - component: {fileID: 124206344}
   - component: {fileID: 124206343}
-  m_Layer: 3
+  m_Layer: 8
   m_Name: Door_Open
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3258,7 +3258,7 @@ GameObject:
   m_Component:
   - component: {fileID: 172155705}
   - component: {fileID: 172155706}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Collision 5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3379,7 +3379,7 @@ GameObject:
   m_Component:
   - component: {fileID: 183340043}
   - component: {fileID: 183340044}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Collision 5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3434,7 +3434,7 @@ GameObject:
   m_Component:
   - component: {fileID: 188698345}
   - component: {fileID: 188698346}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: store_signboard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3794,7 +3794,7 @@ GameObject:
   m_Component:
   - component: {fileID: 220170302}
   - component: {fileID: 220170303}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Collision 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4437,7 +4437,7 @@ GameObject:
   - component: {fileID: 242000251}
   - component: {fileID: 242000250}
   - component: {fileID: 242000249}
-  m_Layer: 3
+  m_Layer: 8
   m_Name: EntranceDoor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5139,7 +5139,7 @@ GameObject:
   m_Component:
   - component: {fileID: 274626269}
   - component: {fileID: 274626270}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Collision 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10024,7 +10024,7 @@ GameObject:
   m_Component:
   - component: {fileID: 282251390}
   - component: {fileID: 282251391}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Collision 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10280,7 +10280,7 @@ GameObject:
   m_Component:
   - component: {fileID: 298203223}
   - component: {fileID: 298203224}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Collision 5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10429,7 +10429,7 @@ GameObject:
   m_Component:
   - component: {fileID: 343849175}
   - component: {fileID: 343849176}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Collision 6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10646,7 +10646,7 @@ GameObject:
   - component: {fileID: 352820698}
   - component: {fileID: 352820697}
   - component: {fileID: 352820696}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10749,7 +10749,7 @@ GameObject:
   m_Component:
   - component: {fileID: 356949876}
   - component: {fileID: 356949877}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Collision 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12085,7 +12085,7 @@ GameObject:
   - component: {fileID: 493737106}
   - component: {fileID: 493737105}
   - component: {fileID: 493737104}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Plane (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12439,7 +12439,7 @@ GameObject:
   - component: {fileID: 547141080}
   - component: {fileID: 547141079}
   - component: {fileID: 547141078}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Plane (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15029,6 +15029,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Building
       objectReference: {fileID: 0}
+    - target: {fileID: 5467950155828125085, guid: befa682ad44dc804a8955f7ac494bc18, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -15089,7 +15093,7 @@ GameObject:
   m_Component:
   - component: {fileID: 737227521}
   - component: {fileID: 737227522}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Collision 6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15737,7 +15741,7 @@ GameObject:
   m_Component:
   - component: {fileID: 774166803}
   - component: {fileID: 774166804}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Collision 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16087,7 +16091,7 @@ GameObject:
   m_Component:
   - component: {fileID: 790814332}
   - component: {fileID: 790814333}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Collision 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16142,7 +16146,7 @@ GameObject:
   m_Component:
   - component: {fileID: 800283841}
   - component: {fileID: 800283842}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Audio Source
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16338,7 +16342,7 @@ GameObject:
   - component: {fileID: 805971520}
   - component: {fileID: 805971519}
   - component: {fileID: 805971518}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17548,7 +17552,7 @@ GameObject:
   m_Component:
   - component: {fileID: 836165145}
   - component: {fileID: 836165146}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Collision 6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17669,7 +17673,7 @@ GameObject:
   m_Component:
   - component: {fileID: 840535054}
   - component: {fileID: 840535055}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Collision 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18342,7 +18346,7 @@ GameObject:
   m_Component:
   - component: {fileID: 895615238}
   - component: {fileID: 895615239}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Collision 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18466,7 +18470,7 @@ GameObject:
   - component: {fileID: 900534111}
   - component: {fileID: 900534110}
   - component: {fileID: 900534109}
-  m_Layer: 3
+  m_Layer: 8
   m_Name: DoorKnob
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18915,7 +18919,7 @@ GameObject:
   m_Component:
   - component: {fileID: 914976156}
   - component: {fileID: 914976157}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Collision 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19064,7 +19068,7 @@ GameObject:
   m_Component:
   - component: {fileID: 931242344}
   - component: {fileID: 931242345}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Collision 5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20903,7 +20907,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1087441884}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Top Lights
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21194,6 +21198,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8606c21208a6abf4aa86e39e9938598b, type: 3}
+--- !u!1 &1141852788 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5467950155828125085, guid: befa682ad44dc804a8955f7ac494bc18, type: 3}
+  m_PrefabInstance: {fileID: 730967430}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1148280846
 GameObject:
   m_ObjectHideFlags: 0
@@ -22740,7 +22749,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1222318616}
   - component: {fileID: 1222318617}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Collision 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23321,7 +23330,7 @@ GameObject:
   - component: {fileID: 1270254755}
   - component: {fileID: 1270254754}
   - component: {fileID: 1270254753}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Plane (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24204,7 +24213,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1328807293}
   - component: {fileID: 1328807294}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Spot Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24299,7 +24308,7 @@ GameObject:
   - component: {fileID: 1330727452}
   - component: {fileID: 1330727454}
   - component: {fileID: 1330727453}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SteelLadder B (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24549,6 +24558,190 @@ PrefabInstance:
       propertyPath: m_Name
       value: LadderCombinationSample Long
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 2116aafc135bfb6439d391c4fb83f4cd, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 2116aafc135bfb6439d391c4fb83f4cd, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100004, guid: 2116aafc135bfb6439d391c4fb83f4cd, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100006, guid: 2116aafc135bfb6439d391c4fb83f4cd, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100008, guid: 2116aafc135bfb6439d391c4fb83f4cd, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100010, guid: 2116aafc135bfb6439d391c4fb83f4cd, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100012, guid: 2116aafc135bfb6439d391c4fb83f4cd, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100014, guid: 2116aafc135bfb6439d391c4fb83f4cd, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100016, guid: 2116aafc135bfb6439d391c4fb83f4cd, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100018, guid: 2116aafc135bfb6439d391c4fb83f4cd, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100020, guid: 2116aafc135bfb6439d391c4fb83f4cd, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100022, guid: 2116aafc135bfb6439d391c4fb83f4cd, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100024, guid: 2116aafc135bfb6439d391c4fb83f4cd, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100026, guid: 2116aafc135bfb6439d391c4fb83f4cd, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100028, guid: 2116aafc135bfb6439d391c4fb83f4cd, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100030, guid: 2116aafc135bfb6439d391c4fb83f4cd, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100032, guid: 2116aafc135bfb6439d391c4fb83f4cd, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100034, guid: 2116aafc135bfb6439d391c4fb83f4cd, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100036, guid: 2116aafc135bfb6439d391c4fb83f4cd, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100038, guid: 2116aafc135bfb6439d391c4fb83f4cd, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100040, guid: 2116aafc135bfb6439d391c4fb83f4cd, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100042, guid: 2116aafc135bfb6439d391c4fb83f4cd, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100044, guid: 2116aafc135bfb6439d391c4fb83f4cd, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100046, guid: 2116aafc135bfb6439d391c4fb83f4cd, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100048, guid: 2116aafc135bfb6439d391c4fb83f4cd, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100050, guid: 2116aafc135bfb6439d391c4fb83f4cd, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100052, guid: 2116aafc135bfb6439d391c4fb83f4cd, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100054, guid: 2116aafc135bfb6439d391c4fb83f4cd, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100056, guid: 2116aafc135bfb6439d391c4fb83f4cd, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100058, guid: 2116aafc135bfb6439d391c4fb83f4cd, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100060, guid: 2116aafc135bfb6439d391c4fb83f4cd, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100062, guid: 2116aafc135bfb6439d391c4fb83f4cd, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100064, guid: 2116aafc135bfb6439d391c4fb83f4cd, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100066, guid: 2116aafc135bfb6439d391c4fb83f4cd, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100068, guid: 2116aafc135bfb6439d391c4fb83f4cd, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100070, guid: 2116aafc135bfb6439d391c4fb83f4cd, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100072, guid: 2116aafc135bfb6439d391c4fb83f4cd, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100074, guid: 2116aafc135bfb6439d391c4fb83f4cd, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100076, guid: 2116aafc135bfb6439d391c4fb83f4cd, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100078, guid: 2116aafc135bfb6439d391c4fb83f4cd, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100080, guid: 2116aafc135bfb6439d391c4fb83f4cd, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100082, guid: 2116aafc135bfb6439d391c4fb83f4cd, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100084, guid: 2116aafc135bfb6439d391c4fb83f4cd, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100086, guid: 2116aafc135bfb6439d391c4fb83f4cd, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100088, guid: 2116aafc135bfb6439d391c4fb83f4cd, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100090, guid: 2116aafc135bfb6439d391c4fb83f4cd, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 2116aafc135bfb6439d391c4fb83f4cd, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.3013266
@@ -24784,7 +24977,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1341799179}
   - component: {fileID: 1341799180}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Collision 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26084,7 +26277,7 @@ GameObject:
   - component: {fileID: 1393936548}
   - component: {fileID: 1393936547}
   - component: {fileID: 1393936546}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26461,7 +26654,7 @@ GameObject:
   - component: {fileID: 1449748964}
   - component: {fileID: 1449748966}
   - component: {fileID: 1449748965}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SteelLadder B (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27030,7 +27223,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1502627963}
   - component: {fileID: 1502627964}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27126,7 +27319,7 @@ GameObject:
   - component: {fileID: 1517655368}
   - component: {fileID: 1517655367}
   - component: {fileID: 1517655366}
-  m_Layer: 3
+  m_Layer: 8
   m_Name: EntranceDoor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27604,7 +27797,7 @@ GameObject:
   - component: {fileID: 1569613481}
   - component: {fileID: 1569613483}
   - component: {fileID: 1569613482}
-  m_Layer: 3
+  m_Layer: 8
   m_Name: DoorGlass
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27862,7 +28055,7 @@ GameObject:
   - component: {fileID: 1573215075}
   - component: {fileID: 1573215074}
   - component: {fileID: 1573215073}
-  m_Layer: 3
+  m_Layer: 8
   m_Name: DoorKnob
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28397,7 +28590,7 @@ GameObject:
   - component: {fileID: 1596758751}
   - component: {fileID: 1596758750}
   - component: {fileID: 1596758749}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Plane (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29308,7 +29501,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1664839619}
   - component: {fileID: 1664839620}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Collision 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31216,7 +31409,7 @@ GameObject:
   - component: {fileID: 1765222343}
   - component: {fileID: 1765222342}
   - component: {fileID: 1765222341}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Plane (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31992,7 +32185,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1807634222}
   - component: {fileID: 1807634224}
-  - component: {fileID: 1807634223}
   m_Layer: 0
   m_Name: playerDialougue
   m_TagString: Untagged
@@ -32015,26 +32207,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1797506483}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1807634223
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1807634221}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6fe49ef214d2e174e9284dc51bb4a73a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  audioSource: {fileID: 1807634224}
-  gameInstructions: {fileID: 2022476206}
-  audioClips:
-  - {fileID: 8300000, guid: 299c2c5c20a2dbd4eabcceed19469b4d, type: 3}
-  - {fileID: 8300000, guid: 6bdf6074de76e2842bb71aebeef9a19d, type: 3}
-  - {fileID: 0}
-  - {fileID: 8300000, guid: 59c9009b5eaef8c4fad11680e8c26b24, type: 3}
-  - {fileID: 8300000, guid: a728a4f31f5c695438831fcf93f737b8, type: 3}
 --- !u!82 &1807634224
 AudioSource:
   m_ObjectHideFlags: 0
@@ -32045,7 +32217,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: c092a0f5a603e2447a7633fb897797c8, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -32725,7 +32897,7 @@ GameObject:
   - component: {fileID: 1852674600}
   - component: {fileID: 1852674599}
   - component: {fileID: 1852674598}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32980,7 +33152,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1877577890}
   - component: {fileID: 1877577891}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Collision 6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33333,7 +33505,7 @@ GameObject:
   - component: {fileID: 1900090962}
   - component: {fileID: 1900090964}
   - component: {fileID: 1900090963}
-  m_Layer: 3
+  m_Layer: 8
   m_Name: DoorGlass
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33815,7 +33987,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1976185100}
   - component: {fileID: 1976185101}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Collision 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33917,7 +34089,7 @@ GameObject:
   - component: {fileID: 1989779771}
   - component: {fileID: 1989779773}
   - component: {fileID: 1989779772}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SteelLadder B (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34005,7 +34177,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1991873458}
   - component: {fileID: 1991873459}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Collision 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34100,6 +34272,9 @@ MonoBehaviour:
   sound: {fileID: 800283840}
   gameSound: {fileID: 691411910}
   gameInstructions: {fileID: 2022476206}
+  playerDialogue: {fileID: 1807634221}
+  mainCamera: {fileID: 1359544386}
+  enemy: {fileID: 1141852788}
 --- !u!65 &1993986528
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -34960,7 +35135,7 @@ GameObject:
   - component: {fileID: 2040658893}
   - component: {fileID: 2040658895}
   - component: {fileID: 2040658894}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Sender
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35338,7 +35513,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2063597518}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Bottom Lights
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36282,7 +36457,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2130516927}
   - component: {fileID: 2130516928}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Collision 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}

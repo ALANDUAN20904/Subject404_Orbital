@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StateManagerScene6Cult : MonoBehaviour
+public class StateManagerScene6Interior : MonoBehaviour
 {
     private int _sceneState = 0;
     private TextUpdater _textUpdater;
-    private string[] _instructions = {"Walk towards the cultists and take a picture using Right Trigger"};
+    private string[] _instructions = {"Inspect and exit the room"};
 
     public int GetSceneState()
     {
