@@ -1,0 +1,11 @@
+Model Information:
+* title:	House Mouse
+* source:	https://sketchfab.com/3d-models/house-mouse-b2737ba987794081bfb9cebc6aa6b55e
+* author:	Jean-Christophe Sekinger (https://sketchfab.com/jc.sekinger)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "House Mouse" (https://sketchfab.com/3d-models/house-mouse-b2737ba987794081bfb9cebc6aa6b55e) by Jean-Christophe Sekinger (https://sketchfab.com/jc.sekinger) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
