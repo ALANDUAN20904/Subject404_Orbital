@@ -38,6 +38,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/daytransition.unity
     guid: eeeae666662b8054dbf3bab049f66644
+  - enabled: 1
+    path: Assets/Scenes/endmenu.unity
+    guid: fd1500c1bbe039b4aaf63611bdf72b85
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: cc4df80c1c1d2854d92946bcb8ade68e, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 0d7563ae891ee6f4eacb1647c8e49f99, type: 2}
