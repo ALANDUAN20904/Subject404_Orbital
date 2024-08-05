@@ -6,6 +6,7 @@ public class StateManager : MonoBehaviour
 {
     private TextUpdater _textUpdater;
     private int _sceneState = 0;
+    private int _prevState = -1;
     private bool _triggeredAudio = false;
     private bool _playedAudio = false;
     private bool _interactedFridge = false;
@@ -107,6 +108,12 @@ public class StateManager : MonoBehaviour
     }
     private void Update()
     {
+        if (_sceneState != _prevState)
+        {
+            string text = _instructions[_sceneState];
+            _textUpdater.UpdateText(ref text);
+            _prevState = _sceneState;
+        }
         if (!lampActive.activeSelf)
         {
             _sceneState = 0;
@@ -124,8 +131,5 @@ public class StateManager : MonoBehaviour
         else{
             _sceneState = 4;
         }
-
-        string text = _instructions[_sceneState];
-        _textUpdater.UpdateText(ref text);
     }
 }
