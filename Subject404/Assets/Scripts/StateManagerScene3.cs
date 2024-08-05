@@ -6,11 +6,12 @@ using UnityEngine.XR.Interaction.Toolkit;
 public class StateManagerScene3 : MonoBehaviour
 {
     private int _sceneState = 0;
+    private int _prevState = -1;
     public GameObject DoorKnob;
     private bool _grabbedMilk = false;
     private bool _putDownMilk = false;
     private TextUpdater _textUpdater;
-    string[] _instructions = { "Grab milk", "", "", "", "Put the milk down at the cashier", "", "", "", "", "", "Grab door knob to exit" };
+    string[] _instructions = { "Grab milk", "", "", "", "Put the milk down at the cashier", "", "", "", "", "", "Grab door handle to exit" };
 
     private void Awake()
     {
@@ -38,8 +39,12 @@ public class StateManagerScene3 : MonoBehaviour
     }
     void Update()
     {
-        string text = _instructions[_sceneState];
-        _textUpdater.UpdateText(ref text);
+        if (_sceneState != _prevState)
+        {
+            string text = _instructions[_sceneState];
+            _textUpdater.UpdateText(ref text);
+            _prevState = _sceneState;
+        }
 
         if (_grabbedMilk && _sceneState == 0)
         {

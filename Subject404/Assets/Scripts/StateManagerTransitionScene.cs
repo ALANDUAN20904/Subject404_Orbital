@@ -6,6 +6,7 @@ public class StateManagerTransitionScene : MonoBehaviour
 {
     private TextUpdater _textUpdater;
     private int _sceneState = 0;
+    private int _prevState = -1;
     private bool _interactedFridge = false;
     private ToggleInteraction _toggleInteraction;
     public GameObject lampActive;
@@ -68,6 +69,12 @@ public class StateManagerTransitionScene : MonoBehaviour
     }
     private void Update()
     {
+        if (_sceneState != _prevState)
+        {
+            string text = _instructions[_sceneState];
+            _textUpdater.UpdateText(ref text);
+            _prevState = _sceneState;
+        }
         if (!lampActive.activeSelf)
         {
             _sceneState = 0;
@@ -78,8 +85,5 @@ public class StateManagerTransitionScene : MonoBehaviour
         else{
             _sceneState = 2;
         }
-
-        string text = _instructions[_sceneState];
-        _textUpdater.UpdateText(ref text);
     }
 }

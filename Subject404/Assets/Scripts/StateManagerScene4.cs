@@ -6,6 +6,7 @@ using UnityEngine.XR.Interaction.Toolkit;
 public class StateManagerScene4 : MonoBehaviour
 {
     private int _sceneState;
+    private int _prevState = -1;
     private Raycast _raycaster;
     private TextUpdater _textUpdater;
     private ToggleInteraction _toggleAxe;
@@ -151,8 +152,12 @@ public class StateManagerScene4 : MonoBehaviour
     }
     void Update()
     {
-        string text = _instructions[_sceneState];
-        _textUpdater.UpdateText(ref text);
+        if (_sceneState != _prevState)
+        {
+            string text = _instructions[_sceneState];
+            _textUpdater.UpdateText(ref text);
+            _prevState = _sceneState;
+        }
 
         if (Axe != null)
         {

@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class StateManagerScene7 : MonoBehaviour
 {
     private int _sceneState = 0;
+    private int _prevState = -1;
     private TextUpdater _textUpdater;
     string[] _instructions = { "Find a barrel to hide!", "Find and open Exit door","Go to exit!"};
     private bool _interactedDoorKnob2 =  false; 
@@ -56,8 +57,12 @@ public class StateManagerScene7 : MonoBehaviour
 
     void UpdateInstructions()
     {
-        string text = _instructions[_sceneState];
-        _textUpdater.UpdateText(ref text);        
+        if (_sceneState != _prevState)
+        {
+            string text = _instructions[_sceneState];
+            _textUpdater.UpdateText(ref text);
+            _prevState = _sceneState;
+        }    
     }
 
     
