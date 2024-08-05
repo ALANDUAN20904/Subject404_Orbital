@@ -5,6 +5,7 @@ using UnityEngine;
 public class BlockerChecker : MonoBehaviour
 {
     public GameObject blocker;
+    public GameObject[] otherCultists;
     public float delay = 7.0f;
     private bool _hasCollided= false;
 
@@ -23,6 +24,18 @@ public class BlockerChecker : MonoBehaviour
             _hasCollided = true;
             GetComponent<Collider>().enabled = false;
             Invoke("showBlocker", delay);
+
+            TriggerAllDisappear();
+            
+        }
+    }
+
+    private void TriggerAllDisappear()
+    {
+        foreach (GameObject cultist in otherCultists)
+        {
+            scene7OtherCultistController cultistController = cultist.GetComponent<scene7OtherCultistController>();
+            cultistController.TriggerDisappear();
         }
     }
 
