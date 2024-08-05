@@ -97,7 +97,7 @@ public class StateManager : MonoBehaviour
             Debug.LogError("Main Door GameObject not set");
         }
     }
-    string[] _instructions = { "Grab lamp interactable to turn on lamp", "Walk towards the table", "", "Grab the handle and open the fridge", "Grab the main door handle to exit the house" };
+    string[] _instructions = { "Grab lamp interactable to turn on lamp", "Walk towards the dining table", "", "Grab the handle and open the fridge", "Grab the main door handle to exit the house" };
     private void Awake()
     {
         _textUpdater = GetComponent<TextUpdater>();

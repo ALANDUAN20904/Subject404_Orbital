@@ -11,7 +11,7 @@ public class StateManagerScene3 : MonoBehaviour
     private bool _grabbedMilk = false;
     private bool _putDownMilk = false;
     private TextUpdater _textUpdater;
-    string[] _instructions = { "Grab milk", "", "", "", "Put the milk down at the cashier", "", "", "", "", "", "Grab door knob to exit" };
+    string[] _instructions = { "Grab milk", "", "", "", "Put the milk down at the cashier", "", "", "", "", "", "Grab door handle to exit" };
 
     private void Awake()
     {

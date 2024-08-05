@@ -12,7 +12,7 @@ public class StateManagerScene5 : MonoBehaviour
     private bool _putDownJuice = false;
     private TextUpdater _textUpdater;
     private ToggleInteraction _toggleInteraction;
-    string[] _instructions = { "", "Grab juice", "Put the juice down at the cashier", "", "Grab door knob to exit" };
+    string[] _instructions = { "", "Grab juice", "Put the juice down at the cashier", "", "Grab door handle to exit" };
 
     private void Awake()
     {
