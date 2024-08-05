@@ -6,6 +6,7 @@ using UnityEngine.XR.Interaction.Toolkit;
 public class StateManagerScene3 : MonoBehaviour
 {
     private int _sceneState = 0;
+    private int _prevState = -1;
     public GameObject DoorKnob;
     private bool _grabbedMilk = false;
     private bool _putDownMilk = false;
@@ -38,8 +39,12 @@ public class StateManagerScene3 : MonoBehaviour
     }
     void Update()
     {
-        string text = _instructions[_sceneState];
-        _textUpdater.UpdateText(ref text);
+        if (_sceneState != _prevState)
+        {
+            string text = _instructions[_sceneState];
+            _textUpdater.UpdateText(ref text);
+            _prevState = _sceneState;
+        }
 
         if (_grabbedMilk && _sceneState == 0)
         {
