@@ -3,18 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-
-
 public class AiLocalmotion : MonoBehaviour
 {
-   
     NavMeshAgent agent;
     Animator animator;
     
-
     public Transform PlayerTransform;
 
-    
     void Start()
     {
         if (PlayerTransform == null)
@@ -28,9 +23,6 @@ public class AiLocalmotion : MonoBehaviour
     
     void Update()
     {
-
-
-
         if (agent.hasPath)
         {
             animator.SetFloat("Speed", agent.velocity.magnitude);
@@ -41,10 +33,5 @@ public class AiLocalmotion : MonoBehaviour
         }
         
 
-    }
-
-    void OnDrawGizmos()
-    {
-        
     }
 }

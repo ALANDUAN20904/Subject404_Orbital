@@ -57,10 +57,4 @@ public class AiCaughtState : AiState
 
         agent.transform.LookAt(new Vector3(playerCamera.transform.position.x, agent.transform.position.y, playerCamera.transform.position.z));
     }
-
-
-
-
-
-
 }

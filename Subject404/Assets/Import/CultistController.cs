@@ -21,9 +21,9 @@ public class CultistController : MonoBehaviour
     [SerializeField] private Transform teleportTarget;
     [SerializeField] private Camera playerCamera;
     
-    //changes
+
     [SerializeField] private LayerMask safeZoneLayer; // Assign this in the inspector
-    private float cultistRadius = 0.5f; // Adjust based on your cultist's size
+    private float cultistRadius = 0.5f; // Adjust based on cultist's size
 
 
     private Vector3 target;

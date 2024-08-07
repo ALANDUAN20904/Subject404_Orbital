@@ -64,6 +64,4 @@ public class StateManagerScene7 : MonoBehaviour
             _prevState = _sceneState;
         }    
     }
-
-    
 }
