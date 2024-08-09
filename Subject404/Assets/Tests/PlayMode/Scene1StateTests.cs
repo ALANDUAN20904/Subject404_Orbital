@@ -9,6 +9,13 @@ public class Scene1StateTests
     private StateManager _stateManager;
     private TextUpdater _textUpdater;
     private TMP_Text _textField;
+     public RectTransform panel;
+    public GameObject UI;
+    private Vector3 _originalScale;
+    private Vector3 targetScale = new Vector3(0.5f, 0.5f, 0.5f);
+    private float transitionDuration = 1.0f;
+    private Vector3 _originalPosition;
+    private Vector3 targetPosition = new Vector3(0, -40, 0);
     private GameObject _manager;
     private GameObject _lamp;
     private GameObject _fridgeRDoor;
@@ -22,6 +29,12 @@ public class Scene1StateTests
         _textUpdater = _manager.AddComponent<TextUpdater>();
         GameObject textObject = new GameObject("TextObject");
         _textField = textObject.AddComponent<TextMeshProUGUI>();
+        UI = new GameObject("UI");
+        _textUpdater.UI = UI;
+        panel = UI.AddComponent<RectTransform>();
+        _textUpdater.panel = panel;
+        _originalScale = panel.localScale;
+        _originalPosition = panel.localPosition;
 
         _textUpdater.textField = _textField;
         _stateManager = _manager.AddComponent<StateManager>();
