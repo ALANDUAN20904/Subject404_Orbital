@@ -34922,9 +34922,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d327d6572e36ba341a8f14421637dc36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inputSource: 5
-  inputButton: 2
-  inputThreshold: 0.5
+  captureAction: {fileID: 83097790271614945, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   captureFlash: {fileID: 585239403}
   lightFlash: {fileID: 306253745}
 --- !u!1 &1799027395

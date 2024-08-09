@@ -13,7 +13,7 @@ public class TeleportPlayer : MonoBehaviour
     {
         _stateManager = gameInstructions.GetComponent<StateManagerScene6>();
     }
-    void OnTriggerEnter(Collider other)
+    public void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
