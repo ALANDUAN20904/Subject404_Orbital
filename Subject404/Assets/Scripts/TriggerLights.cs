@@ -35,7 +35,7 @@ public class TriggerLights : MonoBehaviour
     {
         while (!_raycaster.IsObjectInView(enemy))
         {
-            yield return null; // Wait for the next frame
+            yield return null;
         }
 
         playerDialogue.SetActive(true);

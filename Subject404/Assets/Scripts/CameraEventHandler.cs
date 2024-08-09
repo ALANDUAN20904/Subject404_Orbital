@@ -3,36 +3,36 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR;
 using UnityEngine.SceneManagement;
+using UnityEngine.InputSystem;
 
 public class CameraEventHandler : MonoBehaviour
 {
-    public XRNode inputSource;
-    public UnityEngine.XR.Interaction.Toolkit.InputHelpers.Button inputButton;
-    public float inputThreshold;
+    public InputActionReference captureAction;
     public GameObject captureFlash;
     public GameObject lightFlash;
-private void Update()
-{
-    List<InputDevice> devices = new List<InputDevice>();
-    InputDevices.GetDevicesAtXRNode(inputSource, devices);
 
-    foreach (var device in devices)
+    private void OnEnable()
     {
-        UnityEngine.XR.Interaction.Toolkit.InputHelpers.IsPressed(device, inputButton, out bool isPressed, inputThreshold);
-        if (isPressed)
-        {
-            StartCoroutine(Capture());
-        }
+        captureAction.action.performed += OnCapture;
     }
-}
 
-private IEnumerator Capture()
-{
-    captureFlash.SetActive(true);
-    lightFlash.SetActive(true);
-    yield return new WaitForSeconds(1);
-    lightFlash.SetActive(false);
-    yield return new WaitForSeconds(2);
-    SceneManager.LoadScene(8);
-}
+    private void OnDisable()
+    {
+        captureAction.action.performed -= OnCapture;
+    }
+
+    private void OnCapture(InputAction.CallbackContext context)
+    {
+        StartCoroutine(Capture());
+    }
+
+    private IEnumerator Capture()
+    {
+        captureFlash.SetActive(true);
+        lightFlash.SetActive(true);
+        yield return new WaitForSeconds(1);
+        lightFlash.SetActive(false);
+        yield return new WaitForSeconds(2);
+        SceneManager.LoadScene(8);
+    }
 }
