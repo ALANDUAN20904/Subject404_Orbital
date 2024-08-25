@@ -21,7 +21,7 @@ public class AiCaughtState : AiState
             playerCamera = Camera.main; // Assuming the main camera is the player's camera
         }
 
-        UpdatePosition(agent);
+        CultistTeleport(agent);
 
         Animator agentAnimator = agent.GetComponent<Animator>();
         if(agentAnimator != null)
@@ -34,7 +34,7 @@ public class AiCaughtState : AiState
 
     public void Update(AiAgent agent)
     {
-        UpdatePosition(agent);
+        CultistTeleport(agent);
         Debug.Log("cultist at caught state");
     }
 
@@ -43,7 +43,7 @@ public class AiCaughtState : AiState
         SceneManager.LoadScene(9);
     }
 
-    private void UpdatePosition(AiAgent agent)
+    private void CultistTeleport(AiAgent agent)
     {
         Vector3 cameraForward = playerCamera.transform.forward;
         cameraForward.y = 0; // Flatten the vector to ignore vertical tilt

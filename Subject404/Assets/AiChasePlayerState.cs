@@ -10,7 +10,7 @@ public class AiChasePlayerState : AiState
     public float maxTime = 1.0f;
     public float maxDistance = 1.0f;
     float timer = 0.0f;
-    public float detectionRadius = 30.0f;
+    
 
     public AiStateId GetId()
     {
@@ -33,11 +33,6 @@ public class AiChasePlayerState : AiState
         if (!agent.enabled)
         {
             return;
-        }
-       
-        if (!agent.navMeshAgent.hasPath)
-        {
-            agent.navMeshAgent.destination = playerTransform.position;
         }
 
         if (SafeZone.isPlayerInSafeZone)

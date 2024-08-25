@@ -56,11 +56,7 @@ public class AiPatrolState : AiState
         agent.SetAnimationSpeed(currentSpeed);
         Debug.Log("cultist at patrol state");
     }
-    public void Exit(AiAgent agent)
-    {
-
-    }
-
+    
     private void SetNewRandomTarget(AiAgent agent)
     {
         Vector3 randomDirection = Random.insideUnitSphere * patrolRadius;
@@ -69,4 +65,11 @@ public class AiPatrolState : AiState
         NavMesh.SamplePosition(randomDirection, out hit, patrolRadius, 1);
         patrolTarget = hit.position;
     }
+
+    public void Exit(AiAgent agent)
+    {
+
+    }
+
+    
 }
