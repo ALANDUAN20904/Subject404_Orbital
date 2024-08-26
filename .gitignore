@@ -5,6 +5,7 @@
 [Aa]LP_Assets/
 [Oo]culus Hands/
 
+
 # Ignore temporaries from GameCI
 /[Aa]rtifacts/
 /[Cc]odeCoverage/
